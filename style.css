@@ -74,7 +74,13 @@ header {
 }
 
 
-.content-description-header,
+.content-description-header
+{
+	text-align: center;
+	background-color: rgba(0,255,0,0.3);
+	padding:20px;
+}
+
 .content-description-text{
 	text-align: center;
 	background-color: rgba(0,255,0,0.1);
@@ -140,6 +146,44 @@ header {
 	width: auto;
 
 }
-.content-video video {
-	/*width: auto;*/
+
+.link-person:hover{
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.btn_go_up {
+	position: fixed;
+	right: 5%;
+	bottom: 10%;
+	width: 70px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	border-radius: 20%;
+}
+
+.btn_go_up-link{
+	line-height: 50px;
+	color: white;
+	font-size: 15px;
+}
+
+.btn_go_up-link:hover{
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+
+.gallery_hidden{
+	height: 100em;
+	overflow: hidden;
+}
+
+.btn_open_more{
+	text-align: center;
+	padding:30px;
+	font-size: 16px;
+
 }
