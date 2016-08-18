@@ -6,21 +6,31 @@ var DropMenuProfkom = document.querySelector('#dd-menu_profkom');
 var DropMenuBlog = document.querySelector('#dd-menu_blog');
 var DropMenuProfkomBlock = document.querySelector('#dd-menu_profkom-block');
 var DropMenuBlogBlock = document.querySelector('#dd-menu_blog-block');
-
-
 var counterMenuProfkomClick = 0;
 var counterMenuBlogClick = 0;
 
-if (currentScreenWidth<=769){
-	DropMenuProfkom.onclick = function(){
-		counterMenuProfkomClick++;
-		switchDropMenu (counterMenuProfkomClick, DropMenuProfkomBlock);
-	}
-	DropMenuBlog.onclick = function(){
-		counterMenuBlogClick++;
-		switchDropMenu (counterMenuBlogClick, DropMenuBlogBlock);
+
+window.onresize=function(){
+	currentScreenWidth = document.documentElement.clientWidth;
+	zasdvfds ();
+}
+
+function zasdvfds (){
+	if (currentScreenWidth<=769){
+		DropMenuProfkom.onclick = function(){
+			counterMenuProfkomClick++;
+			switchDropMenu (counterMenuProfkomClick, DropMenuProfkomBlock);
+		}
+		DropMenuBlog.onclick = function(){
+			counterMenuBlogClick++;
+			switchDropMenu (counterMenuBlogClick, DropMenuBlogBlock);
+		}
+	} else {
+		DropMenuProfkom.onclick = function(){}	
+		DropMenuBlog.onclick = function(){}
 	}
 }
+
 
 function switchDropMenu (counter, dropMenu){
 	if (counter%2!=0) {
