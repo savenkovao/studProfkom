@@ -42,7 +42,7 @@ window.onresize=function(){
 	if (currentScreenWidth<=480){
 		galleryPhotoStep = galleryPhoto[0].offsetHeight*20;
 		galleryHidden.style.height = galleryPhotoStep*sum +'px';
-		console.log('!')
+		console.log('!');
 	} else {
 		galleryPhotoStep = galleryPhoto[0].offsetHeight*5;
 		galleryHidden.style.height = galleryPhotoStep*sum +'px';
