@@ -10,12 +10,23 @@ var counterMenuProfkomClick = 0;
 var counterMenuBlogClick = 0;
 
 
+changeWidthDropMenu ();
+
+function switchDropMenu (counter, dropMenu){
+	if (counter%2!=0) {
+		dropMenu.style.display = 'block';
+		dropMenu.style.position = 'relative';
+	}  else {
+		dropMenu.style.display = 'none';
+	}
+}
+	
 window.onresize=function(){
 	currentScreenWidth = document.documentElement.clientWidth;
-	zasdvfds ();
+	changeWidthDropMenu ();
 }
 
-function zasdvfds (){
+function changeWidthDropMenu (){
 	if (currentScreenWidth<=769){
 		DropMenuProfkom.onclick = function(){
 			counterMenuProfkomClick++;
@@ -30,14 +41,3 @@ function zasdvfds (){
 		DropMenuBlog.onclick = function(){}
 	} 
 }
-
-
-function switchDropMenu (counter, dropMenu){
-	if (counter%2!=0) {
-		dropMenu.style.display = 'block';
-		dropMenu.style.position = 'relative';
-	}  else {
-		dropMenu.style.display = 'none';
-	}
-}
-	
