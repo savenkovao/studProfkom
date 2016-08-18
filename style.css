@@ -212,11 +212,12 @@ header {
 
 .btn_open_more{
 	margin: 10px auto 0;
-	width: 25%;
+	width: auto;
+	max-width: 30%;
 	text-align: center;
-	padding:10px;
-	font-size: 16px;
-	background-color:rgba(0,0,0,0.3);
+	padding:0.3rem;
+	font-size: 3vh;
+	background-color:rgba(0,0,0,0.2);
 	border-radius: 0.5em;
 }
 
@@ -233,19 +234,23 @@ header {
 		position: relative;
 	}
 
-   	.menu-item:hover .submenu{
+/*   	.menu-item:hover .submenu{
 		display: none;
-	} 
+	} */
 
-/*	.menu-item .submenu{
+	.menu-item .submenu{
 		position: relative;
 		display: inline-block;
 		width: 100%;
-	}  */
-	
+	}  
+
 
 	.content-image{
 		max-width: 100%;
 		height: auto;
+	}
+
+	.btn_open_more{
+		max-width: 95vw;
 	}
 }
