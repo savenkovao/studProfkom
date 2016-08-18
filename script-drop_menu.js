@@ -28,7 +28,7 @@ function zasdvfds (){
 	} else {
 		DropMenuProfkom.onclick = function(){}	
 		DropMenuBlog.onclick = function(){}
-	}
+	} 
 }
 
 

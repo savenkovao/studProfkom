@@ -230,19 +230,19 @@ header {
 
 @media screen and (max-width: 769px) {
 
-	.submenu{
-		position: relative;
-	}
+.submenu{
+	position: relative;
+}
 
-/*   	.menu-item:hover .submenu{
+.menu-item:hover .submenu{
 		display: none;
-	} */
+	} 
 
-	.menu-item .submenu{
+/*	.menu-item .submenu{
 		position: relative;
 		display: inline-block;
 		width: 100%;
-	}  
+	}  */
 
 
 	.content-image{
