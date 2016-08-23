@@ -4,16 +4,37 @@
 
 var btnOpenMore = document.querySelectorAll('.btn_open_more')[0];
 var galleryHidden =  document.querySelectorAll('.gallery_hidden')[0];
-var galleryPhoto = document.querySelectorAll('.content-image');
-var currentScreenWidth = document.documentElement.clientWidth;
-var photoWidth = galleryPhoto[0].offsetWidth;
-var quantityPhotosInRow = Math.floor(currentScreenWidth/photoWidth);
-var quantityRows = 5;
-var quantityPhotosInBlock = quantityPhotosInRow*quantityRows;
-var galleryPhotoStep = galleryPhoto[0].offsetHeight*quantityRows;
+var galleryPhoto = document.querySelectorAll('.content-gallery-link');
+
+var currentWrapperWidth;
+var currentWrapperHeight;
+var photoWidth;
+var quantityPhotosInRow;
+var quantityRows;
+var quantityPhotosInBlock;
+var galleryPhotoStep;
 var clickCounter = 1;
 
-galleryHidden.style.height = galleryPhotoStep +'px';
+chageVar();
+
+function chageVar(){
+	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth;
+	currentWrapperHeight = document.querySelectorAll('.wrapper')[0].offsetHeight;
+	photoWidth = galleryPhoto[0].offsetWidth;
+	quantityPhotosInRow = Math.floor(currentWrapperWidth/photoWidth);
+	quantityRows = 20/quantityPhotosInRow;
+	quantityPhotosInBlock = quantityPhotosInRow*quantityRows;
+	galleryPhotoStep = galleryPhoto[0].offsetHeight*quantityRows;
+	console.log(currentWrapperWidth + ' fg ' + quantityPhotosInRow);
+	console.log(currentWrapperHeight +' asdfdsf ');
+}
+
+
+if(currentWrapperWidth<480){
+	galleryHidden.style.height = galleryPhoto[0].offsetHeight*quantityPhotosInBlock +'px';
+} else {
+	galleryHidden.style.height = galleryPhotoStep +'px';
+}
 galleryHidden.style.overflow = 'hidden';
 
 
@@ -24,17 +45,10 @@ btnOpenMore.onclick = function(){
 function abr(){
 	clickCounter++;
 	console.log(clickCounter);
-	if (currentScreenWidth<=480){
-		if (getGalleryHeigth()>= (Math.ceil(((galleryPhoto.length+1)*galleryPhotoStep)/quantityRows))){
-			galleryHidden.style.height = (Math.ceil((((galleryPhoto.length+1)*galleryPhotoStep)/quantityRows)/100)*100) +'px';
-		}
-	} else {
-		if (getGalleryHeigth()>= (Math.ceil(((galleryPhoto.length+1)*galleryPhotoStep)/quantityPhotosInBlock))){
-			galleryHidden.style.height = (Math.ceil((((galleryPhoto.length+1)*galleryPhotoStep)/quantityPhotosInBlock)/100)*100) +'px';
-			return;
-		}
+	if (getGalleryHeigth()>= (Math.ceil(((galleryPhoto.length+1)*galleryPhotoStep)/quantityPhotosInBlock))){
+		galleryHidden.style.height = (Math.ceil((((galleryPhoto.length+1)*galleryPhotoStep)/quantityPhotosInBlock)/100)*100) +'px';
+		return;
 	}
-	
 }
 
 function getGalleryHeigth (){
@@ -45,16 +59,19 @@ function getGalleryHeigth (){
 }
 
 
-window.onresize=function(){
-	if (currentScreenWidth<=480){
-		galleryPhotoStep = galleryPhoto[0].offsetHeight*quantityPhotosInBlock;
+window.addEventListener("resize", myFunction);
+
+function myFunction (){
+	chageVar();
+	if (currentWrapperWidth<=480){
 		galleryHidden.style.height = galleryPhotoStep*clickCounter +'px';
-		console.log('!');
+		
 	} else {
-		galleryPhotoStep = galleryPhoto[0].offsetHeight*quantityRows;
 		galleryHidden.style.height = galleryPhotoStep*clickCounter +'px';
+		console.log(galleryPhotoStep+'!__++_!');
+		console.log(galleryHidden.style.height+'!___!');
 	}
-};
+}
 
 
 

@@ -134,9 +134,15 @@ header {
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
+
+.content-gallery-link{
+	max-width: 25%;
+}
+
 .content-image{
-	max-width: 20vw;
-	padding: 0.8vw;
+	width: 100%;
+	/*max-width: 20%;*/
+	padding: 5%;
 	height: auto;
 }
 
@@ -228,7 +234,7 @@ header {
 }
 
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 480px) {
 
 .submenu{
 	position: relative;
@@ -238,17 +244,10 @@ header {
 		display: none;
 	} 
 
-/*	.menu-item .submenu{
-		position: relative;
-		display: inline-block;
-		width: 100%;
-	}  
-*/
-
-	.content-image{
+	.content-gallery-link{
 		max-width: 100%;
-		height: auto;
 	}
+
 
 	.btn_open_more{
 		max-width: 95vw;
