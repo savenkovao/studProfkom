@@ -57,20 +57,28 @@
 
 
 			<section>
+				<div class="col-xs-12 hidden-xs">
+					<div class="row">
+						<div class="content-slider col-xs-12"></div>
+					</div>
+				</div>
 				<div class="col-xs-12">
 					<div class="row">
 						<h2 class="content-description-header">Как стать членом Профкома студентов ОГАСА?</h2>
-						<p class="content-description-text">Очень просто! Внимательно заполни форму ниже на русском языке, нажми кнопку "Вступить в Профком!" и через 2-3 дня тебе на почту придет уведомление о том, что твой билет члена Профкома уже готов</p>
+						<div class="content-description-text">
+							<p>Очень просто! Членом Профкома может стать любой студент ОГАСА дневной формы обучения, на основании личного заявления, поданного в первичную профсоюзную организацию студентов ОГАСА. Член Профкома гарантирует признание Устава организации, оплату членских взносов, а также, то, что он не является членом другого профсоюза.</p>
+							<p>Сегодня Ты можешь это онлайн. Внимательно заполни форму ниже на русском языке, нажми кнопку "Вступить в Профком!" и через 2-3 дня тебе на почту придет уведомление о том, что твой билет члена Профкома уже готов</p>
+						</div>
 
 						<form action="http://mcslayer.com/hillel/post.php" method="post" name="userMemberForm" spellcheck>
 							<label class="form-item">
 								<span><strong>*</strong>Фамилия</span>
-								<input type="text" placeholder="Иван" name="userSurname" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
+								<input type="text" placeholder="Иванов" name="userSurname" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
 							</label>
 
 							<label class="form-item">
 								<span><strong>*</strong>Имя</span>
-								<input type="text" placeholder="Иванов" name="userName" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
+								<input type="text" placeholder="Иван" name="userName" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
 							</label>
 
 							<label class="form-item">
@@ -80,7 +88,7 @@
 
 							<label class="form-item">
 								<span><strong>*</strong>Год рождения</span>
-								<input type="number" placeholder="Иван" name="userBirthDate" required maxlength="4" class="form-item-input" min="1910" max="2015" pattern="[0-9]{4}">
+								<input type="number" placeholder="1910" name="userBirthDate" required maxlength="4" class="form-item-input" min="1910" max="2015" pattern="[0-9]{4}">
 							</label>
 
 							<label class="form-item">
@@ -92,6 +100,16 @@
 								<span><strong>*</strong>Группа</span>
 								<input type="text" placeholder="ЗтК-117" name="userGroup" required maxlength="255" class="form-item-input" pattern="^[а-яА-ЯёЁ0-9\-]+$">
 							</label>
+
+							<div class="form-item">
+								<span><strong>*</strong>Форма обучения</span>
+								<label>						
+									<input type="radio" name="educationForm" required class="form-item-input-radio">Бюджет
+								</label>
+								<label>
+									<input type="radio" name="educationForm" required class="form-item-input-radio">Контракт	
+								</label>
+							</div>						
 
 							<label class="form-item">
 								<span >Фото </span>

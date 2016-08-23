@@ -141,13 +141,22 @@ header {
 
 .content-image{
 	width: 100%;
-	/*max-width: 20%;*/
-	padding: 5%;
+	padding: 2%;
 	height: auto;
 }
 
+.team-gallery-link{
+	max-width: 33%;
+}
+
+.team-gallery-link{
+	max-width: 33%;
+}
+
+
 .content-image:hover{
-	opacity: 0.8;
+	opacity: 0.9;
+	background-color: rgb(179, 255, 179);
 }
 
 .form-item {
@@ -168,6 +177,11 @@ header {
 
 .form-item-input {
 	width: 200px;
+}
+
+.form-item-input-radio{
+	display: inline-block;
+	width: 40px;
 }
 
 .form-item-elaboration {
@@ -219,10 +233,10 @@ header {
 .btn_open_more{
 	margin: 10px auto 0;
 	width: auto;
-	max-width: 30%;
+	max-width: 40%;
 	text-align: center;
-	padding:0.3rem;
-	font-size: 3vh;
+	padding:0.8rem;
+	font-size: 1.5rem;
 	background-color:rgba(0,0,0,0.2);
 	border-radius: 0.5em;
 }
@@ -231,6 +245,10 @@ header {
 	text-decoration: none;
 	font-weight: bold;
 
+}
+
+.content-map{
+	margin: 3rem 0;
 }
 
 
@@ -244,10 +262,11 @@ header {
 		display: none;
 	} 
 
-	.content-gallery-link{
+	.content-gallery-link,
+	.team-gallery-link{
 		max-width: 100%;
 	}
-
+	
 
 	.btn_open_more{
 		max-width: 95vw;
