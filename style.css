@@ -156,7 +156,7 @@ header {
 
 
 .content-image:hover{
-	opacity: 0.9;
+/*	opacity: 0.9;*/
 	background-color: rgb(179, 255, 179);
 }
 
@@ -247,13 +247,25 @@ header {
 	font-weight: bold;
 }
 
+.contacts-maps{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .content-map{
-	margin: 3rem 0;
+	margin: 2rem 0;
+
 }
 .content-ogasa-map{
-	width: 100%;
+	width: 90%;
 	height: auto;
 }
+
+.contacts-header{
+	margin: 0 0 1rem;
+}
+
 
 .content-contacts{
 	text-align: left;
@@ -288,11 +300,15 @@ header {
 	content:'';
 	width: 1.8rem;
 	height: 1.8rem;
-	background-image: url(images/tel_number.png);
+	background-image: url(images/tel_number.svg);
 	position: absolute;
 	left: -0.4rem;
 	background-position:center;
 	background-size: cover;
+}
+
+.content-contacts.contact_1{
+	margin-top: 0;
 }
 
 .content-contacts.contact_2::before{
@@ -325,9 +341,16 @@ header {
 	font-weight: bold;
 }
 
+.content-contacts:hover{
+	opacity: 0.9;
+}
 
-
-
+.content-contacts:hover .content-contacts-tel_number,
+.content-contacts:hover .content-contacts-tel_number::before{
+	color: red;
+	font-weight: 500;
+	fill: red;
+}
 
 
 
