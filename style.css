@@ -102,6 +102,7 @@ header {
 	background-color: rgba(0,255,0,0.1);
 	padding:20px;
 	font-size: 1.5rem;
+	margin-top:2rem;
 }
 
 .networks{
@@ -244,12 +245,90 @@ header {
 .btn_open_more-link:hover{
 	text-decoration: none;
 	font-weight: bold;
-
 }
 
 .content-map{
 	margin: 3rem 0;
 }
+.content-ogasa-map{
+	width: 100%;
+	height: auto;
+}
+
+.content-contacts{
+	text-align: left;
+	margin: 3rem 0 0 100px;
+	position: relative;
+}
+.content-contacts::before{
+	content:'';
+	width: 70px;
+	height: 70px;
+	background-image: url(images/contacts/contact1.jpg);
+	position: absolute;
+	left: -90px;
+	border-radius: 50%;
+	background-position:center;
+	background-size: cover;
+}
+
+.content-contacts::after{
+	content:'';
+	width: 100%;
+	height: 1px;
+	background-color: rgba(0,0,0,0.2);
+	position: absolute;
+	margin-top: 0.5rem;
+}
+
+.content-contacts-tel_number{
+	margin-left: 1.5rem;
+}
+.content-contacts-tel_number::before{
+	content:'';
+	width: 1.8rem;
+	height: 1.8rem;
+	background-image: url(images/tel_number.png);
+	position: absolute;
+	left: -0.4rem;
+	background-position:center;
+	background-size: cover;
+}
+
+.content-contacts.contact_2::before{
+	background-image: url(images/contacts/contact2.jpg);
+}
+.content-contacts.contact_3::before{
+	background-image: url(images/contacts/contact3.jpg);
+}
+
+.content-contacts.contact_4::before{
+	background-image: url(images/contacts/contact4.jpg);
+}
+.content-contacts.contact_5::before{
+	background-image: url(images/contacts/contact5.jpg);
+}
+.content-contacts.contact_6::before{
+	background-image: url(images/contacts/contact6.jpg);
+}
+.content-contacts.contact_7::before{
+	background-image: url(images/contacts/contact7.jpg);
+}
+.content-contacts.contact_8::before{
+	background-image: url(images/contacts/contact8.jpg);
+}
+.content-contacts.contact_9::before{
+	background-image: url(images/contacts/contact9.jpg);
+}
+
+.content-contacts-name{
+	font-weight: bold;
+}
+
+
+
+
+
 
 
 @media screen and (max-width: 480px) {
@@ -266,9 +345,28 @@ header {
 	.team-gallery-link{
 		max-width: 100%;
 	}
-	
 
 	.btn_open_more{
 		max-width: 95vw;
 	}
+
+	.content-header-photo{
+		order: -1;
+	}
+	.content-photo-order-1{
+		order:1;
+	}
+	.content-photo-order-2{
+		order:2;
+	}
+	.content-photo-order-3{
+		order:3;
+	}
+	.content-photo-order-4{
+		order:4;
+	}
+
+
+
+
 }
