@@ -37,7 +37,7 @@ function getNewWrapperWidth (){
 	if (clickCounter>=0) {
 		sliderInner.style.marginLeft = - currentWrapperWidth*clickCounter + 'px';
 	} else {
-		sliderInner.style.marginLeft = currentWrapperWidth*((sliderItems-1)/clickCounter) + 'px';
+		sliderInner.style.marginLeft = - currentWrapperWidth*(sliderItems+clickCounter) + 'px';
 	}	
 	sliderInner.style.transition = 'none';
 }

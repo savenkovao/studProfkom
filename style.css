@@ -431,6 +431,16 @@ header {
 
 
 
+.cauntion-image,
+.cauntion{
+	display: inline-block;
+}
+.cauntion-image{
+	width: 15%;
+}
+
+
+
 @media screen and (max-width: 480px) {
 
 .submenu{
