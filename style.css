@@ -31,7 +31,6 @@ header {
 	padding: 0;
 	margin: 10px 0;
 	font-size: 1.5rem;
-	/*font-size: 3.5vh;*/
 }
 
 .menu-item{
@@ -56,7 +55,7 @@ header {
 	display: none;
 	background-color: rgba(255, 255,255, 0.75);
 	position: absolute;
-	top:103%;
+	top:101%;
 	left: 0;
 	border-radius: 1rem;
 
@@ -269,7 +268,6 @@ header {
 }
 
 .link-person:hover{
-	font-weight: bold;
 	text-decoration: none;
 }
 
@@ -364,9 +362,14 @@ header {
 	margin-top: 0.5rem;
 }
 
+.content-contacts-vk-link{
+	color: rgb(51,51,51);
+}
+
 .content-contacts-tel_number{
 	margin-left: 1.5rem;
 }
+
 .content-contacts-tel_number::before{
 	content:'';
 	width: 1.8rem;
@@ -376,6 +379,17 @@ header {
 	left: -0.4rem;
 	background-position:center;
 	background-size: cover;
+}
+
+.content-contacts-name:hover::after{
+	content:'';
+	width: 1.8rem;
+	height: 1.8rem;
+	position: absolute;
+	margin-left: 0.2rem;
+	background-position:center;
+	background-size: cover;
+	background-image: url(images/vk.png);
 }
 
 .content-contacts.contact_1{
@@ -410,6 +424,7 @@ header {
 
 .content-contacts-name{
 	font-weight: bold;
+	display: inline-block;
 }
 
 .content-contacts:hover{
@@ -439,15 +454,48 @@ header {
 	width: 15%;
 }
 
-
-
-@media screen and (max-width: 480px) {
-
-.submenu{
-	position: relative;
+.tablet-menu{
+	display: none;
 }
 
-.menu-item:hover .submenu{
+@media screen and (max-width: 950px) {
+
+
+	.header-menu{
+		display: none;
+	}
+
+	.tablet-menu{
+		display: block;
+		position: relative;
+		width: 40px;
+	}
+	.tablet-menu-1{
+		position: relative;
+	}
+
+	.tablet-menu-1:hover .header-menu{
+		display: inline-block;
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+	.header-menu{
+		display: block;
+	}
+
+	.submenu{
+		position: relative;
+	}
+
+	.menu-item:hover .submenu{
 		display: none;
 	} 
 
@@ -474,6 +522,10 @@ header {
 	}
 	.content-photo-order-4{
 		order:4;
+	}
+
+	.cauntion-link{
+		display: block;
 	}
 
 
