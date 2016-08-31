@@ -9,7 +9,8 @@ body{
 }
 
 .wrapper {
-	max-width: 1300px;
+	max-width: 1200px;
+	position: relative;
 }
 
 header {
@@ -27,38 +28,49 @@ header {
 }
 
 .header-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	text-align: center;
 	padding: 0;
 	margin: 10px 0;
 	font-size: 1.5rem;
 }
 
-.menu-item{
-	line-height: 3rem;
+.menu-item{	
 	list-style-type: none;
 	z-index: 10;
-	width: auto;
+	width: 16%;
 	position: relative;
 	border-radius: 1rem;
+	padding:5px; 
 }
+
 
 .menu-item-link {
 	font-weight: bold;
 }
+
 .menu-item-link:hover{
 	text-decoration:none;
 }
 
+
+
 .submenu{
 	padding: 10px;
-	width: 100%;
 	display: none;
 	background-color: rgba(255, 255,255, 0.75);
 	position: absolute;
 	top:101%;
-	left: 0;
+	left: -25%;
 	border-radius: 1rem;
 
+}
+
+.submenu .menu-item{
+	width: 100%;
 }
 
 .submenu .menu-item-link {
@@ -71,7 +83,7 @@ header {
 
 .menu-item:hover .submenu{
 	display: inline-block;
-	width: 100%;
+	width: 150%;
 }
 
 
@@ -178,12 +190,13 @@ header {
 .networks{
 	text-align-last: center;
 	line-height: 60px;
-	height: 60px;
+	height: auto;
 	background-color: rgba(0,0,20,0.85);.
 	font-weight: 500;
 	margin-top: 1em;
+	text-align: center;
 }
-.networks-link {		
+.networks-link {
 	color: white;
 	font-size: 16px;
 }
@@ -247,7 +260,7 @@ header {
 
 
 .form-item-input {
-	width: 200px;
+	width: 80%;
 }
 
 .form-item-input-radio{
@@ -280,6 +293,7 @@ header {
 	background-color: rgba(0,0,0,0.5);
 	text-align: center;
 	border-radius: 1em;
+	z-index: 10;
 }
 
 .btn_go_up-link{
@@ -460,11 +474,6 @@ header {
 
 /*@media screen and (max-width: 950px) {
 
-	Если ваше веб-приложение потерпит неудачу 
-	в браузерах с отключенными скриптами,
-	 собака Якоба Нильсена придет к вам домой и насрет на ваш ковер.
-
-
 	.header-menu{
 		display: none;
 	}
@@ -493,16 +502,29 @@ header {
 
 	.header-menu{
 		display: block;
+
 	}
 
 	.submenu{
+		display: inline-block;
 		position: relative;
 	}
 
-	.menu-item:hover .submenu{
-		display: none;
-	} 
+	.menu-item{
+		width: auto;
+		padding: 5px 0;
+	}
 
+	.submenu{
+		padding: 10px;
+		top:0;
+		left: 0;
+	}
+
+	.menu-item:hover .submenu{
+		width: 100%;
+	} 
+	
 	.content-gallery-link,
 	.team-gallery-link{
 		max-width: 100%;
@@ -532,7 +554,18 @@ header {
 		display: block;
 	}
 
+	.form-item {
+		width: 100%;
+		text-align: center;
+	}
 
+	.form-item-input {
+		width: 80%;
+	}
 
+	.form-item-file{
+		margin: 0 auto;
+	}
 
 }
+

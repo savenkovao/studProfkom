@@ -9,6 +9,9 @@ var dropMenuBlogBlock = document.querySelector('#dd-menu_blog-block');
 var counterMenuProfkomClick = 0;
 var counterMenuBlogClick = 0;
 
+dropMenuProfkomBlock.style.display = 'none';
+dropMenuBlogBlock.style.display = 'none';
+
 changeWidthDropMenu ();
 	
 window.onresize=function(){
@@ -17,64 +20,68 @@ window.onresize=function(){
 		dropMenuBlogBlock.style.display = "none";
 		counterMenuProfkomClick = 0;
 		counterMenuBlogClick = 0;
+		dropMenuProfkom.style.backgroundColor= 'rgb(255, 255, 255)';
+		dropMenuBlog.style.backgroundColor= 'rgb(255, 255, 255)';
 	}
 	currentScreenWidth = document.documentElement.clientWidth;
 	changeWidthDropMenu ();
 }
 
 function changeWidthDropMenu (){
-	if (currentScreenWidth<=768){
+	if (currentScreenWidth<=768){		
 		dropMenuProfkom.onclick = function(){
 			counterMenuProfkomClick++;
-			switchDropMenu (counterMenuProfkomClick, dropMenuProfkomBlock);
+			switchDropMenu (counterMenuProfkomClick, dropMenuProfkomBlock, dropMenuProfkom);
 			console.log(counterMenuProfkomClick);
 		}
 		dropMenuBlog.onclick = function(){
 			counterMenuBlogClick++;
-			switchDropMenu (counterMenuBlogClick, dropMenuBlogBlock);
+			switchDropMenu (counterMenuBlogClick, dropMenuBlogBlock, dropMenuBlog);
 		}
 	} else if(currentScreenWidth>768) {
 		dropMenuProfkom.onclick = function(){}	
 		dropMenuBlog.onclick = function(){}	
 
-		dropMenuProfkom.addEventListener("mouseover", dropMenuMouseOver);	
-		dropMenuProfkom.addEventListener("mouseout",dropMenuMouseOut);
-		dropMenuBlog.addEventListener("mouseover", dropMenuMouseOver1);	
-		dropMenuBlog.addEventListener("mouseout",dropMenuMouseOut1);		
+		dropMenuProfkom.addEventListener("mouseover", dropMenuMouseOverProfkom);	
+		dropMenuProfkom.addEventListener("mouseout",dropMenuMouseOutProfkom);
+		dropMenuBlog.addEventListener("mouseover", dropMenuMouseOverBlog);	
+		dropMenuBlog.addEventListener("mouseout",dropMenuMouseOutBlog);		
 	} 
 }
 
-function switchDropMenu (counter, dropMenu){
+function switchDropMenu (counter, dropMenuBlock,dropMenu){
 	if (counter%2 != 0) {
-		dropMenu.style.display = 'block';
-		dropMenu.style.position = 'relative';
+		dropMenuBlock.style.display = 'block';
+		dropMenuBlock.style.position = 'relative';
+		dropMenu.style.backgroundColor= 'rgba(166, 207, 210, 0.28)';
 	}  else {
-		dropMenu.style.display = 'none';
+		dropMenuBlock.style.display = 'none';
+		dropMenu.style.backgroundColor= 'rgb(255, 255, 255)';
 	}
 }
 
 
-function dropMenuMouseOver(){
+function dropMenuMouseOverProfkom(){
 	if (currentScreenWidth>768) {
 		dropMenuProfkomBlock.style.display = "block";
 		dropMenuProfkomBlock.style.position = "absolute";
 	} 
 }
 
-function dropMenuMouseOut(){
+function dropMenuMouseOutProfkom(){
 	if (currentScreenWidth>768) {	
 		dropMenuProfkomBlock.style.display = "none";
 	}
 }
 
-function dropMenuMouseOver1(){
+function dropMenuMouseOverBlog(){
 	if (currentScreenWidth>768) {
 		dropMenuBlogBlock.style.display = "block";
 		dropMenuBlogBlock.style.position = "absolute";
 	} 
 }
 
-function dropMenuMouseOut1(){
+function dropMenuMouseOutBlog(){
 	if (currentScreenWidth>768) {
 		dropMenuBlogBlock.style.display = "none";
 	} 
