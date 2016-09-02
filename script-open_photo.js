@@ -186,11 +186,7 @@ var cloneNodeWidth;
 
 			body.appendChild(newDiv);
 		
-			newDiv.onclick = function (){
-				newDiv.remove();
-			}
-
-			cloneNode.onclick = function (){
+			btnClose.onclick = function (){
 				newDiv.remove();
 			}
 
