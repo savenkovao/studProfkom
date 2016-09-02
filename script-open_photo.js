@@ -144,6 +144,17 @@ var cloneNodeWidth;
 
 			}
 
+			cloneNode.onclick = function(event){
+				event.stopPropagation();
+				cloneNode.remove();				
+				e++;
+				if (e>photoLink.length-1){
+					newDiv.remove();
+				}
+				addImage ();
+
+			}
+
 			btnLeft.onclick = function(event){
 				event.stopPropagation();
 				cloneNode.remove();				
