@@ -56,7 +56,7 @@ var cloneNodeWidth;
 			arrowRight.style.height = '50px';
 			arrowRight.style.right = '10%';
 			arrowRight.style.top = 'calc(50% - 25px)';
-			arrowRight.style.opacity = '0.05';
+			arrowRight.style.opacity = '0.3';
 			arrowRight.style.backgroundImage = 'url(images/slider_arrow.png)';
 			btnRight.appendChild(arrowRight);
 
@@ -78,7 +78,7 @@ var cloneNodeWidth;
 			arrowLeft.style.left = '10%';
 			arrowLeft.style.top = 'calc(50% - 25px)';
 			arrowLeft.style.transform = 'rotate(180deg)';
-			arrowLeft.style.opacity = '0.05';
+			arrowLeft.style.opacity = '0.3';
 			arrowLeft.style.backgroundImage = 'url(images/slider_arrow.png)';
 			btnLeft.appendChild(arrowLeft);
 
