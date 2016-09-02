@@ -156,7 +156,7 @@ header {
 	background-image: url(images/slider_arrow.png);
 	background-position: center;
 	background-size: cover;
-	position: absolute;
+	position: absolute;	
 	left: calc(50% - 10px);
 	top: calc(50% - 25px);
 	
@@ -191,11 +191,12 @@ header {
 	text-align-last: center;
 	line-height: 60px;
 	height: auto;
-	background-color: rgba(0,0,20,0.85);.
+	background-color: rgba(0,0,20,0.85);
 	font-weight: 500;
 	margin-top: 1em;
 	text-align: center;
 }
+
 .networks-link {
 	color: white;
 	font-size: 16px;
@@ -439,6 +440,7 @@ header {
 .content-contacts-name{
 	font-weight: bold;
 	display: inline-block;
+
 }
 
 .content-contacts:hover{
@@ -449,7 +451,6 @@ header {
 .content-contacts:hover .content-contacts-tel_number::before{
 	color: red;
 	font-weight: 500;
-	fill: red;
 }
 
 .content-event-link{
