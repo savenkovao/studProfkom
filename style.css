@@ -34,7 +34,6 @@ header {
 	align-items: center;
 	text-align: center;
 	padding: 0;
-	margin: 10px 0;
 	font-size: 1.5rem;
 }
 
@@ -341,9 +340,16 @@ header {
 	margin: 2rem 0;
 
 }
+
 .content-ogasa-map{
-	width: 90%;
+	max-width: 90%;
 	height: auto;
+	
+}
+
+.content-ogasa-map .content-image{
+	padding: 0;
+	margin-top: 20px;
 }
 
 .contacts-header{
@@ -503,7 +509,7 @@ header {
 
 	.header-menu{
 		display: block;
-
+		margin-top:10px; 
 	}
 
 	.submenu{
