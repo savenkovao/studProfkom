@@ -12,6 +12,33 @@ var currentWrapperHeight = window.innerHeight;
 var cloneNodeWidth;
 var len;
 var i;
+var btnOpenMore = document.querySelectorAll('.btn_open_more-link')[0];
+var photoStep = 20;
+var photosOnPage;
+
+if(photoLink.length>=photoStep){
+	setOffPhotos();
+	function setOffPhotos(){
+		photosOnPage = photoStep;
+		for (var i = photosOnPage; i < photoLink.length; i++) {
+			photoLink[i].style.display = 'none';
+		}	
+	}
+
+	btnOpenMore.onclick = function(){
+		photosOnPage+=photoStep;
+		for (var i = 0; i < photosOnPage; i++) {
+			photoLink[i].style.display = 'block';
+		}	
+
+		for (var i = photosOnPage; i < photoLink.length; i++) {
+			photoLink[i].style.display = 'none';
+		}
+		openPhoto ();
+	}
+} else {
+	photosOnPage = photoLink.length;
+}
 
 openPhoto ();
 
@@ -119,7 +146,7 @@ function openPhoto () {
 			photoNumber.style.backgroundColor = 'rgba(255,255,255,0.7)';
 			photoNumber.style.color = 'rgb(51, 51, 51)';
 			photoNumber.style.fontSize= '1.7rem';
-			photoNumber.innerHTML = e+1 + ' / ' + photoLink.length;
+			photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
 
 			addImage ();
 
@@ -157,10 +184,10 @@ function openPhoto () {
 				event.stopPropagation();
 				cloneNode.remove();				
 				e++;
-				if (e>photoLink.length-1){
+				if (e>photosOnPage-1){
 					e = 0;
 				}
-				photoNumber.innerHTML = e+1 + ' / ' + photoLink.length;
+				photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
 				addImage ();
 			}
 
@@ -169,9 +196,9 @@ function openPhoto () {
 				cloneNode.remove();				
 				e--;
 				if (e<1){
-					e = photoLink.length - 1;
+					e = photosOnPage - 1;
 				}
-				photoNumber.innerHTML = e+1 + ' / ' + photoLink.length;
+				photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
 				addImage ();	
 			}
 
