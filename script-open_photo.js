@@ -25,8 +25,13 @@ if(photoLink.length>=photoStep){
 		}	
 	}
 
-	btnOpenMore.onclick = function(){
-		photosOnPage+=photoStep;
+	btnOpenMore.onclick = function(){		
+		if(photosOnPage<photoLink.length){
+			photosOnPage+=photoStep;
+		}else{
+			photosOnPage=photoLink.length;
+		}
+		
 		for (var i = 0; i < photosOnPage; i++) {
 			photoLink[i].style.display = 'block';
 		}	
@@ -195,8 +200,8 @@ function openPhoto () {
 				event.stopPropagation();
 				cloneNode.remove();				
 				e--;
-				if (e<1){
-					e = photosOnPage - 1;
+				if (e<0){
+					e = photosOnPage-1;
 				}
 				photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
 				addImage ();	
