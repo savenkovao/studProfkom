@@ -15,8 +15,7 @@ var btnOpenMore = document.querySelectorAll('.btn_open_more-link')[0];
 var photoStep = 20;
 var photosOnPage;
 
-if(photoLink.length>=photoStep){
-	alert('!');
+// if(photoLink.length>=photoStep){
 	setOffPhotos();
 	function setOffPhotos(){
 		photosOnPage = photoStep;
@@ -41,11 +40,9 @@ if(photoLink.length>=photoStep){
 		}
 		openPhoto ();
 	}
-} else {
-	photosOnPage = photoLink.length;
-
-	alert('!!!');
-}
+// } else {
+	// photosOnPage = photoLink.length;
+// }
 
 openPhoto ();
 
