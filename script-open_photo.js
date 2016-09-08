@@ -43,6 +43,8 @@ if(photoLink.length>=photoStep){
 	}
 } else {
 	photosOnPage = photoLink.length;
+
+	alert('!!!');
 }
 
 openPhoto ();
