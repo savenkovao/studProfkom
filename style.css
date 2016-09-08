@@ -13,6 +13,10 @@ body{
 	position: relative;
 }
 
+.bold{
+	font-weight: bold;
+}
+
 header {
 	margin-top: 10px;
 	height: 50px;
@@ -166,7 +170,7 @@ header {
 }
 
 
-
+.content-description-subheader,
 .content-description-header{
 	text-align: center;
 	background-color: rgba(0,255,0,0.3);
@@ -176,13 +180,14 @@ header {
 
 .content-description-subheader {
 	font-size: 1.7rem;
+	font-weight: bold;
 }
 
 .content-description-text{
 	text-align: center;
 	background-color: rgba(0,255,0,0.1);
 	padding:20px;
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	margin-top:2rem;
 }
 
@@ -239,7 +244,6 @@ header {
 
 
 .content-image:hover{
-/*	opacity: 0.9;*/
 	background-color: rgb(179, 255, 179);
 }
 
@@ -307,11 +311,6 @@ header {
 	font-weight: bold;
 	text-decoration: none;
 
-}
-
-.gallery_hidden{
-/*	height: 100em;
-	overflow: hidden;*/
 }
 
 .btn_open_more{
@@ -478,6 +477,126 @@ header {
 	display: none;
 }
 
+.contacts,
+.important-information{
+	position: relative;
+}
+
+.contacts::after,
+.important-information::after{
+	content:'';
+	width: 3.5rem;
+	height: 3.5rem;
+	top: calc(50% - 1.7rem);
+	position: absolute;
+	margin-left: 10px;
+	background-position:center;
+	background-size: cover;
+	background-image: url(images/important-information.png);
+}
+
+
+.contacts::after{
+	background-image: url(images/contacts.png);
+}
+
+.information{
+	text-align: left;
+}
+
+.news{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content:left;	
+}
+.news-block{
+	padding: 1rem;
+	border: 1px solid rgba(0,0,0,0.3);
+	width: 48%;
+	margin:1%;
+	color: #333;
+	
+
+}
+
+.news-block:hover{
+	text-decoration: none;
+	color: #333;
+}
+
+.news-block-header{
+	font-weight: bold;
+	font-size: 1.6rem;
+	color: #337ab7;
+}
+
+.news-block:hover .news-block-header{
+	color: #23527c;
+}
+
+.news-block-wrapper{
+	margin-left: 7rem;
+	position: relative;
+}
+
+.news-block-wrapper::before{
+	content: '';
+	position: absolute;	
+	margin: 0.5rem 0 0 -7rem;
+	width: 6rem;
+	height: 6rem;	
+	background-size: cover;
+	background-position: center;
+	background-image: url(images/contacts/contact2.jpg);
+
+}
+
+.news-block-wrapper.news_3::before{
+	background-image: url(images/news/news-icons/first-stud-party.jpg);
+}
+
+.news-block-wrapper.news_2::before{
+	background-image: url(images/news/news-icons/betonomeshalka.jpg);
+}
+
+
+
+
+
+
+
+.news-block:hover .news-block-wrapper::before{
+	opacity: 0.85;
+}
+
+.news-block-date{
+	color: #337ab7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*@media screen and (max-width: 950px) {
 
 	.header-menu{
@@ -571,6 +690,11 @@ header {
 
 	.form-item-file{
 		margin: 0 auto;
+	}
+
+	.news-block{
+		width: 100%;
+		margin:1% 0;
 	}
 
 }

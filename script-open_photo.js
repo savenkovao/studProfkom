@@ -29,7 +29,6 @@ function setOffPhotos(){
 	openPhoto ();			
 }
 
-
 btnOpenMore.onclick = function(){		
 	if(photosOnPage<photoLink.length){
 		photosOnPage+=photoStep;
