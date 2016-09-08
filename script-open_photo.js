@@ -15,39 +15,43 @@ var btnOpenMore = document.querySelectorAll('.btn_open_more-link')[0];
 var photoStep = 20;
 var photosOnPage;
 
-// if(photoLink.length>=photoStep){
-	setOffPhotos();
-	function setOffPhotos(){
+setOffPhotos();
+	
+function setOffPhotos(){
+	if(photoLink.length>=photoStep){
 		photosOnPage = photoStep;
 		for (var i = photosOnPage; i < photoLink.length; i++) {
 			photoLink[i].style.display = 'none';
-		}	
+		} 
+	} else {
+		photosOnPage = photoLink.length;
 	}
+	openPhoto ();			
+}
 
-	btnOpenMore.onclick = function(){		
-		if(photosOnPage<photoLink.length){
-			photosOnPage+=photoStep;
-		}else{
-			photosOnPage=photoLink.length;
-		}
-		
-		for (var i = 0; i < photosOnPage; i++) {
-			photoLink[i].style.display = 'block';
-		}	
 
-		for (var i = photosOnPage; i < photoLink.length; i++) {
-			photoLink[i].style.display = 'none';
-		}
-		openPhoto ();
+btnOpenMore.onclick = function(){		
+	if(photosOnPage<photoLink.length){
+		photosOnPage+=photoStep;
+	}else{
+		photosOnPage=photoLink.length;
 	}
-// } else {
-	// photosOnPage = photoLink.length;
-// }
+	
+	for (var i = 0; i < photosOnPage; i++) {
+		photoLink[i].style.display = 'block';
+	}	
 
-openPhoto ();
+	for (var i = photosOnPage; i < photoLink.length; i++) {
+		photoLink[i].style.display = 'none';
+	}
+	openPhoto ();
+}
+
 
 function openPhoto () {
+
 	if (currentWrapperWidth > 768){
+			// alert('!');
 		len = photoLink.length;
 		var i = 0;
 	    for (;photoLink[i].setAttribute("onclick", "createPhotoBlock(" + i + ")"), ++i < len;);
@@ -239,24 +243,27 @@ function openPhoto () {
 			
 			btnClose.onclick = function (){
 				newDiv.remove();
-			}			
+			}
 	    };	
 	}
 
+	window.addEventListener("resize", resizeFunction);
+	
+	function resizeFunction (){
+		// alert('!');
+		currentWrapperWidth = window.innerWidth;
+		currentWrapperHeight = window.innerHeight;
+		openPhoto ();
+		if (currentWrapperWidth < 768) {
+			len = photoLink.length;
+			var i = 0;
+			for (;photoLink[i].removeAttribute("onclick"), ++i < len;);
+		}
+	};
+
+
 };
 
-window.addEventListener("resize", resizeFunction);
-	
-function resizeFunction (){
-	currentWrapperWidth = window.innerWidth;
-	currentWrapperHeight = window.innerHeight;
-	openPhoto ();
-	if (currentWrapperWidth < 768) {
-		len = photoLink.length;
-		var i = 0;
-		for (;photoLink[i].removeAttribute("onclick"), ++i < len;);
-	}
-};
 
 
 
