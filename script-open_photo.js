@@ -11,12 +11,12 @@ var currentWrapperWidth = window.innerWidth;
 var currentWrapperHeight = window.innerHeight;
 var cloneNodeWidth;
 var len;
-var i;
 var btnOpenMore = document.querySelectorAll('.btn_open_more-link')[0];
 var photoStep = 20;
 var photosOnPage;
 
 if(photoLink.length>=photoStep){
+	alert('!');
 	setOffPhotos();
 	function setOffPhotos(){
 		photosOnPage = photoStep;
@@ -49,8 +49,8 @@ openPhoto ();
 
 function openPhoto () {
 	if (currentWrapperWidth > 768){
-	    len = photoLink.length;
-	    i = 0;
+		len = photoLink.length;
+		var i = 0;
 	    for (;photoLink[i].setAttribute("onclick", "createPhotoBlock(" + i + ")"), ++i < len;);
 
 	    createPhotoBlock = function (e) {
@@ -254,7 +254,7 @@ function resizeFunction (){
 	openPhoto ();
 	if (currentWrapperWidth < 768) {
 		len = photoLink.length;
-		i = 0;
+		var i = 0;
 		for (;photoLink[i].removeAttribute("onclick"), ++i < len;);
 	}
 };
