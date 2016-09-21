@@ -41,6 +41,15 @@ header {
 	font-size: 1.5rem;
 }
 
+
+.clear-link{
+	color: #333;	
+}
+.clear-link:hover{
+	text-decoration: none;
+	color: #333;
+}
+
 .menu-item{	
 	list-style-type: none;
 	z-index: 10;
@@ -248,7 +257,7 @@ header {
 
 
 .content-image:hover{
-	background-color: rgb(179, 255, 179);
+	background-color: rgba(0, 0, 0,0.15);
 }
 
 .form-item {
@@ -545,8 +554,7 @@ header {
 
 
 
-
-
+/*Developing page*/
 
 .cauntion-image,
 .cauntion{
@@ -555,6 +563,10 @@ header {
 .cauntion-image{
 	width: 15%;
 }
+
+
+/*Contacts*/
+
 
 .tablet-menu{
 	display: none;
@@ -587,6 +599,10 @@ header {
 	text-align: left;
 }
 
+
+
+/*News*/
+
 .news{
 	display: flex;
 	flex-wrap: wrap;
@@ -603,7 +619,6 @@ header {
 .news-page-block{
 	width: 100%;
 }
-
 
 .news-block:hover{
 	text-decoration: none;
@@ -634,28 +649,10 @@ header {
 	height: 6rem;	
 	background-size: cover;
 	background-position: center;
-	background-image: url(images/contacts/contact2.jpg);
-
-}
-
-.news-block-wrapper.news_3::before{
-	background-image: url(images/news/news-icons/first-stud-party.jpg);
-}
-
-.news-block-wrapper.news_2::before{
-	background-image: url(images/news/news-icons/betonomeshalka.jpg);
 }
 
 .news-block-date{
 	color: #337ab7;
-}
-
-.clear-link{
-	color: #333;	
-}
-.clear-link:hover{
-	text-decoration: none;
-	color: #333;
 }
 
 .text-decoration-disabled:hover{
@@ -670,6 +667,37 @@ header {
 .news-open-more{
 	margin: 0.5rem auto;
 }
+
+/*images of news on main page*/
+
+
+.news-block-wrapper.news_1::before{
+	background-image: url(images/news/news-icons/betonomeshalka.jpg);
+}
+
+.news-block-wrapper.news_2::before{
+	background-image: url(images/news/news-icons/lviv.jpg);
+}
+
+.news-block-wrapper.news_3::before{
+	background-image: url(images/news/news-icons/first-stud-party.jpg);
+}
+
+.news-block-wrapper.news_4::before{
+	background-image: url(images/news/news-icons/academy.jpg);
+}
+
+/*News page (single)*/
+
+.news-poster{
+	float: right;
+	width: 100%;
+	padding: 0 0 10px 10px;
+}
+
+
+
+
 
 
 
