@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Стать членом ППОС ОГАСА</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../images/design/logoProfkom.png">
+	
+</head>
+<body>
+
+	<div class="container-fluid wrapper">
+		<div class="row">
+			<header id="header">
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-12 col-sm-2 col-md-2 header-logo">
+							<a href="../index.html">
+								<img src="../images/design/ogasa.png" alt="StudProfkom-logo" title="Профком студентов ОГАСА">
+							</a> 
+						</div>
+						<div class="col-xs-12 col-sm-10 col-md-10">
+							<ul class="header-menu ">
+								<li class="menu-item"><a href="../index.html"  class="menu-item-link"><div>Главная</div></a>
+								</li>
+
+								<li id="menu-item" class="menu-item"><a href="../news.html" class="menu-item-link"><div>Новости</div></a>
+
+								<li id="dd-menu_profkom" class="menu-item"><a class="menu-item-link"><div>Профком</div></a>
+									<ul id="dd-menu_profkom-block" class="submenu">		
+										<li class="menu-item"><a href="team.html"  class="menu-item-link"><div >Команда</div></a></li>
+										<li class="menu-item"><a href="become_a_member.html" class="menu-item-link"><div>Стать членом ППОС</div></a></li>										
+									</ul>
+								</li>
+								
+								
+								<li id="dd-menu_blog" class="menu-item"><a class="menu-item-link"><div>Блог</div></a>
+									<ul id="dd-menu_blog-block" class="submenu">
+										
+										<li class="menu-item"><a href="../blog/events.html"  class="menu-item-link"><div>Мероприятия</div></a></li>
+										
+										<li class="menu-item"><a href="../blog/travels.html"  class="menu-item-link"><div>Поездки</div></a></li>
+
+										<li class="menu-item"><a href="../blog/projects.html" class="menu-item-link"><div>Проекты</div></a></li>
+
+										<li class="menu-item"><a href="../blog/videos.html" class="menu-item-link"><div>Видео</div></a></li>
+									</ul>
+								</li>
+								
+								<li class="menu-item"><a href="../information.html" class="
+								menu-item-link"><div>Полезная информация</div></a></li>
+								
+								<li class="menu-item"><a href="../contacts.html" class="menu-item-link"><div>Контакты</div></a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>				
+			</header>
+
+			<section>
+				<div class="col-xs-12">
+					<div class="row">
+						<h2 class="content-description-header">Как стать членом Профкома студентов ОГАСА?</h2>
+						<div class="content-description-text">
+							<p>Очень просто! Членом Профкома может стать любой студент ОГАСА дневной формы обучения, на основании личного заявления, поданного в первичную профсоюзную организацию студентов ОГАСА. Член Профкома гарантирует признание Устава организации, оплату членских взносов, а также, то, что он не является членом другого профсоюза.</p>
+							<p>Сегодня Ты можешь это онлайн. Внимательно заполни форму ниже на русском языке, нажми кнопку "Вступить в Профком!" и через 2-3 дня тебе на почту придет уведомление о том, что твой билет члена Профкома уже готов</p>
+						</div>
+
+						<form action="http://mcslayer.com/hillel/post.php" method="post" name="userMemberForm" spellcheck>
+							<label class="form-item">
+								<span><strong>*</strong>Фамилия</span>
+								<input type="text" placeholder="Иванов" name="userSurname" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
+							</label>
+
+							<label class="form-item">
+								<span><strong>*</strong>Имя</span>
+								<input type="text" placeholder="Иван" name="userName" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
+							</label>
+
+							<label class="form-item">
+								<span><strong>*</strong>Отчество</span>
+								<input type="text" placeholder="Иванович" name="userSecondName" maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
+							</label>
+
+							<label class="form-item">
+								<span><strong>*</strong>Год рождения</span>
+								<input type="number" placeholder="1910" name="userBirthDate" required maxlength="4" class="form-item-input" min="1910" max="2015" pattern="[0-9]{4}">
+							</label>
+
+							<label class="form-item">
+								<span><strong>*</strong>Факультет</span> 
+								<input type="text" placeholder="ЭкУС" name="userFaculty" required maxlength="255" class="form-item-input" pattern="^[А-Яа-яЁё\-]+$">
+							</label>
+
+							<label class="form-item">
+								<span><strong>*</strong>Группа</span>
+								<input type="text" placeholder="ЗтК-117" name="userGroup" required maxlength="255" class="form-item-input" pattern="^[а-яА-ЯёЁ0-9\-]+$">
+							</label>
+
+							<div class="form-item">
+								<span><strong>*</strong>Форма обучения</span>
+								<label>						
+									<input type="radio" name="educationForm" required class="form-item-input-radio">Бюджет
+								</label>
+								<label>
+									<input type="radio" name="educationForm" required class="form-item-input-radio">Контракт	
+								</label>
+							</div>						
+
+							<label class="form-item">
+								<span>Фото </span>
+								<p class="form-item-elaboration">(загрузи фото, на котором Ты один, одет :) и улыбаешься. Можно фотографию из паспорта. Если такой нет, принеси фотографию с собой, когда будешь забирать свой билет.</p>
+								<input class="form-item-file" type="file" name="userPhoto" maxlength="255" value="Выбрать фото"> 
+							</label>
+
+							<label class="form-item">
+								<input type="checkbox" name="userAgreement" required > Я ввел информацию в форму правильно :)
+							</label>
+
+
+							<div class="form-item">
+								<button>Вступить в Профком!</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<a class="btn_go_up-link" href="#header">
+					<div class="btn_go_up">
+						Вверх
+					</div>
+				</a>
+			</section>
+
+			<footer>
+				<div class="col-xs-12 networks">
+					<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
+						<span>Мы в социальных сетях</span>
+					</a>
+				</div>
+			</footer>
+
+
+		</div>
+	</div>
+	
+	<script src="../scripts/script-drop_menu.js"></script>
+
+	
+</body>
+</html>
