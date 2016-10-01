@@ -18,7 +18,7 @@ var photosOnPage;
 setOffPhotos();
 	
 function setOffPhotos(){
-	if(photoLink.length>=photoStep){
+	if(photoLink.length>photoStep){
 		btnOpenMore.style.display = "block";
 		photosOnPage = photoStep;		
 		for (var i = photosOnPage; i < photoLink.length; i++) {
@@ -26,17 +26,19 @@ function setOffPhotos(){
 		} 
 	} else {
 		photosOnPage = photoLink.length;		
-	}
+	}	
 	openPhoto ();			
 }
 
 btnOpenMore.onclick = function(){		
 	if(photosOnPage<photoLink.length){
 		photosOnPage+=photoStep;
-	}else{
-		photosOnPage=photoLink.length;
+		if (photosOnPage>=photoLink.length) {
+			photosOnPage=photoLink.length;
+			btnOpenMore.style.display = "none";
+		}
 	}
-	
+		
 	for (var i = 0; i < photosOnPage; i++) {
 		photoLink[i].style.display = 'block';
 	}	
@@ -100,12 +102,10 @@ function openPhoto () {
 
 			function getImageSize (){
 				if((currentWrapperWidth/currentWrapperHeight)<(photoInLink[e].offsetWidth/photoInLink[e].offsetHeight)){
-					currentPhoto.style.width = '100%';
-					currentPhoto.style.height = 'auto';
+					currentPhoto.classList.add("wide-image");
 					currentPhotoWidth = currentWrapperWidth;
 				} else {
-					currentPhoto.style.width = 'auto';
-					currentPhoto.style.height = '97%';
+					currentPhoto.classList.add("extended-image");
 					currentPhotoWidth = (currentWrapperHeight*0.97) * photoInLink[e].offsetWidth/photoInLink[e].offsetHeight;
 				}	
 			}
@@ -141,30 +141,6 @@ function openPhoto () {
 				addImage ();	
 			}
 
-			btnLeft.addEventListener("mouseover", changeBackgroundBtnLeft);	
-			btnLeft.addEventListener("mouseout",deleteBackGround);
-			btnRight.addEventListener("mouseover", changeBackgroundBtnRight);	
-			btnRight.addEventListener("mouseout",deleteBackGround);
-			btnClose.addEventListener("mouseover", changeBackgroundBtnClose);	
-			btnClose.addEventListener("mouseout",deleteBackGround);
-
-			function changeBackgroundBtnLeft (){			
-				arrowLeft.style.opacity = '1';
-			}
-			function changeBackgroundBtnRight (){
-				arrowRight.style.opacity = '1';
-			}
-
-			function changeBackgroundBtnClose () {
-				closePic.style.opacity = '0.8';
-			}
-
-			function deleteBackGround (){
-				arrowRight.style.opacity = '0.4';
-				arrowLeft.style.opacity = '0.4';
-				closePic.style.opacity = '0.3';
-			}
-
 			body.appendChild(photoBlock);
 			
 			btnClose.onclick = function (){
@@ -172,23 +148,19 @@ function openPhoto () {
 			}
 	    };	
 	}
-
-	window.addEventListener("resize", resizeFunction);
-	
-	function resizeFunction (){
-		currentWrapperWidth = window.innerWidth;
-		currentWrapperHeight = window.innerHeight;
-		openPhoto ();
-		if (currentWrapperWidth < 768) {
-			len = photoLink.length;
-			var i = 0;
-			for (;photoLink[i].removeAttribute("onclick"), ++i < len;);
-		}
-	};
 };
 
-
-
+window.addEventListener("resize", resizeFunction);
+function resizeFunction (){
+	currentWrapperWidth = window.innerWidth;
+	currentWrapperHeight = window.innerHeight;
+	openPhoto ();
+	if (currentWrapperWidth < 768) {
+		len = photoLink.length;
+		var i = 0;
+		for (;photoLink[i].removeAttribute("onclick"), ++i < len;);
+	}
+};
 
 
 

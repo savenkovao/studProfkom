@@ -1,3 +1,4 @@
+/*@import 'https://fonts.googleapis.com/css?family=Andika';*/
 @import 'https://fonts.googleapis.com/css?family=Didact+Gothic';
 
 *{
@@ -5,13 +6,15 @@
 }
 
 body{
-	font-family: 'Didact Gothic', sans-serif;
+	font-family:'Andika', 'Didact Gothic','Futura', sans-serif;
+	font-size: 15px;
 }
 
 .wrapper {
 	max-width: 1200px;
-	position: relative;	
-
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 70px;
 }
 
 .bold{
@@ -21,6 +24,14 @@ body{
 header {
 	margin-top: 10px;
 	height: 50px;
+}
+
+footer{
+	margin-top: 15px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
 }
 
 .header-logo{
@@ -49,6 +60,20 @@ header {
 .clear-link:hover{
 	text-decoration: none;
 	color: #333;
+}
+
+.block_element{
+	display: block;
+}
+
+.disabled{
+	display: none !important;
+}
+
+
+.important_information{
+	color: red;
+	font-size: 1.7rem;
 }
 
 .menu-item{	
@@ -91,7 +116,7 @@ header {
 }
 
 .menu-item:hover{
-	background-color: rgba(166, 207, 210, 0.28);
+	background-color: rgba(0, 255, 17,0.1);
 }
 
 .menu-item:hover .submenu{
@@ -183,7 +208,7 @@ header {
 .content-description-subheader,
 .content-description-header{
 	text-align: center;
-	background-color: rgba(0,255,0,0.3);
+	background-color: rgba(0, 255, 17,0.3);
 	padding:20px;
 	font-size: 2.8rem;
 }
@@ -195,7 +220,7 @@ header {
 
 .content-description-text{
 	text-align: center;
-	background-color: rgba(0,255,0,0.1);
+	background-color: rgba(0, 255, 17,0.2);
 	padding:20px;
 	font-size: 1.6rem;
 	margin-top:2rem;
@@ -205,7 +230,7 @@ header {
 	text-align-last: center;
 	line-height: 60px;
 	height: auto;
-	background-color: rgba(0,0,20,0.85);
+	background-color: rgb(34, 6, 39);
 	font-weight: 500;
 	margin-top: 1em;
 	text-align: center;
@@ -270,7 +295,7 @@ header {
 	border:4px solid transparent;	
 }
 .content-gallery-block:hover{
-	/*border-color:rgba(0, 0, 0,0.20);*/
+	/*border-color:rgba(0, 0, 0,0.20);
 	opacity: 0.75;
 }
 
@@ -366,19 +391,23 @@ header {
 
 .btn_open_more{
 	margin: 10px auto 0;
-	width: auto;
-	max-width: 40%;
-	text-align: center;
-	padding:0.8rem;
-	font-size: 1.5rem;
-	background-color:rgba(0,0,0,0.2);
-	border-radius: 0.5em;
+	padding:0.8rem;	
+	text-align: center;	
+	font-size: 1.5rem;	
 }
 
+.btn_open_more-link:hover .btn_open_more{
+	margin: 10px auto 0;
+	max-width: 40%;
+	border-radius: 0.5em;	
+	width: auto;
+	background-color:rgba(0,0,0,0.2);
+	
+}
 .btn_open_more-link:hover{
 	text-decoration: none;
-	font-weight: bold;
 }
+
 
 .contacts-maps{
 	display: flex;
@@ -533,47 +562,56 @@ header {
 	font-weight: 500;
 }
 
-.content-event-wrapper{
+.content-section-wrapper{
 	padding: 10px;
 	width: 33%;
 
 }
 
-.content-event-container{
+.content-section-container{
 	height: 30vh;
 	position: relative;
 	background-size: cover;
 	background-position: center;
 }
 
+
+
 /*event's backgrounds*/
+/*Image size - 750x500 100kb*/
 
 .page-event-1{
-	background-image: url(../images/content/news/news-logos/betonomeshalka.jpg);	
+	background-image: url(../images/content/events/events-icons/studosen_2015.jpg);	
 }
-
 .page-event-2{
-	background-image: url(../images/content/news/news-logos/first-stud-party.jpg);	
+	background-image: url(../images/content/events/events-icons/kvartirnik_6.jpg);	
 }
 
 .page-event-3{
-	background-image: url(../images/content/news/news-logos/trade.jpg);	
+	background-image: url(../images/content/events/events-icons/zags_ogasa_2016.jpg);	
 }
 
 .page-event-4{
-	background-image: url(../images/content/news/news-logos/mafia.jpg);	
+	background-image: url(../images/content/events/events-icons/armwrestling_2016.jpg);	
 }
 
 .page-event-5{
-	background-image: url(../images/content/news/news-logos/trade-autumn.jpg);	
+	background-image: url(../images/content/events/events-icons/spring_and_health_day_2016.jpg);	
 }
 
 .page-event-6{
-	background-image: url(../images/content/news/news-logos/lviv.jpg);	
+	background-image: url(../images/content/events/events-icons/ploshadka_2016.jpg);	
+}
+.page-event-7{
+	background-image: url(../images/content/events/events-icons/best-student_2016.html.jpg);	
 }
 
-.page-event-7{
-	background-image: url(../images/content/news/news-logos/studosen.jpg);	
+.page-event-8{
+	background-image: url(../images/content/events/events-icons/first-stud-party_2016.jpg);	
+}
+
+.page-event-9{
+	background-image: url(../images/content/events/events-icons/betonomeshalka_2016.jpg);	
 }
 
 /*project's backgrounds*/
@@ -589,16 +627,41 @@ header {
 
 
 
-.content-event-title{
+/*travel's backgrounds*/
+.page-travel-1{
+	background-image: url(../images/content/travels/travels-icons/bukovel_2016.jpg);	
+}
+
+/*zk's backgrounds*/
+
+.page-zk-1{
+	background-image: url(../images/content/projects/projects-images/zk/zk_1.jpg);	
+}
+.page-zk-2{
+	background-image: url(../images/content/projects/projects-images/zk/zk_2.jpg);	
+}
+.page-zk-3{
+	background-image: url(../images/content/projects/projects-images/zk/zk_3.jpg);	
+}
+
+
+
+
+
+
+
+
+
+.content-section-title{
 	padding: 10px;
 }
 
-.content-event-name{
+.content-section-name{
 	font-weight: bold;
 	font-size: 1.6rem;
 	color: #337ab7;
 }
-.content-event-title{
+.content-section-title{
 	display: none;
 	width: 100%;
 	background-color: rgba(255,255,255,0.8);
@@ -606,10 +669,29 @@ header {
 	bottom: 0;
 }
 
-.content-event-wrapper:hover .content-event-title{
+.content-section-wrapper:hover .content-section-title{
 	display: block;
 }
 
+.content-section-download{
+	display: block;
+	position: relative;
+}
+
+.content-section-download:hover::after{
+	content: '';
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	margin-left: 5px;
+	background-image: url(../images/design/pdf_icon.png); 
+	background-size: cover;
+	background-position: center;
+}
+
+.content-section-link:hover{
+	text-decoration: none;
+}
 
 
 
@@ -636,12 +718,14 @@ header {
 }
 
 .contacts,
-.important-information{
+.useful-information{
 	position: relative;
+	padding-right: 6.5rem;
+
 }
 
 .contacts::after,
-.important-information::after{
+.useful-information::after{
 	content:'';
 	width: 3.5rem;
 	height: 3.5rem;
@@ -650,7 +734,7 @@ header {
 	margin-left: 10px;
 	background-position:center;
 	background-size: cover;
-	background-image: url(images/design/important-information.png);
+	background-image: url(../images/design/useful-information.png);
 }
 
 
@@ -686,7 +770,7 @@ header {
 .news-block:hover{
 	text-decoration: none;
 	color: #333;
-	background-color:rgba(0,255,0,0.1); 
+	background-color:rgba(0, 255, 17,0.1); 
 }
 
 .news-block-header{
@@ -811,7 +895,23 @@ header {
 	width: 100%;
 } 
 
+.btn_news_back{
+	padding-left: 30px;
+	margin-left: 45px;
+	position: relative;
+}
 
+.btn_news_back::before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/design/news_back_arrow.png);
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 
 
 
@@ -878,6 +978,7 @@ header {
 	margin-right: 3rem;
 }
 
+
 .btnClose{
 	display:block;
 	width:130px;
@@ -899,6 +1000,12 @@ header {
 	background-image: url(../images/design/close_button.png);
 }
 
+
+.btnClose:hover .closePic,
+.btn_browse:hover .btn_arrow{
+	opacity: 1;
+}
+
 .photoNumber{
 	position: absolute;
 	bottom: 0;
@@ -915,9 +1022,15 @@ header {
 	border: 3px solid rgba(255,255,255,0.7);
 	border-radius: 0.5vw;
 }
-	
 
-
+.wide-image{
+	width: 100%;
+	height: auto;
+}
+.extended-image{
+	width: auto;
+	height: 97%;
+}
 
 
 
@@ -994,7 +1107,16 @@ header {
 	}
 
 	.btn_open_more{
-		max-width: 95vw;
+		padding:1.5rem;	
+		max-width: 85vw;
+		border-radius: 0.5em;	
+		width: auto;
+		background-color:rgba(0,0,0,0.2);
+	}
+
+
+	.btn_open_more-link:hover .btn_open_more{
+		max-width: 85vw;
 	}
 
 	.content-header-photo{
@@ -1058,6 +1180,44 @@ header {
 
 	.content-image:hover{
 		background-color: transparent;
+	}
+
+	.short{
+		max-height: 100%; 
+	}
+
+	.content-section-download::after{
+		content: '';
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		margin-left: 5px;
+		background-image: url(../images/design/pdf_icon.png); 
+		background-size: cover;
+		background-position: center;
+	}
+
+	.networks-content-ogasa::after{
+		content: '';
+		position: absolute;
+		width: 1.7em;
+		height: 1.7em;
+		top:0;
+		right: -2em;
+		background-image: url(../images/design/logo_ogasa.png);
+		background-size: cover;
+		background-position: center;
+	}
+
+	.content-contacts-name::after{
+		content:'';
+		width: 1.8rem;
+		height: 1.8rem;
+		position: absolute;
+		margin-left: 0.2rem;
+		background-position:center;
+		background-size: cover;
+		background-image: url(../images/design/vk.png);
 	}
 
 
