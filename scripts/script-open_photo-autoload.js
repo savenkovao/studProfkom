@@ -18,6 +18,8 @@ var sourceInformation = document.querySelectorAll('.source-information')[0];
 var imageQuantity = +sourceInformation.getAttribute('name');
 var source = sourceInformation.getAttribute('href');
 var contentGallery = document.querySelectorAll('.content-gallery')[0];
+var contentHeader =  document.querySelectorAll('.content-description-header')[0].innerHTML;
+
 
 uploadImages();
 
@@ -45,9 +47,10 @@ function uploadImages(){
 
 function addImage (num){
 	imageСontainer[num] = document.createElement('div');
-	imageСontainer[num].className ="content-gallery-block image_container short";
+	imageСontainer[num].className ="content-gallery-block image_container short";	
 	image_containerInner[num] = document.createElement('img');
 	image_containerInner[num].setAttribute("src", source + num + ".jpg");
+	image_containerInner[num].setAttribute("alt", contentHeader+ ' - фото_' + num);
 	image_containerInner[num].className ="content-image image_container_inner";
 	imageСontainer[num].appendChild(image_containerInner[num]);
 	contentGallery.appendChild(imageСontainer[num]);
