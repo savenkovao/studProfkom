@@ -160,10 +160,6 @@ function openPhoto () {
 	}
 };
 
-
-
-
-
 window.addEventListener("resize", resizeFunction);
 	
 function resizeFunction (){
@@ -174,7 +170,7 @@ function resizeFunction (){
 		for(var i = photosOnPagePrevious+1;i<=photosOnPage;i++){
 	    	imageСontainer[i].removeAttribute("onclick");
 	   	}
-	   }
+	}
 };
 
 

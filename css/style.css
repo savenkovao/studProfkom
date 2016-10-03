@@ -81,6 +81,7 @@ footer{
 	z-index: 10;
 	width: 16%;
 	position: relative;
+	border: 1.5px solid transparent;
 	border-radius: 1rem;
 	padding:5px; 
 }
@@ -116,7 +117,8 @@ footer{
 }
 
 .menu-item:hover{
-	background-color: rgba(0, 255, 17,0.1);
+	border-color: rgba(22, 95, 67, 0.23);
+	/*background-color: rgba(0, 255, 17,0.1);*/
 }
 
 .menu-item:hover .submenu{
@@ -382,7 +384,6 @@ footer{
 	color: white;
 	font-weight: bold;
 	text-decoration: none;
-
 }
 
 .btn_open_more-link{
@@ -393,7 +394,8 @@ footer{
 	margin: 10px auto 0;
 	padding:0.8rem;	
 	text-align: center;	
-	font-size: 1.5rem;	
+	font-size: 1.5rem;
+	border:1.5px solid transparent;
 }
 
 .btn_open_more-link:hover .btn_open_more{
@@ -401,9 +403,9 @@ footer{
 	max-width: 40%;
 	border-radius: 0.5em;	
 	width: auto;
-	background-color:rgba(0,0,0,0.2);
-	
+	border-color: rgba(0,0,0,0.4);
 }
+
 .btn_open_more-link:hover{
 	text-decoration: none;
 }
@@ -761,6 +763,8 @@ footer{
 	width: 48%;
 	margin:1%;
 	color: #333;
+	border:1.5px solid transparent;
+	/*border-radius: 0.5em;*/
 }
 
 .news-page-block{
@@ -770,7 +774,8 @@ footer{
 .news-block:hover{
 	text-decoration: none;
 	color: #333;
-	background-color:rgba(0, 255, 17,0.1); 
+	border-color: rgba(0,0,0,0.2);
+	/*background-color:rgba(0, 255, 17,0.1); */
 }
 
 .news-block-header{
@@ -812,8 +817,16 @@ footer{
 }
 
 .news-open-more{
+	padding: 10px;
+	border:1.5px solid transparent;
 	margin: 0.5rem auto;
+	border-radius: 0.5em;
 }
+
+.news-open-more:hover{
+	border-color:rgba(0,0,0,0.2);
+}
+
 
 /*images of news on main page*/
 /*image size - 100x100px*/
@@ -1111,12 +1124,14 @@ footer{
 		max-width: 85vw;
 		border-radius: 0.5em;	
 		width: auto;
-		background-color:rgba(0,0,0,0.2);
+
+		border-color:rgba(0,0,0,0.2);
 	}
 
 
 	.btn_open_more-link:hover .btn_open_more{
 		max-width: 85vw;
+		border-color: rgba(0,0,0,0.2);
 	}
 
 	.content-header-photo{
@@ -1218,6 +1233,12 @@ footer{
 		background-position:center;
 		background-size: cover;
 		background-image: url(../images/design/vk.png);
+	}
+
+	.news-open-more{
+		border-color:rgba(0,0,0,0.2);
+		width: 90%;
+		text-align: center;
 	}
 
 
