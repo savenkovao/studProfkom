@@ -232,7 +232,7 @@ footer{
 	text-align-last: center;
 	line-height: 60px;
 	height: auto;
-	background-color: rgb(34, 6, 39);
+	background-color: rgba(0, 0, 20,0.9);
 	font-weight: 500;
 	margin-top: 1em;
 	text-align: center;
@@ -588,33 +588,52 @@ footer{
 .page-event-2{
 	background-image: url(../images/content/events/events-icons/kvartirnik_6.jpg);	
 }
-
 .page-event-3{
 	background-image: url(../images/content/events/events-icons/zags_ogasa_2016.jpg);	
 }
-
 .page-event-4{
 	background-image: url(../images/content/events/events-icons/armwrestling_2016.jpg);	
 }
-
 .page-event-5{
 	background-image: url(../images/content/events/events-icons/spring_and_health_day_2016.jpg);	
 }
-
 .page-event-6{
 	background-image: url(../images/content/events/events-icons/ploshadka_2016.jpg);	
-}
-.page-event-7{
+}.page-event-7{
 	background-image: url(../images/content/events/events-icons/best-student_2016.html.jpg);	
 }
-
 .page-event-8{
 	background-image: url(../images/content/events/events-icons/first-stud-party_2016.jpg);	
 }
-
 .page-event-9{
 	background-image: url(../images/content/events/events-icons/betonomeshalka_2016.jpg);	
 }
+.page-event-10{
+	background-image: url(../images/content/events/events-icons/quest_ogasa_2015.jpg);	
+}
+.page-event-11{
+	background-image: url(../images/content/events/events-icons/ogasa_85_2015.jpg);	
+}
+.page-event-12{
+	background-image: url(../images/content/events/events-icons/autumn_fair_2015.jpg);	
+}
+.page-event-13{
+	background-image: url(../images/content/events/events-icons/flashmob_ogasa_2015.jpg);	
+}
+.page-event-14{
+	background-image: url(../images/content/events/events-icons/mafia_game_3_2015.jpg);	
+}
+.page-event-15{
+	background-image: url(../images/content/events/events-icons/spartakiada_bespredela_2015.jpg);	
+}
+.page-event-16{
+	background-image: url(../images/content/events/events-icons/sushka_3_2014.jpg);	
+}
+
+
+
+
+
 
 /*project's backgrounds*/
 
@@ -623,7 +642,10 @@ footer{
 	background-image: url(../images/content/projects/projects-logos/ogasavl.jpg);	
 }
 .page-project-2{
-	background-image: url(../images/content/projects/projects-logos/logo-project-2.jpg);	
+	background-image: url(../images/content/projects/projects-logos/zk.jpg);	
+}
+.page-project-3{
+	background-image: url(../images/content/projects/projects-logos/made_in_studprofkom.jpg);	
 }
 
 
@@ -632,6 +654,12 @@ footer{
 /*travel's backgrounds*/
 .page-travel-1{
 	background-image: url(../images/content/travels/travels-icons/bukovel_2016.jpg);	
+}
+.page-travel-2{
+	background-image: url(../images/content/travels/travels-icons/lviv_2015.jpg);	
+}
+.page-travel-3{
+	background-image: url(../images/content/travels/travels-icons/bukovel_2015.jpg);	
 }
 
 /*zk's backgrounds*/
