@@ -11,7 +11,6 @@ var currentWrapperWidth = window.innerWidth;
 var currentWrapperHeight = window.innerHeight;
 var currentPhotoWidth;
 var len;
-var btnOpenMore = document.querySelectorAll('.btn_open_more-link')[0];
 var photoStep = 20;
 var photosOnPage;
 
@@ -19,7 +18,6 @@ setOffPhotos();
 	
 function setOffPhotos(){
 	if(photoLink.length>photoStep){
-		btnOpenMore.style.display = "block";
 		photosOnPage = photoStep;		
 		for (var i = photosOnPage; i < photoLink.length; i++) {
 			photoLink[i].style.display = 'none';			
@@ -28,25 +26,6 @@ function setOffPhotos(){
 		photosOnPage = photoLink.length;		
 	}	
 	openPhoto ();			
-}
-
-btnOpenMore.onclick = function(){		
-	if(photosOnPage<photoLink.length){
-		photosOnPage+=photoStep;
-		if (photosOnPage>=photoLink.length) {
-			photosOnPage=photoLink.length;
-			btnOpenMore.style.display = "none";
-		}
-	}
-		
-	for (var i = 0; i < photosOnPage; i++) {
-		photoLink[i].style.display = 'block';
-	}	
-
-	for (var i = photosOnPage; i < photoLink.length; i++) {
-		photoLink[i].style.display = 'none';
-	}
-	openPhoto ();
 }
 
 
@@ -151,15 +130,17 @@ function openPhoto () {
 };
 
 window.addEventListener("resize", resizeFunction);
+	
 function resizeFunction (){
 	currentWrapperWidth = window.innerWidth;
 	currentWrapperHeight = window.innerHeight;
-	openPhoto ();
+
 	if (currentWrapperWidth < 768) {
-		len = photoLink.length;
-		var i = 0;
-		for (;photoLink[i].removeAttribute("onclick"), ++i < len;);
+		for(var i = 0; i<photosOnPage; i++){
+	    	photoLink[i].removeAttribute("onclick");
+	   	}
 	}
+	openPhoto ();
 };
 
 

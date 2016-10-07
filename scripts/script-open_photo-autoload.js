@@ -13,25 +13,28 @@ var photosOnPage = 0;
 var currentWrapperWidth = window.innerWidth;
 var currentWrapperHeight = window.innerHeight;
 var body = document.getElementsByTagName('body')[0];
-var btnOpenMore = document.querySelectorAll('.btn_open_more-link')[0];
+var btnOpenMoreLink;
+var btnOpenMore;
 var sourceInformation = document.querySelectorAll('.source-information')[0];
 var imageQuantity = +sourceInformation.getAttribute('name');
 var source = sourceInformation.getAttribute('href');
 var contentGallery = document.querySelectorAll('.content-gallery')[0];
 var contentHeader =  document.querySelectorAll('.content-description-header')[0].innerHTML;
+var btnMoreContainer =  document.querySelectorAll('.btn_more_container')[0];
 
-
+createButtonOpenMore();
 uploadImages();
+
 
 function uploadImages(){
 	if(imageQuantity<=photoStep){
 		photosOnPagePrevious = photosOnPage;
 		photosOnPage = imageQuantity;
 		for(var i = photosOnPagePrevious+1; i<=photosOnPage;i++){
-			addImage (i)
+			addImage (i);
 		}
 	} else {
-		btnOpenMore.style.display = "block";
+		btnOpenMoreLink.style.display = "block";	
 		photosOnPagePrevious = photosOnPage;
 		photosOnPage += photoStep;
 		if(photosOnPage>=imageQuantity){
@@ -45,6 +48,16 @@ function uploadImages(){
 	openPhoto ();
 }
 
+function createButtonOpenMore(){
+	btnOpenMoreLink = document.createElement('a');
+	btnOpenMoreLink.className = "btn_open_more-link";
+	btnOpenMore = document.createElement('div');
+	btnOpenMore.className = "btn_open_more";
+	btnOpenMore.innerHTML = "Открыть больше фотографий";
+	btnOpenMoreLink.appendChild(btnOpenMore);
+	btnMoreContainer.appendChild(btnOpenMoreLink);
+}
+
 function addImage (num){
 	imageСontainer[num] = document.createElement('div');
 	imageСontainer[num].className ="content-gallery-block image_container short";	
@@ -56,7 +69,7 @@ function addImage (num){
 	contentGallery.appendChild(imageСontainer[num]);
 }
 
-btnOpenMore.onclick = function(){
+btnOpenMoreLink.onclick = function(){
 	uploadImages();
 	openPhoto ();
 }
@@ -164,16 +177,14 @@ window.addEventListener("resize", resizeFunction);
 	
 function resizeFunction (){
 	currentWrapperWidth = window.innerWidth;
-	currentWrapperHeight = window.innerHeight;
-	openPhoto ();
+	currentWrapperHeight = window.innerHeight;	
 	if (currentWrapperWidth < 768) {
 		for(var i = photosOnPagePrevious+1;i<=photosOnPage;i++){
 	    	imageСontainer[i].removeAttribute("onclick");
 	   	}
 	}
+	openPhoto ();
 };
-
-
 
 
 
