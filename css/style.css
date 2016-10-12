@@ -72,6 +72,17 @@ footer{
 	margin:0 auto;
 }
 
+.no-marker>li{
+	list-style-type: none;
+}
+
+.marker-1{
+	list-style-image: url(../images/design/basketball-marker.png);
+}
+.marker-2{
+	list-style-image: url(../images/design/theatre-1.png);
+}
+
 
 .width_4{
 	width: 40%;
@@ -79,6 +90,10 @@ footer{
 
 .width_5{
 	width: 50%;
+}
+
+.width_7{
+	width: 70%;
 }
 
 .button_external_link{
@@ -164,7 +179,7 @@ footer{
 }
 
 .slider{
-		padding: :0 15px;
+	padding: :0 15px;
 }
 
 .content-slider {
