@@ -7,7 +7,7 @@
 
 body{
 	font-family:'Andika', 'Didact Gothic','Futura', sans-serif;
-	font-size: 15px;
+	font-size: 16px;
 }
 
 .wrapper {
@@ -68,7 +68,17 @@ footer{
 }
 
 .block-center{
+	display: block;
 	margin:0 auto;
+}
+
+
+.width_4{
+	width: 40%;
+}
+
+.width_5{
+	width: 50%;
 }
 
 .button_external_link{
@@ -343,7 +353,7 @@ footer{
 	border:4px solid transparent;	
 }
 .content-gallery-block:hover{
-	/*border-color:rgba(0, 0, 0,0.20);
+	/*border-color:rgba(0, 0, 0,0.20);*/
 	opacity: 0.75;
 }
 
@@ -351,6 +361,7 @@ footer{
 .full{
 	height: auto; /*full image size*/
 }
+
 
 .short{ 
 	height: 12.5vw; /*short image size for qallaries*/
@@ -897,6 +908,9 @@ footer{
 /*images of news on main page*/
 /*image size - 100x100px*/
 
+.news-block-wrapper.news_0::before{
+	background-image: url(../images/content/news/news-icons/news_0.png);
+}
 
 .news-block-wrapper.news_1::before{
 	background-image: url(../images/content/news/news-icons/news_1.jpg);
@@ -929,7 +943,7 @@ footer{
 	background-image: url(../images/content/news/news-icons/news_8.jpg);
 }
 .news-block-wrapper.news_9::before{
-	background-image: url(../images/content/news/news-icons/news_9.jpg);
+	background-image: url(../images/content/news/news-icons/news_9.png);
 }
 .news-block-wrapper.news_10::before{
 	background-image: url(../images/content/news/news-icons/news_10.jpg);
@@ -1173,6 +1187,10 @@ footer{
 
 
 @media screen and (max-width: 768px) {
+
+	body{
+		font-size: 14px;
+	}
 
 	.header-menu{
 		display: block;
