@@ -463,18 +463,17 @@ footer{
 }
 
 .btn_open_more{
+	width: 40%;
 	margin: 10px auto 0;
 	padding:0.8rem;	
 	text-align: center;	
 	font-size: 1.5rem;
 	border:1.5px solid transparent;
+	border-radius: 0.5em;
 }
 
-.btn_open_more-link:hover .btn_open_more{
-	margin: 10px auto 0;
-	max-width: 40%;
-	border-radius: 0.5em;	
-	width: auto;
+
+.btn_open_more-link:hover .btn_open_more{		
 	border-color: rgba(0,0,0,0.4);
 }
 
@@ -842,18 +841,18 @@ footer{
 
 
 
-/*News*/
+ /*News*/
 
 .news{
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content:left;	
-}
+	justify-content: space-between;	
+} 
 .news-block{
-	padding: 1rem;
+	padding: 0.5rem;
 	width: 48%;
-	// margin:1%;
+	margin:1%;
 	color: #333;
 	border:1.5px solid transparent;
 	/*border-radius: 0.5em;*/
@@ -888,7 +887,7 @@ footer{
 .news-block-wrapper::before{
 	content: '';
 	position: absolute;	
-	margin: 0.5rem 0 0 -7rem;
+	margin: 0 0 0 -7rem;
 	width: 6rem;
 	height: 6rem;	
 	background-size: cover;
@@ -909,6 +908,9 @@ footer{
 }
 
 .news-open-more{
+	display: block;
+	width: 40%;
+	text-align: center;
 	padding: 10px;
 	border:1.5px solid transparent;
 	margin: 0.5rem auto;
@@ -916,7 +918,7 @@ footer{
 }
 
 .news-open-more:hover{
-	border-color:rgba(0,0,0,0.2);
+	border-color:rgba(0,0,0,0.4);
 }
 
 
@@ -981,9 +983,6 @@ footer{
 .news-block-wrapper.news_15::before{
 	background-image: url(../images/content/news/news-icons/news_15.jpg);
 }
-
-
-
 
 
 
@@ -1239,17 +1238,9 @@ footer{
 	}
 
 	.btn_open_more{
-		padding:1.5rem;	
-		max-width: 85vw;
-		border-radius: 0.5em;	
+		max-width: 80%;
 		width: auto;
-		border-color:rgba(0,0,0,0.2);
-	}
-
-
-	.btn_open_more-link:hover .btn_open_more{
-		max-width: 85vw;
-		border-color: rgba(0,0,0,0.2);
+		border-color:rgba(0,0,0,0.4);
 	}
 
 	.content-header-photo{
@@ -1285,10 +1276,17 @@ footer{
 		margin: 0 auto;
 	}
 
+	.news{
+		display: block;
+	}
+
 	.news-block{
+		display: block;
 		width: 100%;
 		margin:1% 0;
+		border-color: rgba(0,0,0,0.2);
 	}
+
 
 	.content-event-wrapper{
 		width: 100%;
@@ -1354,8 +1352,10 @@ footer{
 	}
 
 	.news-open-more{
-		border-color:rgba(0,0,0,0.2);
-		width: 90%;
+		display: block;
+		margin-top: 1rem;
+		border-color:rgba(0,0,0,0.4);
+		width: 80%;
 		text-align: center;
 	}
 
