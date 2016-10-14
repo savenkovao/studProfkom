@@ -853,7 +853,7 @@ footer{
 .news-block{
 	padding: 1rem;
 	width: 48%;
-	margin:1%;
+	// margin:1%;
 	color: #333;
 	border:1.5px solid transparent;
 	/*border-radius: 0.5em;*/
