@@ -209,7 +209,7 @@ footer{
 
 .slider-title{
 	position: absolute;
-	display: block;
+	display: none;
 	width: auto;
 	height: 4rem;
 	padding: 1rem;
@@ -220,6 +220,10 @@ footer{
 	border-bottom-right-radius: 5px;
 	background-color: rgba(255,255,255,0.7);
 	text-align: center;
+}
+
+.slider:hover .slider-title{
+	display: block;
 }
 
 .slider-arrow-left,
