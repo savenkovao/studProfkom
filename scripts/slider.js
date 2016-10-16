@@ -13,7 +13,13 @@ var radioButton=[];
 arrowLeft.classList.add("enabled");
 arrowRight.classList.add("enabled");
 
+
 arrowRight.onclick = function (){
+	clearTimeout(timerId);
+	rightOnClick();
+}
+
+function rightOnClick(){
 	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
 	sliderInner.style.width = currentWrapperWidth + 'px';	
 	clickCounter++;		
@@ -25,8 +31,12 @@ arrowRight.onclick = function (){
 	browseRight ();
 }
 
-
 arrowLeft.onclick = function (){
+	clearTimeout(timerId);
+	leftOnClick();
+}
+
+function leftOnClick(){
 	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
 	sliderInner.style.width = currentWrapperWidth + 'px';
 	clickCounter--;	
@@ -92,6 +102,7 @@ var result = createRadioButtons ();
 sliderInner.appendChild(result);
 
 function chooseSlide (i){
+	clearTimeout(timerId);
 	clickCounter = i;	
 	changeButtonBackGround ();
 	radioButton[i].style.backgroundColor= 'rgb(80, 210, 89)';
@@ -103,9 +114,15 @@ function chooseSlide (i){
 
 function changeButtonBackGround (){
 	for(var e = 0; e <sliderItems; e++){
-		radioButton[e].style.backgroundColor= 'rgba(255,255,255,0.3)';
+		radioButton[e].style.backgroundColor= 'rgba(0,0,0,0.3)';
 	}
 }
+
+var timerId = setInterval(
+	function() { 
+		rightOnClick();
+	}, 
+2700);
 
 
 
