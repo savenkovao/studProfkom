@@ -440,7 +440,7 @@ footer{
 .btn_go_up::after {
 	content: '';
 	position: absolute;
-	top: calc(50% - 7.5px);
+	top: 17.5px;
 	right: 15px;
 	width: 15px;
 	height: 15px;
@@ -494,7 +494,7 @@ footer{
 }
 
 .content-map{
-	margin: 2rem 0;
+	margin: 2rem auto;
 
 }
 
@@ -1253,6 +1253,11 @@ footer{
 	.team-gallery-head{
 		width: 100%;
 		height: auto;
+	}
+	.content-gallery-block.content-ogasa-map,
+	.content-map{
+		display: block;
+		/*margin: 0 auto;*/
 	}
 
 	.btn_open_more{
