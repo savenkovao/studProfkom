@@ -390,22 +390,17 @@ footer{
 
 .form-item {
 	display: block;
-	width: 30%;
+	width: 40%;
 	margin:20px auto;
 }
-.form-item span {
+.form-item-title {
 	display: block;
 	margin-bottom: 10px;
+	font-weight: bold;
 }
 
-.form-item strong {
-	color: red;
-	font-size: 20px;
-}
-
-
-.form-item-input {
-	width: 80%;
+.form-item-input {	
+	width: 100%;
 }
 
 .form-item-input-radio{
@@ -461,7 +456,6 @@ footer{
 	line-height: 50px;
 	color: white;
 	font-size: 15px;
-
 }
 
 .btn_go_up-link:hover{
@@ -866,7 +860,6 @@ footer{
 	margin:1%;
 	color: #333;
 	border:1.5px solid transparent;
-	/*border-radius: 0.5em;*/
 }
 
 .news-page-block{
@@ -877,7 +870,6 @@ footer{
 	text-decoration: none;
 	color: #333;
 	border-color: rgba(0,0,0,0.2);
-	/*background-color:rgba(0, 255, 17,0.1); */
 }
 
 .news-block-header{
@@ -1310,7 +1302,6 @@ footer{
 		display: block;
 		width: 100%;
 		margin:1% 0;
-		border-color: rgba(0,0,0,0.2);
 	}
 
 

@@ -40,6 +40,8 @@ function openPhoto () {
 			body.style.position = 'relative';
 			photoBlock = document.createElement('div');
 			photoBlock.classList.add("photoBlock");
+			imageContainer.onkeydown = function (e){
+
 
 			imageContainer = document.createElement('div');			
 			imageContainer.classList.add("imageContainer");

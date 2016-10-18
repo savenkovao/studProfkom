@@ -92,37 +92,37 @@
 						<form action="mailto:profkomstudentovogasa@mail.ru" method="post" name="userMemberForm" spellcheck ectype="text/plain">
 
 							<label class="form-item">
-								<span><strong>*</strong>Фамилия</span>
+								<span class="form-item-title"><strong class="important_information">* </strong>Фамилия</span>
 								<input type="text" placeholder="Иванов" name="userSurname" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
 							</label>
 
 							<label class="form-item">
-								<span><strong>*</strong>Имя</span>
+								<span class="form-item-title"><strong class="important_information">* </strong>Имя</span>
 								<input type="text" placeholder="Иван" name="userName" required maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
 							</label>
 
 							<label class="form-item">
-								<span><strong>*</strong>Отчество</span>
+								<span class="form-item-title"><strong class="important_information">* </strong>Отчество</span>
 								<input type="text" placeholder="Иванович" name="userSecondName" maxlength="255" class="form-item-input" pattern="[А-Яа-яЁё]{1,}">
 							</label>
 
 							<label class="form-item">
-								<span><strong>*</strong>Год рождения</span>
-								<input type="number" placeholder="1910" name="userBirthDate" required maxlength="4" class="form-item-input" min="1910" max="2015" pattern="[0-9]{4}">
+								<span class="form-item-title"><strong class="important_information">* </strong>Год рождения</span>
+								<input type="number" placeholder="1950" name="userBirthDate" required maxlength="4" class="form-item-input" min="1950" max="2005" pattern="[0-9]{4}">
 							</label>
 
 							<label class="form-item">
-								<span><strong>*</strong>Факультет</span> 
+								<span class="form-item-title"><strong class="important_information">* </strong>Факультет</span> 
 								<input type="text" placeholder="ЭкУС" name="userFaculty" required maxlength="255" class="form-item-input" pattern="^[А-Яа-яЁё\-]+$">
 							</label>
 
 							<label class="form-item">
-								<span><strong>*</strong>Группа</span>
+								<span class="form-item-title"><strong class="important_information">* </strong>Группа</span>
 								<input type="text" placeholder="ЗтК-117" name="userGroup" required maxlength="255" class="form-item-input" pattern="^[а-яА-ЯёЁ0-9\-]+$">
 							</label>
 
 							<div class="form-item">
-								<span><strong>*</strong>Форма обучения</span>
+								<span class="form-item-title"><strong class="important_information">* </strong>Форма обучения</span>
 								<label>						
 									<input type="radio" name="educationForm" required class="form-item-input-radio">Бюджет
 								</label>
@@ -132,13 +132,15 @@
 							</div>						
 
 							<label class="form-item">
-								<span>Фото </span>
-								<p class="form-item-elaboration">(загрузи фото, на котором Ты один, одет :) и улыбаешься. Можно фотографию из паспорта. Если такой нет, принеси фотографию с собой, когда будешь забирать свой билет.</p>
-								<input class="form-item-file" type="file" name="userPhoto" maxlength="255" value="Выбрать фото"> 
+								<span class="form-item-title"><strong class="important_information">* </strong>Телефон</span>
+								<p class="form-item-elaboration ">
+									Укажи телефон в формате: <b class="block_element">050 111 22 33</b>
+								</p> 
+								<input type="tel" name="tel" required placeholder="050 111 22 33" class="form-item-input" maxlength="19" pattern="[0-9\-+ ]+$">
 							</label>
 
 							<label class="form-item">
-								<input type="checkbox" name="userAgreement" required > Я ввел информацию в форму правильно :)
+								<input type="checkbox" name="userAgreement" required> Я подтверждаю, что ввел информацию верно
 							</label>
 
 
