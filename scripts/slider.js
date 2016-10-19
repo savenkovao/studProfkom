@@ -86,16 +86,19 @@ function browseLeft () {
 }
 
 function createRadioButtons (){
-	var radioButtonContainer = document.createElement('div');
-	radioButtonContainer.className = 'radio-button-container';	
-	for(var i = 0; i < sliderItems; i++){		
-		radioButton[i] = document.createElement('div');		
-		radioButton[i].classList.add("radio-button", "item_"+i);		
-		radioButton[i].setAttribute("onclick","chooseSlide("+i+")");
-		radioButtonContainer.appendChild(radioButton[i]);		
-	}	
-	radioButton[0].style.backgroundColor= 'rgb(80, 210, 89)';
-	return radioButtonContainer;
+	// if (currentWrapperWidth>768){
+		var radioButtonContainer = document.createElement('div');
+		radioButtonContainer.className = 'radio-button-container';	
+		for(var i = 0; i < sliderItems; i++){		
+			radioButton[i] = document.createElement('div');		
+			radioButton[i].classList.add("radio-button", "item_"+i);		
+			radioButton[i].setAttribute("onclick","chooseSlide("+i+")");
+			radioButtonContainer.appendChild(radioButton[i]);		
+		}	
+		radioButton[0].style.backgroundColor= 'rgb(80, 210, 89)';
+		return radioButtonContainer;
+	// }
+	
 }
 
 var result = createRadioButtons ();
