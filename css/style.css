@@ -39,9 +39,9 @@ footer{
 }
 
 .logo-block{
-	height: 50px;
-	width: 80px;
-	margin:0 auto;
+	height: 40px;
+	width: 61px;
+	margin: 5px auto;	
 	background-image: url(../images/design/ogasa.png);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -273,9 +273,9 @@ footer{
 	background-size: cover;
 	position: absolute;	
 	left: calc(50% - 10px);
-	top: calc(50% - 25px);
-	
+	top: calc(50% - 25px);	
 }
+
 .slider-arrow-left::before{
 	right: calc(50% - 25px);
 	transform: rotate(180deg);
@@ -1233,6 +1233,11 @@ footer{
 	body{
 		font-size: 14px;
 	}
+
+	header {
+		margin-top: 0;
+	}
+
 	.header-logo{
 		background-color: rgba(255,255,255,0.9);
 		height: 60px;
@@ -1242,13 +1247,17 @@ footer{
 		position: fixed;
 	}
 
+	.logo-block{
+		margin: 0 auto;	
+	}
+
 	.mobile-menu{
 		position: absolute;
 		width: 40px;
 		height: 40px;
 		background-image: url(../images/design/burger-menu-icon.png);
 		background-position: center;
-		background-size: cover;	
+		background-size: cover;			
 		z-index: 13;	
 	}
 
@@ -1256,10 +1265,10 @@ footer{
 		display: none;
 		height: 100%;
 		width: 80%;
-		padding-top: 60px;
+		padding-top: 70px;
 		position: fixed;
 		top: 0;
-		left: -15px;
+		margin-left:-15px;
 		background-color: rgba(0,0,0,0.9);
 		z-index: 12;
 		text-align: left;
@@ -1270,7 +1279,7 @@ footer{
 		display: inline-block;
 		position: relative;
 		width: 100%;
-		padding: 0 15% 0 0;
+		padding: 0;
 		top:0;
 		left: 0;
 		background-color: transparent;
@@ -1278,7 +1287,7 @@ footer{
 	
 	.submenu::before{
 		content: '';
-		width: 50%;
+		width: 90%;
 		height: 2px;
 		background-color: rgba(255,255,255,0.2);
 		position: absolute;
@@ -1290,9 +1299,13 @@ footer{
 
 	.menu-item{
 		width: auto;
-		padding: 5px 0;
+		padding: 5px 0 5px 15px;
 		border-radius: 0;
-		margin-left: 30px;		
+		/*margin-left: 30px;		*/
+	}
+
+	.menu-item.expand{
+		padding-bottom: 0;
 	}
 
 	.submenu .menu-item-link,
@@ -1300,7 +1313,6 @@ footer{
 		color: white;
 	}
 
-	
 	.submenu .menu-item-link:hover,
 	.menu-item-link:hover{
 		color: rgb(204, 163, 19);
@@ -1311,11 +1323,6 @@ footer{
 		width: auto;
 	}
 
-	.menu-item.expand{
-		padding-bottom: 0;
-	}
-
-
 	.radio-button-container{
 		display: none;
 	}
@@ -1324,6 +1331,21 @@ footer{
 	.slider-arrow-right{
 		width: 50%;
 	}
+
+	.slider:hover .slider-title{
+		display: none;
+	}
+
+/*	.slider-arrow-right::before{
+		left: 0;
+	}
+	.slider-arrow-right::before{
+		right: 0;
+	}
+
+	.slider-arrow-left::before{
+		left: 0;
+	}*/
 
 
 	.menu-item:hover .submenu{

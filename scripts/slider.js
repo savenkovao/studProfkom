@@ -10,8 +10,12 @@ var currentInnerHeight = document.querySelector('.slider-inner').offsetHeight;
 var currentInnerItemHeight = document.querySelector('.slider-item').offsetHeight;
 var radioButton=[];
 
-arrowLeft.classList.add("enabled");
-arrowRight.classList.add("enabled");
+// if(currentWrapperWidth>768){
+	arrowLeft.classList.add("enabled");
+	arrowRight.classList.add("enabled");
+// }
+
+
 
 
 arrowRight.onclick = function (){

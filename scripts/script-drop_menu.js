@@ -8,13 +8,24 @@ var headerLogo = document.querySelectorAll('.header-logo')[0];
 var logoBlock = document.querySelectorAll('.logo-block')[0];
 var mainCounter=0;
 
+var burgerMenuIcon = "url(images/design/burger-menu-icon.png)";
+var burgerMenuWhiteIcon = "url(images/design/burger-menu-white.png)";
+var logoIcon = "url(images/design/ogasa.png)";
+var logoWhiteIcon = "url(images/design/ogasa-white.png)";
+var colorTransparent = 'transparent';
+var headerBackgroundColor = "rgba(255,255,255,0.9)";
+var mobileMenuBackgroundColor = 'rgba(0,0,0,0.9)';
+
 // enableDropMenu ();
 
 function enableDropMenu (){
 	if(currentScreenWidth<768){
 		headerMenu.style.display = "none";
-		mobileMenu.style.backgroundImage = "url(images/design/burger-menu-icon.png)";
-		logoBlock.style.backgroundImage = "url(images/design/ogasa.png)";
+		headerLogo.style.backgroundColor= headerBackgroundColor;
+		mobileMenu.style.backgroundImage = burgerMenuIcon;
+		mobileMenu.style.backgroundColor= colorTransparent;
+		logoBlock.style.backgroundImage = logoIcon;
+		
 	} else {
 		headerMenu.style.display = "flex";
 	}
@@ -25,16 +36,19 @@ mobileMenu.onclick = function (){
 	if (mainCounter%2 == 0){
 		headerMenu.style.display = "none";
 		headerLogo.style.zIndex = "11";
-		headerLogo.style.backgroundColor= "rgba(255,255,255,0.9)";
-		mobileMenu.style.backgroundImage = "url(images/design/burger-menu-icon.png)";
-		logoBlock.style.backgroundImage = "url(images/design/ogasa.png)";
+		headerLogo.style.backgroundColor= headerBackgroundColor;
+		mobileMenu.style.backgroundImage = burgerMenuIcon;
+		mobileMenu.style.backgroundColor= colorTransparent;
+		logoBlock.style.backgroundImage = logoIcon;
 
 	} else {
 		headerMenu.style.display = "block";
-		headerLogo.style.zIndex = "13";
-		headerLogo.style.backgroundColor= "transparent";
-		mobileMenu.style.backgroundImage = "url(images/design/burger-menu-white.png)";
-		logoBlock.style.backgroundImage = "url(images/design/ogasa-white.png)";
+		headerLogo.style.zIndex = "13";		
+		headerLogo.style.backgroundColor= colorTransparent;
+		logoBlock.style.backgroundImage = logoWhiteIcon;
+		mobileMenu.style.backgroundImage = burgerMenuWhiteIcon;
+		mobileMenu.style.backgroundColor= mobileMenuBackgroundColor;
+		
 	}
 }
 
