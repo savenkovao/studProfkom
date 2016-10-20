@@ -7,6 +7,7 @@ var menuItemExpand = document.querySelectorAll('.menu-item.expand');
 var subMenu = document.querySelectorAll('.submenu');
 var mobileMenu = document.querySelectorAll('.mobile-menu')[0];
 var headerMenu = document.querySelectorAll('.header-menu')[0];
+var headerLogo = document.querySelectorAll('.header-logo')[0];
 var counter = [];
 var mainCounter;
 setSubmenuDisplay ();
@@ -14,18 +15,27 @@ setSubmenuDisplay ();
 function setSubmenuDisplay (){
 	if(currentScreenWidth<768){
 		for(var i = 0; i<menuItemExpand.length;i++){		
-			subMenu[i].style.display = "none";
+			// subMenu[i].style.display = "none";
 		}
 	}
 }
 
 
 mobileMenu.onclick = function (){
+	
+
 	mainCounter++;
 	if (mainCounter%2 == 0){
 		headerMenu.style.display = "none";
+		headerLogo.style.Zindex = "11";
+		headerLogo.style.backgroundColor= "rgba(255,255,255,0.9)";
+		mobileMenu.style.backgroundImage = "url(images/design/burger-menu-icon.png)";
+
 	} else {
 		headerMenu.style.display = "block";
+		headerLogo.style.zIndex = "13";
+		headerLogo.style.backgroundColor= "transparent";
+		mobileMenu.style.backgroundImage = "url(images/design/burger-menu-white.png)";
 	}
 }
 
