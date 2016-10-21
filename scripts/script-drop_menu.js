@@ -10,11 +10,8 @@ var logoBlock = document.querySelectorAll('.logo-block')[0];
 var submenu = document.querySelectorAll('.submenu');
 var menuItem = document.querySelectorAll('.menu-item');
 var mainCounter=0;
-
-var burgerMenuIcon = "url(images/design/burger-menu-icon.png)";
-var burgerMenuWhiteIcon = "url(images/design/burger-menu-white.png)";
-var logoIcon = "url(images/design/ogasa.png)";
-var logoWhiteIcon = "url(images/design/ogasa-white.png)";
+var burgerMenuWhiteIcon = "mobile-menu-white_icon";
+var logoWhiteIcon = "logo-block-white_icon";
 var colorTransparent = 'transparent';
 var headerBackgroundColor = "rgba(255,255,255,0.9)";
 var mobileMenuBackgroundColor = 'rgba(0,0,0,0.95)';
@@ -55,18 +52,17 @@ mobileMenu.onclick = function (){
 	if (mainCounter%2 == 0){
 		headerMenu.style.left = "-80%";
 		headerLogo.style.zIndex = "11";
-		headerLogo.style.backgroundColor= headerBackgroundColor;
-		mobileMenu.style.backgroundImage = burgerMenuIcon;
-		mobileMenu.style.backgroundColor= colorTransparent;
-		logoBlock.style.backgroundImage = logoIcon;
-
+		mobileMenu.classList.remove(burgerMenuWhiteIcon);
+		logoBlock.classList.remove(logoWhiteIcon);
+		headerLogo.style.backgroundColor = headerBackgroundColor;
+		mobileMenu.style.backgroundColor = colorTransparent;		
 	} else {
 		headerMenu.style.left = "0";
-		headerLogo.style.zIndex = "13";		
-		headerLogo.style.backgroundColor= colorTransparent;
-		logoBlock.style.backgroundImage = logoWhiteIcon;
-		mobileMenu.style.backgroundImage = burgerMenuWhiteIcon;
-		mobileMenu.style.backgroundColor= mobileMenuBackgroundColor;		
+		headerLogo.style.zIndex = "13";	
+		logoBlock.classList.add(logoWhiteIcon);
+		mobileMenu.classList.add(burgerMenuWhiteIcon);
+		mobileMenu.style.backgroundColor = mobileMenuBackgroundColor;
+		headerLogo.style.backgroundColor = colorTransparent;		
 	}
 }
 
@@ -92,9 +88,9 @@ function resizeFunction (){
 function enableDropMenu (){
 	headerMenu.style.left = "-80%";
 	headerLogo.style.backgroundColor = headerBackgroundColor;
-	mobileMenu.style.backgroundImage = burgerMenuIcon;
-	mobileMenu.style.backgroundColor= colorTransparent;
-	logoBlock.style.backgroundImage = logoIcon;
+	mobileMenu.style.backgroundColor = colorTransparent;
+	mobileMenu.classList.remove(burgerMenuWhiteIcon);
+	logoBlock.classList.remove(logoWhiteIcon);
 }
 
 

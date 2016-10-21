@@ -48,6 +48,10 @@ footer{
 	background-size: cover;
 }
 
+.logo-block-white_icon {
+	background-image: url(../images/design/ogasa-white.png);
+}
+
 .header-logo img{
 	height: 100%;
 }
@@ -270,6 +274,7 @@ footer{
 	background-image: url(../images/design/slider_arrow.png);
 	background-position: center;
 	background-size: cover;
+	background-repeat: no-repeat;
 	position: absolute;	
 	left: calc(50% - 10px);
 	top: calc(50% - 25px);	
@@ -1281,6 +1286,10 @@ footer{
 		z-index: 13;	
 	}
 
+	.mobile-menu-white_icon{
+		background-image: url(../images/design/burger-menu-white.png);
+	}
+
 
 
 	/* f[gbjmfdiuobfdkmfndlkvbdf*/
@@ -1338,10 +1347,11 @@ footer{
 
 	.menu-item-mobile {
 		width: auto;
-		padding: 5px 0 5px 15px;
+		padding: 7px 0 7px 15px;
 		border-radius: 0;
 		margin-left: 30px;
-		list-style-type: none;	
+		list-style-type: none;
+		/*font-size: 1.6rem;*/
 	}
 
 	.menu-item-mobile.expand{
@@ -1371,26 +1381,26 @@ footer{
 
 	.slider-arrow-left,
 	.slider-arrow-right{
-		background-color: rgba(255,255,255,0.5);
-		border-radius: 50%;
-		width: 40px;
-		height: 40px;
+		background-color:transparent;
+		/*border-radius: 50%;*/
+		width: 30%;
+		height: 100%;
 		display: block;
-		top:calc(50% - 20px);
+		top:0;
 	}
 
 
 	.slider-arrow-right::before,
 	.slider-arrow-left::before{
 		content: '';
-		width: 13px;
-		height: 30px;
-		left: calc(50% - 5px);
-		top: calc(50% - 15px);	
+		width: 8px;
+		height: 17px;
+		left: calc(20% - 4px);
+		top: calc(50% - 9px);	
 	}
 
-	.slider-arrow-left::before{
-		right: calc(50% - 5px);
+	.slider-arrow-right::before{
+		left: calc(80% - 4px);
 	}
 
 /*	.slider-arrow-right::before{
