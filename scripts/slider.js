@@ -1,22 +1,31 @@
 'use strict';
 
-var currentWrapperWidth; 
-var clickCounter = 0;  
-var sliderInner = document.querySelector('.slider-inner');
+var sliderInner;
+var clickCounter = 0;
+var radioButton=[];
+var contentSlider = document.querySelector('.content-slider');
 var arrowLeft = document.querySelector('.slider-arrow-left');
 var arrowRight = document.querySelector('.slider-arrow-right');
-var sliderItems = document.querySelectorAll('.slider-item').length;
-var currentInnerHeight = document.querySelector('.slider-inner').offsetHeight;
+var sliderItemImage = document.querySelector('.slider-item-image');
+var sliderItems = document.querySelectorAll('.slider-item').length/2;
 var currentInnerItemHeight = document.querySelector('.slider-item').offsetHeight;
-var radioButton=[];
+var currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30; 
 
-// if(currentWrapperWidth>768){
-	arrowLeft.classList.add("enabled");
-	arrowRight.classList.add("enabled");
-// }
+setSlider();
 
+function setSlider(){
+	if(currentWrapperWidth<768){
+		sliderInner = document.querySelector('.slider-inner-mobile');		
+	} else {
+		sliderInner = document.querySelector('.slider-inner-desktop');
+		
+	}
+}
 
+createRadioButtons ();
 
+arrowLeft.classList.add("enabled");
+arrowRight.classList.add("enabled");
 
 arrowRight.onclick = function (){
 	clearTimeout(timerId);
@@ -58,6 +67,7 @@ window.addEventListener("resize", getNewWrapperWidth);
 
 function getNewWrapperWidth (){
 	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
+	setSlider();
 	sliderInner.style.width = currentWrapperWidth + 'px';
 	if (clickCounter>=0) {
 		sliderInner.style.marginLeft = - currentWrapperWidth*clickCounter + 'px';
@@ -68,45 +78,39 @@ function getNewWrapperWidth (){
 
 function browseRight () {
 	var currentMargin = parseInt(sliderInner.style.marginLeft)||0;
-	sliderInner.style.transition = 'margin-left 0.3s linear';	
+	sliderInner.style.transition = 'margin-left 0.3s linaer';	
 	
 	if(currentMargin != (sliderItems - 1)*-currentWrapperWidth){
 		sliderInner.style.marginLeft = currentMargin - currentWrapperWidth + 'px';
 	} else {
 		sliderInner.style.marginLeft = '0px';
-		sliderInner.style.transition = 'margin-left 0.1s linear';
+		sliderInner.style.transition = 'margin-left 0.1s linaer';
 	}
 }
 
 function browseLeft () {
 	var currentMargin = parseInt(sliderInner.style.marginLeft)||0;
-	sliderInner.style.transition = 'margin-left 0.3s linear';	
+	sliderInner.style.transition = 'margin-left 0.3s linaer';	
 	if(currentMargin !=0){
 		sliderInner.style.marginLeft = currentMargin + currentWrapperWidth + 'px';
 	} else {
 		sliderInner.style.marginLeft = ((sliderItems - 1)* -currentWrapperWidth)+'px';
-		sliderInner.style.transition = 'margin-left 0.1s linear';
+		sliderInner.style.transition = 'margin-left 0.1s linaer';
 	}
 }
 
 function createRadioButtons (){
-	// if (currentWrapperWidth>768){
-		var radioButtonContainer = document.createElement('div');
-		radioButtonContainer.className = 'radio-button-container';	
-		for(var i = 0; i < sliderItems; i++){		
-			radioButton[i] = document.createElement('div');		
-			radioButton[i].classList.add("radio-button", "item_"+i);		
-			radioButton[i].setAttribute("onclick","chooseSlide("+i+")");
-			radioButtonContainer.appendChild(radioButton[i]);		
-		}	
-		radioButton[0].style.backgroundColor= 'rgb(80, 210, 89)';
-		return radioButtonContainer;
-	// }
-	
+	var radioButtonContainer = document.createElement('div');
+	radioButtonContainer.className = 'radio-button-container';	
+	for(var i = 0; i < sliderItems; i++){		
+		radioButton[i] = document.createElement('div');		
+		radioButton[i].classList.add("radio-button", "item_"+i);		
+		radioButton[i].setAttribute("onclick","chooseSlide("+i+")");
+		radioButtonContainer.appendChild(radioButton[i]);		
+	}	
+	radioButton[0].style.backgroundColor= 'rgb(80, 210, 89)';
+	contentSlider.appendChild(radioButtonContainer);
 }
-
-var result = createRadioButtons ();
-sliderInner.appendChild(result);
 
 function chooseSlide (i){
 	clearTimeout(timerId);
@@ -130,6 +134,7 @@ var timerId = setInterval(
 		rightOnClick();
 	}, 
 2700);
+
 
 
 
