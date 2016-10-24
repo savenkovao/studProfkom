@@ -23,7 +23,7 @@ function setCurrentScreenWidth(){
 setNewClasses ();
 
 function setNewClasses (){	
-	if(currentScreenWidth<768){		
+	if(currentScreenWidth<=768){		
 		mobileMenu.style.display = "block";
 
 		headerMenuMobile.style.backgroundColor = "rgba(0,0,0,0.95)";
@@ -50,14 +50,14 @@ function resizeFunction (){
 	currentScreenWidth = document.documentElement.clientWidth;	
 	mainCounter=0;
 
-	if(previousScreenWidth<768){
-		if (currentScreenWidth<768){
+	if(previousScreenWidth<=768){
+		if (currentScreenWidth<=768){
 			enableDropMenu ();
 		} else {
 			enableDesktopMenu ();
 		}
 	} else{
-		if (currentScreenWidth<768){
+		if (currentScreenWidth<=768){
 			setNewClasses ();
 		}
 	}

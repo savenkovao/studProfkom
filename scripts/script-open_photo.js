@@ -135,7 +135,7 @@ function resizeFunction (){
 	currentWrapperWidth = window.innerWidth;
 	currentWrapperHeight = window.innerHeight;
 
-	if (currentWrapperWidth < 768) {
+	if (currentWrapperWidth <= 768) {
 		for(var i = 0; i<photosOnPage; i++){
 	    	photoLink[i].removeAttribute("onclick");
 	   	}

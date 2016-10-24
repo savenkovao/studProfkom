@@ -178,7 +178,7 @@ window.addEventListener("resize", resizeFunction);
 function resizeFunction (){
 	currentWrapperWidth = window.innerWidth;
 	currentWrapperHeight = window.innerHeight;	
-	if (currentWrapperWidth < 768) {
+	if (currentWrapperWidth <= 768) {
 		for(var i = photosOnPagePrevious+1;i<=photosOnPage;i++){
 	    	imageСontainer[i].removeAttribute("onclick");
 	   	}

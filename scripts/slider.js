@@ -14,12 +14,12 @@ var currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth -
 setSlider();
 
 function setSlider(){
-	if(currentWrapperWidth<768){
+	if(currentWrapperWidth<=768){
 		sliderInner = document.querySelector('.slider-inner-mobile');		
 	} else {
-		sliderInner = document.querySelector('.slider-inner-desktop');
-		
+		sliderInner = document.querySelector('.slider-inner-desktop');		
 	}
+	sliderInner.style.display = "block";
 }
 
 createRadioButtons ();
@@ -67,6 +67,7 @@ window.addEventListener("resize", getNewWrapperWidth);
 
 function getNewWrapperWidth (){
 	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
+	sliderInner.style.display = "none";
 	setSlider();
 	sliderInner.style.width = currentWrapperWidth + 'px';
 	if (clickCounter>=0) {
