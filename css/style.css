@@ -1077,6 +1077,7 @@ footer{
 .tab-chosen{
 	position: relative;
 	margin-left: 1.7rem;
+	font-weight: bold;
 }
 
 .tab-chosen::before{
