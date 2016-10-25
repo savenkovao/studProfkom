@@ -67,9 +67,10 @@ footer{
 }
 
 
-.clear-link{
-	color: #333;	
-}
+.clear-link,
+.clear-link:focus,
+.clear-link:active,
+.clear-link:visited,
 .clear-link:hover{
 	text-decoration: none;
 	color: #333;
@@ -158,7 +159,9 @@ footer{
 .menu-item-link {
 	font-weight: bold;
 }
-
+.menu-item-link:active,
+.menu-item-link:focus,
+.menu-item-link:visited,
 .menu-item-link:hover{
 	text-decoration:none;
 }
@@ -304,6 +307,7 @@ footer{
 	position: relative;
 	color: white;
 	font-size: 16px;
+	margin-left: -0.75rem;
 }
 
 .networks-content-link{
@@ -322,7 +326,7 @@ footer{
 	width: 1.5em;
 	height: 1.5em;
 	top:0;
-	right: -2em;
+	margin-left: 0.5rem;
 	background-image: url(../images/design/vk.png);
 	background-size: cover;
 	background-position: center;
@@ -752,6 +756,10 @@ footer{
 .page-project-3{
 	background-image: url(../images/content/projects/projects-logos/made_in_studprofkom.jpg);	
 }
+.page-project-4{
+	background-image: url(../images/content/projects/projects-logos/ogasa_student_tv.jpg);	
+}
+
 
 
 
@@ -765,6 +773,9 @@ footer{
 }
 .page-travel-3{
 	background-image: url(../images/content/travels/travels-icons/bukovel_2015.jpg);	
+}
+.page-travel-4{
+	background-image: url(../images/content/travels/travels-icons/lviv_2016.jpg);	
 }
 
 /*zk's backgrounds*/
@@ -780,7 +791,7 @@ footer{
 }
 
 
-/*video's backgrounds*/
+/*video's backgrounds 750x500px*/
 .page-video-1{
 	background-image: url(../images/content/videos/video-icons/1.jpg);	
 }
@@ -844,8 +855,108 @@ footer{
 .page-video-21{
 	background-image: url(../images/content/videos/video-icons/21.jpg);	
 }
-
-
+.page-video-22{
+	background-image: url(../images/content/videos/video-icons/22.jpg);	
+}
+.page-video-23{
+	background-image: url(../images/content/videos/video-icons/23.jpg);	
+}
+.page-video-24{
+	background-image: url(../images/content/videos/video-icons/24.jpg);	
+}
+.page-video-25{
+	background-image: url(../images/content/videos/video-icons/25.jpg);	
+}
+.page-video-26{
+	background-image: url(../images/content/videos/video-icons/26.jpg);	
+}
+.page-video-27{
+	background-image: url(../images/content/videos/video-icons/27.jpg);	
+}
+.page-video-28{
+	background-image: url(../images/content/videos/video-icons/28.jpg);	
+}
+.page-video-29{
+	background-image: url(../images/content/videos/video-icons/29.jpg);	
+}
+.page-video-30{
+	background-image: url(../images/content/videos/video-icons/30.jpg);	
+}
+.page-video-31{
+	background-image: url(../images/content/videos/video-icons/31.jpg);	
+}
+.page-video-32{
+	background-image: url(../images/content/videos/video-icons/32.jpg);	
+}
+.page-video-33{
+	background-image: url(../images/content/videos/video-icons/33.jpg);	
+}
+.page-video-34{
+	background-image: url(../images/content/videos/video-icons/34.jpg);	
+}
+.page-video-35{
+	background-image: url(../images/content/videos/video-icons/35.jpg);	
+}
+.page-video-36{
+	background-image: url(../images/content/videos/video-icons/36.jpg);	
+}
+.page-video-37{
+	background-image: url(../images/content/videos/video-icons/37.jpg);	
+}
+.page-video-38{
+	background-image: url(../images/content/videos/video-icons/38.jpg);	
+}
+.page-video-39{
+	background-image: url(../images/content/videos/video-icons/39.jpg);	
+}
+.page-video-40{
+	background-image: url(../images/content/videos/video-icons/40.jpg);	
+}
+.page-video-41{
+	background-image: url(../images/content/videos/video-icons/41.jpg);	
+}
+.page-video-42{
+	background-image: url(../images/content/videos/video-icons/42.jpg);	
+}
+.page-video-43{
+	background-image: url(../images/content/videos/video-icons/43.jpg);	
+}
+.page-video-44{
+	background-image: url(../images/content/videos/video-icons/44.jpg);	
+}
+.page-video-45{
+	background-image: url(../images/content/videos/video-icons/45.jpg);	
+}
+.page-video-46{
+	background-image: url(../images/content/videos/video-icons/46.jpg);	
+}
+.page-video-47{
+	background-image: url(../images/content/videos/video-icons/47.jpg);	
+}
+.page-video-48{
+	background-image: url(../images/content/videos/video-icons/48.jpg);	
+}
+.page-video-49{
+	background-image: url(../images/content/videos/video-icons/49.jpg);	
+}
+.page-video-50{
+	background-image: url(../images/content/videos/video-icons/50.jpg);	
+}
+.page-video-51{
+	background-image: url(../images/content/videos/video-icons/51.jpg);	
+}
+.page-video-52{
+	background-image: url(../images/content/videos/video-icons/52.jpg);	
+}
+.page-video-53{
+	background-image: url(../images/content/videos/video-icons/53.jpg);	
+}
+.page-video-54{
+	background-image: url(../images/content/videos/video-icons/54.jpg);	
+}
+.page-video-55{
+	background-image: url(../images/content/videos/video-icons/55.jpg);	
+}
 
 
 
@@ -938,7 +1049,53 @@ footer{
 
 .information{
 	text-align: left;
+	padding-left: 30px;
 }
+
+
+.tab_block{
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 15px;
+}
+
+.tab{
+	margin: 10px 0;
+	padding: 2.5px 0;
+}
+
+
+.tab_block-information{
+	margin: 15px 0;
+	padding: 10px;
+	border:2px solid rgba(0,0,0,0.3);
+	/*background-color: rgba(0, 255, 17,0.2);*/
+}
+
+.tab-chosen{
+	position: relative;
+	margin-left: 1.7rem;
+}
+
+.tab-chosen::before{
+	content:'';
+	width: 1.5rem;
+	height: 1.5rem;
+	top: calc(50% - 0.75rem);
+	position: absolute;
+	margin-left: -2.2rem;
+	background-position:center;
+	background-size: cover;
+	background-image: url(../images/design/useful-information.png);	
+	
+}
+
+
+
+
+
+
 
 
 
@@ -1543,6 +1700,7 @@ footer{
 	.content-event-title{
 		display: block;
 	}
+
 	.networks-content-link::after,
 	.networks-link::after{
 		content: '';
@@ -1550,7 +1708,7 @@ footer{
 		width: 1.5em;
 		height: 1.5em;
 		top:0;
-		right: -2em;
+		margin-left: 0.5rem;
 		background-image: url(../images/design/vk.png);
 		background-size: cover;
 		background-position: center;
