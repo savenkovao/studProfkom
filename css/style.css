@@ -1,11 +1,12 @@
-@import 'https://fonts.googleapis.com/css?family=Didact+Gothic';
+@import url('https://fonts.googleapis.com/css?family=Andika');
+
 
 *{
 	box-sizing: border-box;
 }
 
 body{
-	font-family:'Andika', 'Didact Gothic','Futura', sans-serif;
+	font-family:'Andika', 'Futura', sans-serif;
 	font-size: 14px;
 }
 
