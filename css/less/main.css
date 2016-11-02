@@ -1,0 +1,157 @@
+@import 'https://fonts.googleapis.com/css?family=Didact+Gothic';
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 400 14px 'Didact Gothic', 'Futura', sans-serif;
+  line-height: 14px;
+}
+body .wrapper {
+  max-width: 1200px;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 70px;
+}
+header {
+  margin-top: 10px;
+  height: 50px;
+}
+header .header-logo {
+  height: 50px;
+  text-align: center;
+}
+header .logo-block {
+  height: 40px;
+  width: 61px;
+  margin: 5px auto;
+  background-image: url("../images/design/ogasa.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+header .logo-block-white_icon {
+  background-image: url("../images/design/ogasa-white.png");
+}
+header .header-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+header .header-menu .menu-item {
+  list-style-type: none;
+  z-index: 10;
+  width: 16%;
+  position: relative;
+  padding: 5px;
+  border: 1.8px solid transparent;
+  border-radius: 1rem;
+}
+header .header-menu .menu-item:hover {
+  border-color: rgba(22, 95, 67, 0.23);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+header .header-menu .menu-item:hover .submenu {
+  display: inline-block;
+  width: 150%;
+}
+header .header-menu .menu-item .menu-item-link {
+  font-weight: bold;
+}
+header .header-menu .menu-item .menu-item-link:active,
+header .header-menu .menu-item .menu-item-link:focus,
+header .header-menu .menu-item .menu-item-link:visited,
+header .header-menu .menu-item .menu-item-link:hover {
+  text-decoration: none;
+  color: #23527c;
+}
+header .header-menu .menu-item .submenu {
+  padding: 10px;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  top: 107%;
+  left: -25%;
+  border-radius: 1rem;
+}
+header .header-menu .menu-item .submenu .menu-item {
+  width: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+.no-marker > li {
+  list-style-type: none;
+}
+.marker-1 {
+  list-style-image: url("../images/design/basketball-marker.png");
+}
+.marker-2 {
+  list-style-image: url("../images/design/theatre-1.png");
+}
+.button_external_link {
+  display: block;
+  padding: 10px;
+  margin: 15px auto;
+  width: 24rem;
+  text-align: center;
+  height: auto;
+  color: white;
+  font-size: 1.8rem;
+  background: -moz-linear-gradient(top, #faa51a, #f47a20);
+  /* для Firefox */
+  background-image: -o-linear-gradient(top, #faa51a, #f47a20);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+}
+.button_external_link:hover,
+.button_external_link:visited,
+.button_external_link:active,
+.button_external_link:focus {
+  text-decoration: none;
+  color: white;
+}
+.bold {
+  font-weight: bold;
+}
+.clear-link,
+.clear-link:focus,
+.clear-link:active,
+.clear-link:visited,
+.clear-link:hover {
+  text-decoration: none;
+  color: #333333;
+}
+.block_element {
+  display: block;
+}
+.block-center {
+  display: block;
+  margin: 0 auto;
+}
+.text-align-left {
+  text-align: left;
+}
+.width_4 {
+  width: 40%;
+}
+.width_5 {
+  width: 50%;
+}
+.width_7 {
+  width: 70%;
+}
+.disabled {
+  display: none !important;
+}
+.important_information {
+  color: red;
+  font-size: 1.7rem;
+}

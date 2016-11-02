@@ -125,6 +125,13 @@ function openPhoto () {
 			btnClose.onclick = function (){
 				photoBlock.remove();
 			}
+
+			photoBlock.onclick = function (){
+				currentPhoto.style.zIndex = "-1";
+			}
+			photoBlock.oncontextmenu = function (){
+				currentPhoto.style.zIndex = "1";
+			}
 	    };	
 	}
 };

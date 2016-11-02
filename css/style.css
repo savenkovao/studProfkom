@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Andika');
+@import 'https://fonts.googleapis.com/css?family=Didact+Gothic';
 
 
 *{
@@ -6,7 +6,7 @@
 }
 
 body{
-	font-family:'Andika', 'Futura', sans-serif;
+	font-family:'Didact Gothic', 'Futura', sans-serif;
 	font-size: 14px;
 }
 
@@ -75,6 +75,7 @@ footer{
 .clear-link:hover{
 	text-decoration: none;
 	color: #333;
+	cursor: pointer;
 }
 
 .block_element{
@@ -212,11 +213,12 @@ footer{
 }
 
 .slider-inner-desktop{
-	transition: margin-left 0.5s linear;	
+	transition: margin-left 0.3s linear;	
 }
 
 .slider-inner-mobile{
 	display: none;
+	transition: margin-left 0.3s linear;
 }
 
 .slider-item{
@@ -1066,11 +1068,16 @@ footer{
 	padding: 2.5px 0;
 }
 
+.tab:hover{
+	font-weight: bold;
+}
+
 
 .tab_block-information{
 	margin: 15px 0;
 	padding: 10px;
-	border:2px solid rgba(0,0,0,0.3);
+	border:1.5px solid rgba(0,0,0,0.3);
+	transition: display 2s linear;
 	/*background-color: rgba(0, 255, 17,0.2);*/
 }
 
@@ -1091,6 +1098,12 @@ footer{
 	background-size: cover;
 	background-image: url(../images/design/useful-information.png);	
 	
+}
+
+.tab-image{
+	width: 50%;
+	float: right;
+	padding: 10px;
 }
 
 
@@ -1253,6 +1266,24 @@ footer{
 }
 .news-block-wrapper.news_20::before{
 	background-image: url(../images/content/news/news-icons/news_20.jpg);
+}
+.news-block-wrapper.news_21::before{
+	background-image: url(../images/content/news/news-icons/news_21.jpg);
+}
+.news-block-wrapper.news_22::before{
+	background-image: url(../images/content/news/news-icons/news_22.jpg);
+}
+.news-block-wrapper.news_23::before{
+	background-image: url(../images/content/news/news-icons/news_23.jpg);
+}
+.news-block-wrapper.news_24::before{
+	background-image: url(../images/content/news/news-icons/news_24.jpg);
+}
+.news-block-wrapper.news_25::before{
+	background-image: url(../images/content/news/news-icons/news_25.jpg);
+}
+.news-block-wrapper.news_26::before{
+	background-image: url(../images/content/news/news-icons/news_26.jpg);
 }
 
 
@@ -1783,5 +1814,9 @@ footer{
 		padding: 10px;
 	}
 
-}
+	.tab-image{
+		width: 100%;
+		float: none;
+	}
 
+}

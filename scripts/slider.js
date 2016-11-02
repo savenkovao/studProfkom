@@ -79,24 +79,24 @@ function getNewWrapperWidth (){
 
 function browseRight () {
 	var currentMargin = parseInt(sliderInner.style.marginLeft)||0;
-	sliderInner.style.transition = 'margin-left 0.3s linaer';	
+	sliderInner.style.transition = 'margin-left 0.3s linear';	
 	
 	if(currentMargin != (sliderItems - 1)*-currentWrapperWidth){
 		sliderInner.style.marginLeft = currentMargin - currentWrapperWidth + 'px';
 	} else {
 		sliderInner.style.marginLeft = '0px';
-		sliderInner.style.transition = 'margin-left 0.1s linaer';
+		sliderInner.style.transition = 'margin-left 0.1s linear';
 	}
 }
 
 function browseLeft () {
 	var currentMargin = parseInt(sliderInner.style.marginLeft)||0;
-	sliderInner.style.transition = 'margin-left 0.3s linaer';	
+	sliderInner.style.transition = 'margin-left 0.3s linear';	
 	if(currentMargin !=0){
 		sliderInner.style.marginLeft = currentMargin + currentWrapperWidth + 'px';
 	} else {
 		sliderInner.style.marginLeft = ((sliderItems - 1)* -currentWrapperWidth)+'px';
-		sliderInner.style.transition = 'margin-left 0.1s linaer';
+		sliderInner.style.transition = 'margin-left 0.1s linear';
 	}
 }
 

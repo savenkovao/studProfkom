@@ -17,7 +17,7 @@ var btnOpenMoreLink;
 var btnOpenMore;
 var sourceInformation = document.querySelectorAll('.source-information')[0];
 var imageQuantity = +sourceInformation.getAttribute('name');
-var source = sourceInformation.getAttribute('href');
+var source = sourceInformation.getAttribute('src');
 var contentGallery = document.querySelectorAll('.content-gallery')[0];
 var contentHeader =  document.querySelectorAll('.content-description-header')[0].innerHTML;
 var btnMoreContainer =  document.querySelectorAll('.btn_more_container')[0];
@@ -168,6 +168,13 @@ function openPhoto () {
 			
 			btnClose.onclick = function (){
 				photoBlock.remove();
+			}
+
+			photoBlock.onclick = function (){
+				currentPhoto.style.zIndex = "-1";
+			}
+			photoBlock.oncontextmenu = function (){
+				currentPhoto.style.zIndex = "1";
 			}
 	    };	
 	}

@@ -1,0 +1,26 @@
+@btnBorderColor:rgba(0,0,0,0.1);
+@backgroundColor_1:#faa51a;
+@backgroundColor_2:#f47a20;
+
+.button_external_link{
+	display: block;
+	padding: 10px;
+	margin:15px auto;
+	width: 24rem;
+	text-align: center;
+	height: auto;
+	color: @colorWhite;
+	font-size: 1.8rem;
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20); /* для Firefox */
+    background-image: -o-linear-gradient(top,  #faa51a,  #f47a20);
+	
+	.setBorder( 2px, @btnBorderColor, 2rem);
+    
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus{
+    	text-decoration: none;
+		color: @colorWhite;
+    }
+}
