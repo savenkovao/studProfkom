@@ -92,11 +92,28 @@ footer{
 }
 
 .marker-1{
-	list-style-image: url(../images/design/basketball-marker.png);
+	list-style-image: url(../images/design/marker-1.png);
 }
 .marker-2{
-	list-style-image: url(../images/design/theatre-1.png);
+	list-style-image: url(../images/design/marker-2.png);
 }
+.marker-3{
+	list-style-image: url(../images/design/marker-3.png);
+}
+.marker-4{
+	list-style-image: url(../images/design/marker-4.png);
+}
+.marker-5{
+	list-style-image: url(../images/design/marker-5.png);
+}
+.marker-6{
+	list-style-image: url(../images/design/marker-6.png);
+}
+
+
+
+
+
 
 .text-align-left {
 	text-align: left;
@@ -629,6 +646,12 @@ footer{
 }
 .content-contacts.contact_9::before{
 	background-image: url(../images/content/contacts/person_pic/contact9.jpg);
+}
+.content-contacts.contact_10::before{
+	background-image: url(../images/content/contacts/person_pic/contact10.jpg);
+}
+.content-contacts.contact_11::before{
+	background-image: url(../images/content/contacts/person_pic/contact11.jpg);
 }
 
 .content-contacts-name{
