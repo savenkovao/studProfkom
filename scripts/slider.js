@@ -28,7 +28,7 @@ arrowLeft.classList.add("enabled");
 arrowRight.classList.add("enabled");
 
 arrowRight.onclick = function (){
-	clearTimeout(timerId);
+	// clearTimeout(timerId);
 	rightOnClick();
 }
 
@@ -45,7 +45,7 @@ function rightOnClick(){
 }
 
 arrowLeft.onclick = function (){
-	clearTimeout(timerId);
+	// clearTimeout(timerId);
 	leftOnClick();
 }
 
@@ -114,7 +114,7 @@ function createRadioButtons (){
 }
 
 function chooseSlide (i){
-	clearTimeout(timerId);
+	// clearTimeout(timerId);
 	clickCounter = i;	
 	changeButtonBackGround ();
 	radioButton[i].style.backgroundColor= 'rgb(80, 210, 89)';
@@ -136,6 +136,16 @@ var timerId = setInterval(
 	}, 
 2700);
 
+contentSlider.onmouseover = function (){
+	clearTimeout(timerId);
+}
 
+contentSlider.onmouseout = function (){
+	timerId = setInterval(
+		function() { 
+			rightOnClick();
+		}, 
+	2700);
+}
 
 
