@@ -13,22 +13,19 @@ var burgerMenuWhiteIcon = "mobile-menu-white_icon";
 var logoWhiteIcon = "logo-block-white_icon";
 var colorTransparent = 'transparent';
 var headerBackgroundColor = "rgba(255,255,255,0.9)";
-var mobileMenuBackgroundColor = 'rgba(0,0,0,0.95)';
 var mobileMenuBackground;
 
 createBlockMenuBackground ();
 
 function createBlockMenuBackground (){
+	
 	mobileMenuBackground = document.createElement('div');
 	mobileMenuBackground.classList.add("mobile-menu-background");
 	headerLogo.appendChild(mobileMenuBackground);
 	if(currentScreenWidth<=768){
-		headerMenuMobile.style.height = (currentScreenHeight - 70) + "px";	
+		headerMenuMobile.style.display = "none";	
 	}
 }
-
-
-
 
 setCurrentScreenWidth();
 
@@ -40,16 +37,14 @@ setNewClasses ();
 
 function setNewClasses (){	
 	if(currentScreenWidth<=768){
-		headerMenuMobile.style.height = (currentScreenHeight - 70) + "px";	
-		mobileMenu.style.display = "block";
-		mobileMenuBackground.style.display = "block";
-		mobileMenuBackground.style.position = "fixed";
 		mobileMenuBackground.style.left = "-80%";
-		headerMenuMobile.style.position = "fixed";
-		headerMenuMobile.style.left = "-80%";
-		headerMenuMobile.style.backgroundColor = mobileMenuBackgroundColor;
+		headerMenuMobile.style.left = "-80%";		
+		mobileMenuBackground.style.position = "fixed";		
+		headerMenuMobile.style.position = "fixed";		
+		headerMenuMobile.style.zIndex = 15;
 		headerMenuMobile.style.transition = "left 0.15s linear";
 		mobileMenuBackground.style.transition = "left 0.15s linear";
+		mobileMenu.style.display = "block";		
 	}	
 }
 
@@ -68,6 +63,7 @@ function resizeFunction (){
 	currentScreenWidth = document.documentElement.clientWidth;	
 	currentScreenHeight = document.documentElement.clientHeight;	
 	mainCounter=0;
+	headerMenuMobile.style.display = "none";
 
 	if(previousScreenWidth<=768){
 		if (currentScreenWidth<=768){
@@ -76,29 +72,31 @@ function resizeFunction (){
 			enableDesktopMenu ();
 		}
 	} else{
-		if (currentScreenWidth<=768){
-			setNewClasses ();
+		if (currentScreenWidth<=768){			
+			setNewClasses ();			
+		} else{
+			headerMenuMobile.style.display = "flex";
 		}
 	}
 	setCurrentScreenWidth();			
 }
 
 function enableDropMenu (){
-	headerMenuMobile.style.height = (currentScreenHeight - 70) + "px";	
 	hideMenu();	
 }
 
 function enableDesktopMenu (){
-	headerMenuMobile.style.height = "auto";	
+	headerMenuMobile.style.display = "flex";
 	headerMenuMobile.style.position = "relative";
 	headerMenuMobile.style.left = "0";
-	headerMenuMobile.style.padding = "0";
 	mobileMenuBackground.style.left = "0";
 	headerMenuMobile.style.backgroundColor = colorTransparent;
 	headerMenuMobile.style.transition = "none";
 }
 
 function showMenu(){
+	mobileMenuBackground.style.display = "block";
+	headerMenuMobile.style.display = "block";
 	headerLogo.style.zIndex = "13";
 	headerMenuMobile.style.left = "0";
 	mobileMenuBackground.style.left = "0";
@@ -108,6 +106,7 @@ function showMenu(){
 }
 
 function hideMenu(){
+	headerMenuMobile.style.display = "none";
 	headerLogo.style.zIndex = "11";
 	headerMenuMobile.style.left = "-80%";
 	mobileMenuBackground.style.left = "-80%";
@@ -115,6 +114,7 @@ function hideMenu(){
 	logoBlock.classList.remove(logoWhiteIcon);
 	headerLogo.style.backgroundColor = headerBackgroundColor;
 	mobileMenu.style.backgroundColor = colorTransparent;
+	
 }
 
 

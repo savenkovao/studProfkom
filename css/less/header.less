@@ -12,11 +12,16 @@ header {
 		height: 40px;
 		width: 61px;
 		margin: 5px auto;	
-		.setBackgroudImage(@mainLogo);
+		.setBackgroundImage(@mainLogo);
+		background-position: top;
+
+		@media @mobile{
+			margin: 0 auto;
+		}
 	}
 
 	.logo-block-white_icon {
-		background-image: url(@mainLogoWhite);
+		background-position: bottom;
 	}
 
 	.header-menu {
@@ -29,14 +34,16 @@ header {
 		margin: @blankMargin;
 		font-size: 1.5rem;
 		
-		.menu-item{	
+		.menu-item{
+			display: inline-block; //for old browsers
+			width: 16.6%;	
 			list-style-type: none;
 			z-index: 10;
-			width: 16%;
 			position: relative;
 			padding:5px;
 			.setBorder(1.8px, transparent, 1rem);
-			
+			transition: background-color, border-color 0.2s linear;			
+			color: @menuLinkColor;
 			&:hover{
 				border-color: @menuItemHvBrd;
 				background-color: @menuItemHvBgCl;
@@ -49,9 +56,9 @@ header {
 
 			.menu-item-link {
 				font-weight: bold;
+				color: @menuLinkColor;
 				&:active,
 				&:focus,
-				&:visited,
 				&:hover{
 					text-decoration:none;
 					color: @menuLinkHover;
@@ -65,21 +72,127 @@ header {
 				position: absolute;
 				top:107%;
 				left: -25%;
-				border-radius: 1rem;
+				.setBorder(0, transparent, 1rem);
 
 				.menu-item{
 					width: 100%;
 				}
-			}
-
-			
+			}			
 		}
-
 	}
 
-	
+	@media @mobile{
+		margin-top: 0;
+	}
 
+	@media @mobile{
+		.header-logo-mobile{
+			position: fixed;
+			width: 100%;
+			height: 60px;
+			top: 0;
+			margin: 0 auto;	
+			padding: 10px;
+			background-color: @logoMobileClr;
+			z-index: 11;
 
+			.mobile-menu{
+				display: none;
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				.setBackgroundImage(@brgMenuIcon);
+				background-position: top;
+				z-index: 13;	
+			}
 
-	
+			.mobile-menu-white_icon{
+				background-position: bottom;
+			}
+
+			.mobile-menu-background{
+				display: block;
+				position: absolute;
+				width: 80%;
+				height: 100%;
+				top:0;
+				left: 0;
+				background-color: @mobileMenuBgclr;
+				z-index: -1;
+			}
+		}
+
+		.header-menu-mobile{
+			display: block;
+			position: relative;
+			width: 80%;
+			height: 100%;		
+			// .height(100%,"-",70px);
+			top: 0;
+			left: 0;	
+			margin: 70px 0 0;		
+			padding-bottom: 70px;
+			background-color: @hdrMenuMobileBgclr;
+			z-index: 10;
+			text-align: left;
+			overflow: auto;	
+
+			.menu-item-mobile {
+				display: block;
+				width: auto;
+				padding: 7px 0 7px 15px;
+				border: 0;
+				border-radius: 0;
+				list-style-type: none;
+
+				&.expand{
+					padding-bottom: 0;
+				}
+
+				&:hover {
+					border-color: transparent;
+					width: auto;
+				}
+
+				.menu-item-link{
+					color: white;
+
+					&:hover{
+						color: rgb(89, 196, 96);
+					}
+				}
+
+				.submenu.submenu-mobile {
+					display: inline-block;
+					position: relative;
+					width: 100%;
+					top: 0;
+					left: 0;
+					padding: 0;
+					background-color: transparent;
+
+					&::before{
+						content: '';
+						position: absolute;
+						width: 90%;
+						height: 2px;
+						background-color: @subMenuMline;
+						top: 3px;
+						left: 15px;
+						z-index: 16;
+					}
+
+					.menu-item-link{
+						color: white;
+
+						&:hover{
+							color: rgb(89, 196, 96);
+						}
+					}
+				}
+			}
+		}
+	}
+
 }
+

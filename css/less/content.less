@@ -1,0 +1,115 @@
+.content-description-subheader,
+.content-description-header{
+	padding:20px;
+	font-size: 2.8rem;
+	text-align: center;
+	background-color: @content-header;
+}
+
+.content-description-subheader {
+	font-size: 1.7rem;
+	font-weight: bold;
+
+	@media @mobile{
+		padding: 10px;
+	}
+}
+
+.content-description-text{
+	margin-top:2rem;
+	padding:20px;
+	font-size: 1.6rem;
+	text-align: center;
+	background-color: @content-description;
+}
+
+
+
+.networks{
+	height: auto;
+	background-color: @footerBgColor;
+	line-height: 60px;
+	font-weight: 500;
+	text-align-last: center;
+	text-align: center;
+
+	.networks-link {
+		position: relative;
+		color: white;
+		font-size: 16px;
+		margin-left: -0.75rem;
+
+		&:hover,
+		&:active,
+		&:visited,
+		&:focus {
+			color: white;
+			text-decoration: none;
+		}
+	}	
+}
+
+.networks-content-link{
+	position: relative;
+	&:hover{
+		text-decoration: none;	
+	}
+}
+
+.networks-content-link::after,
+.networks-link::after{
+	content: '';
+	position: absolute;
+	width: 1.5em;
+	height: 1.5em;
+	top:0;
+	margin-left: 0.5rem;
+	.setBackgroundImage (@vkIcon);
+	background-position: top;
+	transition: background-position 0.2s linear;
+}
+
+.networks-content-link:hover::after,
+.networks-link:hover::after{
+	background-position: bottom;
+}
+
+
+
+
+@media @mobile{
+	.networks-content-link::after,
+	.networks-link::after{
+		content: '';
+		position: absolute;
+		width: 1.5em;
+		height: 1.5em;
+		top:0;
+		margin-left: 0.5rem;
+		.setBackgroundImage (@vkIcon);
+		background-position: top;
+	}
+}
+
+.networks-icon{
+	width: 1.5em;
+}
+
+.link-person{
+	&:hover,
+	&:active,
+	&:visited,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+

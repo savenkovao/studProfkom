@@ -8,6 +8,8 @@ var currentPhotoWidth;
 var photosOnPagePrevious;
 var imageСontainer = [];
 var image_containerInner = [];
+var imageСontainerbackground = [];
+var imageMob = [];
 var photoStep = 20;
 var photosOnPage = 0;
 var currentWrapperWidth = window.innerWidth;
@@ -21,6 +23,7 @@ var source = sourceInformation.getAttribute('src');
 var contentGallery = document.querySelectorAll('.content-gallery')[0];
 var contentHeader =  document.querySelectorAll('.content-description-header')[0].innerHTML;
 var btnMoreContainer =  document.querySelectorAll('.btn_more_container')[0];
+
 
 createButtonOpenMore();
 uploadImages();
@@ -60,13 +63,27 @@ function createButtonOpenMore(){
 
 function addImage (num){
 	imageСontainer[num] = document.createElement('div');
-	imageСontainer[num].className ="content-gallery-block image_container short";	
-	image_containerInner[num] = document.createElement('img');
-	image_containerInner[num].setAttribute("src", source + num + ".jpg");
-	image_containerInner[num].setAttribute("alt", contentHeader+ ' - фото_' + num);
-	image_containerInner[num].className ="content-image image_container_inner";
-	imageСontainer[num].appendChild(image_containerInner[num]);
-	contentGallery.appendChild(imageСontainer[num]);
+	imageСontainer[num].className ="content-gallery-block image_container short";
+	imageСontainer[num].style.position = "relative";
+
+	imageСontainerbackground[num] = document.createElement('div');
+	imageСontainerbackground[num].style.height = "100%";
+	imageСontainerbackground[num].style.width = "100%";
+	imageСontainerbackground[num].style.position = "absolute";
+	imageСontainerbackground[num].style.backgroundImage ="url("+source+num+".jpg)";
+	imageСontainerbackground[num].style.backgroundPosition = "center";
+	imageСontainerbackground[num].style.backgroundSize = "cover";
+	imageСontainerbackground[num].style.backgroundRepeat = "no-repeat";
+	imageСontainerbackground[num].className ="content-image image_container_inner desktop_img";
+
+	imageMob[num] = document.createElement('img');	
+	imageMob[num].setAttribute("src", source+num+".jpg");
+	imageMob[num].className= "content-image mobile_img";
+
+
+	imageСontainer[num].appendChild(imageMob[num]);
+	imageСontainer[num].appendChild(imageСontainerbackground[num]);
+	contentGallery.appendChild(imageСontainer[num]);	
 }
 
 btnOpenMoreLink.onclick = function(){
@@ -114,22 +131,29 @@ function openPhoto () {
 			photoNumber.classList.add("photoNumber");
 			photoNumber.innerHTML = e + ' / ' + photosOnPage;
 
-			addImage ();
+			addImage (e);
 
-			function addImage (){
-				currentPhoto = image_containerInner[e].cloneNode(true);		
+			function addImage (e){
+				currentPhoto = document.createElement('img');	
 				getImageSize ();
+				currentPhoto.setAttribute("src", source + e + ".jpg");
+				currentPhoto.setAttribute("alt", contentHeader+ ' - фото_' + e);				
 				currentPhoto.classList.add("currentPhoto");
 				imageOpenContainer.appendChild(currentPhoto);
 			}
 
 			function getImageSize (){
-				if((currentWrapperWidth/currentWrapperHeight)<(image_containerInner[e].offsetWidth/image_containerInner[e].offsetHeight)){
+				var img = new Image();
+				img.src = source + e + ".jpg";
+
+				// console.log(img.src);
+				// console.log(img.width);
+				if((currentWrapperWidth/currentWrapperHeight)<(img.width/img.height)){					
 					currentPhoto.classList.add("wide-image");
 					currentPhotoWidth = currentWrapperWidth;
 				} else {
 					currentPhoto.classList.add("extended-image");
-					currentPhotoWidth = (currentWrapperHeight*0.97) * image_containerInner[e].offsetWidth/image_containerInner[e].offsetHeight;
+					currentPhotoWidth = (currentWrapperHeight*0.97) * (img.width/img.height);
 				}	
 			}
 			
@@ -150,7 +174,7 @@ function openPhoto () {
 					e = 1;
 				}
 				photoNumber.innerHTML = e + ' / ' + photosOnPage;
-				addImage ();
+				addImage (e);
 			}
 
 			btnLeft.onclick = function(event){
@@ -161,7 +185,7 @@ function openPhoto () {
 					e = photosOnPage;
 				}
 				photoNumber.innerHTML = e + ' / ' + photosOnPage;
-				addImage ();	
+				addImage (e);	
 			}
 
 			body.appendChild(photoBlock);
@@ -184,14 +208,15 @@ window.addEventListener("resize", resizeFunction);
 	
 function resizeFunction (){
 	currentWrapperWidth = window.innerWidth;
-	currentWrapperHeight = window.innerHeight;	
+	currentWrapperHeight = window.innerHeight;
 	if (currentWrapperWidth <= 768) {
 		for(var i = photosOnPagePrevious+1;i<=photosOnPage;i++){
 	    	imageСontainer[i].removeAttribute("onclick");
 	   	}
-	}
+	}	
 	openPhoto ();
 };
+
 
 
 
