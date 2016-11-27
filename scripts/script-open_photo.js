@@ -1,158 +1,171 @@
 "use strict";
 
-var photoLink = document.querySelectorAll('.image_container');
-var photoInLink = document.querySelectorAll('.image_container_inner');
-var body = document.getElementsByTagName('body')[0];
 var photoBlock;
 var createPhotoBlock;
 var currentPhoto;
-var imageContainer;
+var imageOpenContainer;
+var currentPhotoWidth;
+var photosOnPagePrevious;
+var photoNumber;
+var btnRight;
+var arrowRight;
+var btnLeft;
+var arrowLeft;
+var btnClose;
+var closePic;
+var imageСontainer = document.querySelectorAll('.image_container');
+var imageСontainerInner = document.querySelectorAll('.image_container_inner');
 var currentWrapperWidth = window.innerWidth;
 var currentWrapperHeight = window.innerHeight;
-var currentPhotoWidth;
-var len;
-var photoStep = 20;
-var photosOnPage;
+var body = document.getElementsByTagName('body')[0];
+var btnOpenMoreLink;
+var btnOpenMore;
 
-setOffPhotos();
-	
-function setOffPhotos(){
-	if(photoLink.length>photoStep){
-		photosOnPage = photoStep;		
-		for (var i = photosOnPage; i < photoLink.length; i++) {
-			photoLink[i].style.display = 'none';			
-		} 
+setOclickEvent ();	
+
+function setOclickEvent (){
+	if (currentWrapperWidth > 768){
+	    for(var i = 0;i<imageСontainer.length;i++){
+	    	imageСontainer[i].setAttribute("onclick", "createPhotoBlock(" + i + ")");
+	    }
 	} else {
-		photosOnPage = photoLink.length;		
+		for(var i = 0;i<imageСontainer.length;i++){
+	    	imageСontainer[i].removeAttribute("onclick");
+	   	}
+	}
+}
+
+createPhotoBlock_1 ();
+
+function createPhotoBlock_1 (){
+	body.style.position = 'relative';
+	photoBlock = document.createElement('div');
+	photoBlock.classList.add("photoBlock");
+
+	imageOpenContainer = document.createElement('div');			
+	imageOpenContainer.classList.add("imageContainer");
+
+	btnRight = document.createElement('div');
+	btnRight.classList.add("btn_browse", "btnRight");
+
+	arrowRight = document.createElement('div');
+	arrowRight.classList.add("btn_arrow", "arrowRight");
+	btnRight.appendChild(arrowRight);
+
+	btnLeft = document.createElement('div');			
+	btnLeft.classList.add("btn_browse", "btnLeft");
+	
+	arrowLeft = document.createElement('div');			
+	arrowLeft.classList.add("btn_arrow", "arrowLeft");
+	btnLeft.appendChild(arrowLeft);
+
+	btnClose = document.createElement('div');
+	btnClose.classList.add("btnClose");
+
+
+	closePic = document.createElement('div');		
+	closePic.classList.add("closePic");
+	btnClose.appendChild(closePic);
+
+	photoNumber = document.createElement('div');
+	photoNumber.classList.add("photoNumber");
+
+	if (imageСontainer.length>1){
+		imageOpenContainer.appendChild(btnRight);
+		imageOpenContainer.appendChild(btnLeft);
 	}	
-	openPhoto ();			
+
+	imageOpenContainer.appendChild(btnClose);
+	imageOpenContainer.appendChild(photoNumber);
+	photoBlock.appendChild(imageOpenContainer);
+	body.appendChild(photoBlock);
 }
 
 
-function openPhoto () {
-
-	if (currentWrapperWidth > 768){
-		len = photoLink.length;
-		var i = 0;
-	    for (;photoLink[i].setAttribute("onclick", "createPhotoBlock(" + i + ")"), ++i < len;);
-
-	    createPhotoBlock = function (e) {	    	
-			body.style.position = 'relative';
-			photoBlock = document.createElement('div');
-			photoBlock.classList.add("photoBlock");
-
-			imageContainer = document.createElement('div');			
-			imageContainer.classList.add("imageContainer");
-		
-			var btnRight = document.createElement('div');
-			btnRight.classList.add("btn_browse", "btnRight");
-
-			var arrowRight = document.createElement('div');
-			arrowRight.classList.add("btn_arrow", "arrowRight");
-			btnRight.appendChild(arrowRight);
-
-			var btnLeft = document.createElement('div');			
-			btnLeft.classList.add("btn_browse", "btnLeft");
-			
-			var arrowLeft = document.createElement('div');			
-			arrowLeft.classList.add("btn_arrow", "arrowLeft");
-			btnLeft.appendChild(arrowLeft);
-
-			var btnClose = document.createElement('div');
-			btnClose.classList.add("btnClose");
+createPhotoBlock = function (e) {    	
+	photoNumber.innerHTML = (e + 1) + ' / ' + imageСontainer.length;
+	setNavigation(e);
+	addPhBlImage (e);
+	photoBlock.style.display = "block";
+}
 
 
-			var closePic = document.createElement('div');		
-			closePic.classList.add("closePic");
-			btnClose.appendChild(closePic);
+function addPhBlImage (e){
+	currentPhoto = imageСontainerInner[e].cloneNode(true);	
+	getImageSize (e);
+	currentPhoto.classList.add("currentPhoto");
+	imageOpenContainer.appendChild(currentPhoto);
+}
 
-			var photoNumber = document.createElement('div');
-			photoNumber.classList.add("photoNumber");
-			photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
+function getImageSize (e){
 
-			addImage ();
-
-			function addImage (){
-				currentPhoto = photoInLink[e].cloneNode(true);		
-				getImageSize ();
-				currentPhoto.classList.add("currentPhoto");
-				imageContainer.appendChild(currentPhoto);
-			}
-
-			function getImageSize (){
-				if((currentWrapperWidth/currentWrapperHeight)<(photoInLink[e].offsetWidth/photoInLink[e].offsetHeight)){
-					currentPhoto.classList.add("wide-image");
-					currentPhotoWidth = currentWrapperWidth;
-				} else {
-					currentPhoto.classList.add("extended-image");
-					currentPhotoWidth = (currentWrapperHeight*0.97) * photoInLink[e].offsetWidth/photoInLink[e].offsetHeight;
-				}	
-			}
-			
-			if (len>1){
-				imageContainer.appendChild(btnRight);
-				imageContainer.appendChild(btnLeft);
-			}
-			
-			imageContainer.appendChild(btnClose);
-			imageContainer.appendChild(photoNumber);
-			photoBlock.appendChild(imageContainer);
-
-			btnRight.onclick = function(event){
-				event.stopPropagation();
-				currentPhoto.remove();				
-				e++;
-				if (e>photosOnPage-1){
-					e = 0;
-				}
-				photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
-				addImage ();
-			}
-
-			btnLeft.onclick = function(event){
-				event.stopPropagation();
-				currentPhoto.remove();				
-				e--;
-				if (e<0){
-					e = photosOnPage-1;
-				}
-				photoNumber.innerHTML = e+1 + ' / ' + photosOnPage;
-				addImage ();	
-			}
-
-			body.appendChild(photoBlock);
-			
-			btnClose.onclick = function (){
-				photoBlock.remove();
-			}
-
-			photoBlock.onclick = function (){
-				currentPhoto.style.zIndex = "-1";
-			}
-			photoBlock.oncontextmenu = function (){
-				currentPhoto.style.zIndex = "1";
-			}
-	    };	
+	if((currentWrapperWidth/currentWrapperHeight)<(imageСontainerInner[e].offsetWidth/imageСontainerInner[e].offsetHeight)){					
+		currentPhoto.classList.add("wide-image");
+		currentPhotoWidth = currentWrapperWidth;
+	} else {
+		currentPhoto.classList.add("extended-image");
+		currentPhotoWidth = (currentWrapperHeight*0.97) * (imageСontainerInner[e].offsetWidth/imageСontainerInner[e].offsetHeight);
 	}
-};
+		
+}
+
+function setNavigation(e){
+	btnRight.onclick = function(event){
+		event.stopPropagation();
+		currentPhoto.remove();				
+		e++;
+		if (e>imageСontainer.length-1){
+			e = 0;
+		}
+		photoNumber.innerHTML = (e+1) + ' / ' + imageСontainer.length;
+		addPhBlImage (e);
+	}
+
+	btnLeft.onclick = function(event){
+		event.stopPropagation();
+		currentPhoto.remove();				
+		e--;
+		if (e<0){
+			e = imageСontainer.length-1;
+		}
+		photoNumber.innerHTML = (e+1) + ' / ' + imageСontainer.length;
+		addPhBlImage (e);	
+	}
+
+	body.appendChild(photoBlock);
+	
+	btnClose.onclick = function (){
+		currentPhoto.remove();
+		photoBlock.style.display = "none";
+	}
+
+	photoBlock.onclick = function (){
+		currentPhoto.style.zIndex = "-1";
+	}
+	photoBlock.oncontextmenu = function (){
+		currentPhoto.style.zIndex = "1";
+	}
+}
 
 window.addEventListener("resize", resizeFunction);
 	
 function resizeFunction (){
 	currentWrapperWidth = window.innerWidth;
 	currentWrapperHeight = window.innerHeight;
-
-	if (currentWrapperWidth <= 768) {
-		for(var i = 0; i<photosOnPage; i++){
-	    	photoLink[i].removeAttribute("onclick");
-	   	}
-	}
-	openPhoto ();
+	setOclickEvent ();
+	resizeHeightWidth();
 };
 
-
-
-
-
-
-	
+function resizeHeightWidth(){
+	if(currentPhoto != undefined){
+		if((currentWrapperWidth/currentWrapperHeight)<(currentPhoto.offsetWidth/currentPhoto.offsetHeight)){					
+			currentPhoto.classList.remove("extended-image");
+			currentPhoto.classList.add("wide-image");
+			currentPhotoWidth = currentWrapperWidth;
+		} else {
+			currentPhoto.classList.remove("wide-image");
+			currentPhoto.classList.add("extended-image");
+			currentPhotoWidth = (currentWrapperHeight*0.97) * (currentPhoto.offsetWidth/currentPhoto.offsetHeight);
+		}
+	}	
+}

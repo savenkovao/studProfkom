@@ -3,11 +3,41 @@
 .content-gallery-block{
 	width: 19%;
 	margin: 10px 0.5%;
-	transition: opacity 0.2s linear;
+	overflow: hidden;
+	transition: opacity 0.2s linear;	
 	
 	&:hover{
-		opacity: 0.75;
+		opacity: 0.85;
 	}
+
+	.content-image{
+		transition: transform 0.2s linear;
+
+		&:hover{			
+			transform: rotate(0deg) scale(1.2);
+
+			@media @mobile{
+				transform: none;
+			}
+		}		
+	}
+
+	.image_container-background{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		.setBackgroundImage(@logoOGASA);
+		transition: transform 0.2s linear;
+
+		&:hover{
+			transform: rotate(0deg) scale(1.2);
+			
+			@media @mobile{
+				transform: none;
+			}
+		}		
+	}
+
 
 	@media @mobile{
 		width: 100%;
@@ -49,7 +79,11 @@
 		width: 33%;	
 
 		&:hover .content-section-link .content-section-container .content-section-title{			
-			display: block;	
+			background-color: @sectTitleColor;
+			.content-section-name,
+			.content-section-date{
+				color: @sectFontColor;
+			}
 		}
 
 		.content-section-link{
@@ -61,22 +95,34 @@
 				.setBackgroundWImg();
 
 				.content-section-title{
-					display: none;					
+					display: block;					
 					position: absolute;
 					width: 100%;
 					bottom: 2%;
-					padding: 5px;
-					background-color: @sectTitleColor;		
+					padding: 5px 10px;
+					background-color: transparent;
+					transition: background 0.25s linear;			
 
 
 					.content-section-name{
+						color: transparent;
 						font-weight: bold;
 						font-size: 1.6rem;
-						color: @sectFontColor;
+						transition: color 0.25s linear;	
+					}
+
+					.content-section-date{
+						transition: color 0.25s linear;	
+						color: transparent;
 					}
 
 					@media @mobile{
-						display: block;
+						background-color: @sectTitleColor;
+
+						.content-section-name,
+						.content-section-date{
+							color: @sectFontColor;
+						}
 					}
 				}
 			}
@@ -86,10 +132,7 @@
 		}
 
 		&:hover .video-play_icon::before{
-			width: 40px;
-			height: 40px;
-			.top(50%,"-",20px);
-			.left(50%,"-",20px);			
+			transform: scale(1.15);		
 		}
 
 		@media @mobile{
@@ -113,6 +156,7 @@
 	.top(50%,"-",15px);
 	.left(50%,"-",15px);
 	.setBackgroundImage(@playIcon);
+	transition: transform 0.2s linear;
 }
 
 .content-section-download{

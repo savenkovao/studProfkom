@@ -66,6 +66,39 @@ body{
 	}
 
 
+	
+
+	.prompt_w{
+		display: block;
+		cursor: pointer;
+		position: relative;
+
+		.prompt_d{
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 20%;
+			padding: 10px;
+			background-color: @prompt_dBG;
+			.setBorder(2px, @mainFontColor, 10px);
+			z-index: 3;
+
+			&:hover{
+				display: block;
+			}
+
+			@media @mobile{
+				display: none;
+			}
+		}
+
+		&:hover .prompt_d{
+			display: block;						
+		}
+	}
+
+
+
 
 }
 

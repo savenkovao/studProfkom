@@ -128,10 +128,17 @@
 			display: block;
 			
 		}
-		&:hover .slider-arrow-left,
-		&:hover .slider-arrow-right{
-			background-color: rgba(255,255,255,0.1);		
+		&:hover .slider-arrow-left{
+			background: rgba(255,255,255,0.2);
+			background: linear-gradient(to right, rgba(255,255,255,0.3), transparent);		
 		}
+
+		&:hover .slider-arrow-right{
+			background: rgba(255,255,255,0.2);
+			background: linear-gradient(to left, rgba(255,255,255,0.3), transparent);
+		}
+
+
 
 		@media @mobile{
 			.slider-arrow-left::before,

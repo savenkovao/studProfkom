@@ -11,9 +11,9 @@
 	height: auto;
 	color: @colorWhite;
 	font-size: 1.8rem;
-	background: -moz-linear-gradient(top,  #faa51a,  #f47a20); /* для Firefox */
-    background-image: -o-linear-gradient(top,  #faa51a,  #f47a20);
-	
+	background: #faa51a;
+	background: linear-gradient(to top, #faa51a, #f47a20);
+
 	.setBorder( 2px, @btnBorderColor, 2rem);
     
     &:hover,
@@ -55,7 +55,8 @@
 		background-color: @bt_up_color_1;
 		.setBorder(0, transparent, 50%);
 		transition: background-color 0.2s linear;
-
+		
+		&:active,
 		&:hover{
 			background-color: @bt_up_color_2;
 		}

@@ -2,6 +2,10 @@
 header {
 	margin-top: 10px;
 	height: 50px;
+	// position: fixed;
+	// background-color: white;
+	// width: 100%;
+	// z-index: 1;
 
 	.header-logo{
 		height: 50px;
@@ -41,12 +45,13 @@ header {
 			z-index: 10;
 			position: relative;
 			padding:5px;
-			.setBorder(1.8px, transparent, 1rem);
+			.setBorder(1.8px, transparent, 0.5em);
 			transition: background-color, border-color 0.2s linear;			
 			color: @menuLinkColor;
+
 			&:hover{
 				border-color: @menuItemHvBrd;
-				background-color: @menuItemHvBgCl;
+				// background-color: @menuItemHvBgCl;
 				
 				.submenu{
 					display: inline-block;
@@ -66,11 +71,11 @@ header {
 			}
 
 			.submenu{
-				padding: 10px;
 				display: none;
-				background-color: rgba(255, 255,255, 0.75);
+				padding: 10px;
+				background-color: @subMenuBgclr;
 				position: absolute;
-				top:107%;
+				top:105%;
 				left: -25%;
 				.setBorder(0, transparent, 1rem);
 
@@ -140,7 +145,7 @@ header {
 			.menu-item-mobile {
 				display: block;
 				width: auto;
-				padding: 7px 0 7px 15px;
+				padding: 7px 0 7px 20px;
 				border: 0;
 				border-radius: 0;
 				list-style-type: none;

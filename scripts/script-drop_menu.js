@@ -14,11 +14,18 @@ var logoWhiteIcon = "logo-block-white_icon";
 var colorTransparent = 'transparent';
 var headerBackgroundColor = "rgba(255,255,255,0.9)";
 var mobileMenuBackground;
+var networksLink = document.querySelectorAll('.networks-link')[0];
+
+setFooterText ();
+
+function setFooterText () {
+	networksLink.innerHTML = "© 2000 - 2016 \"Профком студентов ОГАСА\"";
+}
+
 
 createBlockMenuBackground ();
 
-function createBlockMenuBackground (){
-	
+function createBlockMenuBackground (){	
 	mobileMenuBackground = document.createElement('div');
 	mobileMenuBackground.classList.add("mobile-menu-background");
 	headerLogo.appendChild(mobileMenuBackground);
