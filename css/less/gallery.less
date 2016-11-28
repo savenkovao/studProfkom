@@ -1,6 +1,7 @@
 //images gallery
 
 .content-gallery-block{
+	display: inline-block;
 	width: 19%;
 	margin: 10px 0.5%;
 	overflow: hidden;
@@ -72,11 +73,13 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	text-align: center;
 
 	.content-section-wrapper{
 		display: inline-block;
 		padding: 10px;
-		width: 33%;	
+		width: 33%;
+		min-width: 200px;
 
 		&:hover .content-section-link .content-section-container .content-section-title{			
 			background-color: @sectTitleColor;
@@ -101,7 +104,8 @@
 					bottom: 2%;
 					padding: 5px 10px;
 					background-color: transparent;
-					transition: background 0.25s linear;			
+					transition: background 0.25s linear;
+					text-align: left;			
 
 
 					.content-section-name{

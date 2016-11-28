@@ -19,7 +19,12 @@ var networksLink = document.querySelectorAll('.networks-link')[0];
 setFooterText ();
 
 function setFooterText () {
-	networksLink.innerHTML = "© 2000 - 2016 \"Профком студентов ОГАСА\"";
+	if(currentScreenWidth > 768){
+		networksLink.innerHTML = "© 2000 - 2016 \"Профком студентов ОГАСА\"";
+	} else {
+		networksLink.innerHTML = "© 2000 - 2016 \"ППОС ОГАСА\"";
+	}
+	
 }
 
 
@@ -68,9 +73,10 @@ window.addEventListener("resize", resizeFunction);
 	
 function resizeFunction (){
 	currentScreenWidth = document.documentElement.clientWidth;	
-	currentScreenHeight = document.documentElement.clientHeight;	
+	currentScreenHeight = document.documentElement.clientHeight;		
 	mainCounter=0;
 	headerMenuMobile.style.display = "none";
+	setFooterText ();
 
 	if(previousScreenWidth<=768){
 		if (currentScreenWidth<=768){

@@ -21,7 +21,7 @@ function setOnItems(){
 			btnOpenMore.style.display = "none";
 		}
 		for(var i = itemsOnPagePrevious; i<itemsOnPage;i++){
-			contentSectionWrapper[i].style.display = "block";
+			contentSectionWrapper[i].style.display = "inline-block";
 			itemsOnPagePrevious = itemsOnPage;
 		}
 		for(var i = itemsOnPage; i<contentSectionWrapper.length;i++){
