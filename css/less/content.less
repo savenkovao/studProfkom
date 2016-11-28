@@ -39,7 +39,7 @@
 		position: relative;
 		color: white;
 		font-size: 16px;
-		margin-left: -0.75rem;
+		margin-left: -2.5rem;		
 
 		&:hover,
 		&:active,
@@ -48,6 +48,14 @@
 			color: white;
 			text-decoration: none;
 		}
+
+		@media @mobile{
+			white-space: nowrap;
+		}
+	}
+
+	@media @mobile{
+		padding: 0;
 	}	
 }
 
@@ -58,7 +66,7 @@
 	width: 1.5em;
 	height: 1.5em;
 	top: 0;
-	margin-left: 0.5rem;
+	margin-left: 0.5em;
 	.setBackgroundImage (@vkIcon);
 	background-position: top;
 	transition: background-position 0.2s linear;

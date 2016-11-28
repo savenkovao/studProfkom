@@ -75,6 +75,9 @@ body{
 
 		&:hover{
 			font-weight: bold;
+			@media @mobile{
+				font-weight: 400;
+			}		
 		}
 
 		.prompt_d{
@@ -90,15 +93,14 @@ body{
 
 			&:hover{
 				display: block;
-			}
-
-			@media @mobile{
-				display: none;
-			}
+			}			
 		}
 
 		&:hover .prompt_d{
-			display: block;						
+			display: block;	
+			@media @mobile{
+				display: none;
+			}					
 		}
 	}
 

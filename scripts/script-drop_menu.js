@@ -23,8 +23,7 @@ function setFooterText () {
 		networksLink.innerHTML = "© 2000 - 2016 \"Профком студентов ОГАСА\"";
 	} else {
 		networksLink.innerHTML = "© 2000 - 2016 \"ППОС ОГАСА\"";
-	}
-	
+	}	
 }
 
 
