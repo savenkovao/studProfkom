@@ -34,7 +34,7 @@ function createBlockMenuBackground (){
 	mobileMenuBackground.classList.add("mobile-menu-background");
 	headerLogo.appendChild(mobileMenuBackground);
 	if(currentScreenWidth<=768){
-		headerMenuMobile.style.display = "none";	
+		headerMenuMobile.style.backgroundColor = "transparent";
 	}
 }
 
@@ -53,14 +53,15 @@ function setNewClasses (){
 		mobileMenuBackground.style.position = "fixed";		
 		headerMenuMobile.style.position = "fixed";		
 		headerMenuMobile.style.zIndex = 15;
-		headerMenuMobile.style.transition = "left 0.15s linear";
-		mobileMenuBackground.style.transition = "left 0.15s linear";
 		mobileMenu.style.display = "block";		
 	}	
 }
 
 mobileMenu.onclick = function (){
 	mainCounter++;
+	headerMenuMobile.style.transition = "left 0.15s linear";
+	mobileMenuBackground.style.transition = "left 0.15s linear";
+
 	if (mainCounter%2 == 0){		
 		hideMenu();				
 	} else {	
@@ -74,16 +75,16 @@ function resizeFunction (){
 	currentScreenWidth = document.documentElement.clientWidth;	
 	currentScreenHeight = document.documentElement.clientHeight;		
 	mainCounter=0;
-	headerMenuMobile.style.display = "none";
 	setFooterText ();
-
+	headerMenuMobile.style.transition = "none";
+	
 	if(previousScreenWidth<=768){
 		if (currentScreenWidth<=768){
 			enableDropMenu ();
 		} else {
 			enableDesktopMenu ();
 		}
-	} else{
+	} else{		
 		if (currentScreenWidth<=768){			
 			setNewClasses ();			
 		} else{
@@ -118,7 +119,6 @@ function showMenu(){
 }
 
 function hideMenu(){
-	headerMenuMobile.style.display = "none";
 	headerLogo.style.zIndex = "11";
 	headerMenuMobile.style.left = "-80%";
 	mobileMenuBackground.style.left = "-80%";
