@@ -55,6 +55,11 @@
 		background-color: @bt_up_color_1;
 		.setBorder(0, transparent, 50%);
 		transition: background-color 0.2s linear;
+
+		@media @lg-screen{
+			right: 12%;
+			right:~'calc(50% - 640px)';
+		}
 		
 		&:active,
 		&:hover{
@@ -70,6 +75,8 @@
 			height: 15px;
 			.setBackgroundImage(@bt_up_img);
 		}
+
+		
 	}
 }
 

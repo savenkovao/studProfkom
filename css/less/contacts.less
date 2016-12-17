@@ -1,14 +1,4 @@
-@contact1:"../../images/content/contacts/person_pic/contact1.jpg";
-@contact2:"../../images/content/contacts/person_pic/contact2.jpg";
-@contact3:"../../images/content/contacts/person_pic/contact3.jpg";
-@contact4:"../../images/content/contacts/person_pic/contact4.jpg";
-@contact5:"../../images/content/contacts/person_pic/contact5.jpg";
-@contact6:"../../images/content/contacts/person_pic/contact6.jpg";
-@contact7:"../../images/content/contacts/person_pic/contact7.jpg";
-@contact8:"../../images/content/contacts/person_pic/contact8.jpg";
-@contact9:"../../images/content/contacts/person_pic/contact9.jpg";
-@contact10:"../../images/content/contacts/person_pic/contact10.jpg";
-@contact11:"../../images/content/contacts/person_pic/contact11.jpg";
+@contact:"../../images/content/contacts/person_pic/";
 
 .contacts-header{
 	margin: 0 0 1rem;
@@ -27,7 +17,7 @@
 		height: 70px;
 		left: -90px;
 		.setBorder(0, transparent, 50%);
-		.setBackgroundImage (@contact1);
+		.setBackgroundImage (~'@{contact}contact.jpg');
 	}
 
 	&::after{
@@ -97,37 +87,60 @@
 	}
 	
 	&.contact_1{
-		margin-top: 0;
+			margin-top: 0;
+		&::before{
+			background-image: url(~'@{contact}contact1.jpg');
+		}
 	}
-	&.contact_2::before{
-		background-image: url(@contact2);
+	&.contact_2{
+		&::before{
+			background-image: url(~'@{contact}contact2.jpg');
+		}
 	}
-	&.contact_3::before{
-		background-image: url(@contact3);
+	&.contact_3{
+		&::before{
+			background-image: url(~'@{contact}contact3.jpg');
+		}
 	}
-	&.contact_4::before{
-		background-image: url(@contact4);
+	&.contact_4{
+		&::before{
+			background-image: url(~'@{contact}contact4.jpg');
+		}
 	}
-	&.contact_5::before{
-		background-image: url(@contact5);
+	&.contact_5{
+		&::before{
+			background-image: url(~'@{contact}contact5.jpg');
+		}
 	}
-	&.contact_6::before{
-		background-image: url(@contact6);
+	&.contact_6{
+		&::before{
+			background-image: url(~'@{contact}contact6.jpg');
+		}
 	}
-	&.contact_7::before{
-		background-image: url(@contact7);
+	&.contact_7{
+		&::before{
+			background-image: url(~'@{contact}contact7.jpg');
+		}
 	}
-	&.contact_8::before{
-		background-image: url(@contact8);
+	&.contact_8{
+		&::before{
+			background-image: url(~'@{contact}contact8.jpg');
+		}
 	}
-	&.contact_9::before{
-		background-image: url(@contact9);
+	&.contact_9{
+		&::before{
+			background-image: url(~'@{contact}contact9.jpg');
+		}
 	}
-	&.contact_10::before{
-		background-image: url(@contact10);
+	&.contact_1{
+		&0::before{
+			background-image: url(~'@{contact}contact10.jpg');
+		}
 	}
-	&.contact_11::before{
-		background-image: url(@contact11);
+	&.contact_1{
+		&1::before{
+			background-image: url(~'@{contact}contact11.jpg');
+		}
 	}	
 }
 
