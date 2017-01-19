@@ -16,117 +16,118 @@ var headerBackgroundColor = "rgba(255,255,255,0.9)";
 var mobileMenuBackground;
 var networksLink = document.querySelectorAll('.networks-link')[0];
 
-setFooterText ();
+setFooterText();
 
-function setFooterText () {
-	if(currentScreenWidth > 768){
-		networksLink.innerHTML = "© 2000 - 2016 \"Профком студентов ОГАСА\"";
-	} else {
-		networksLink.innerHTML = "© 2000 - 2016 \"ППОС ОГАСА\"";
-	}	
+function setFooterText() {
+ var date = new Date();
+ if(currentScreenWidth > 768){
+  networksLink.innerHTML = "© 2000 - "+date.getFullYear()+" \"Профком студентов ОГАСА\"";
+ } else {
+  networksLink.innerHTML = "© 2000 - "+date.getFullYear()+" \"ППОС ОГАСА\"";
+ } 
 }
 
 
 createBlockMenuBackground ();
 
-function createBlockMenuBackground (){	
-	mobileMenuBackground = document.createElement('div');
-	mobileMenuBackground.classList.add("mobile-menu-background");
-	headerLogo.appendChild(mobileMenuBackground);
-	if(currentScreenWidth<=768){
-		headerMenuMobile.style.backgroundColor = "transparent";
-	}
+function createBlockMenuBackground() { 
+ mobileMenuBackground = document.createElement('div');
+ mobileMenuBackground.classList.add("mobile-menu-background");
+ headerLogo.appendChild(mobileMenuBackground);
+ if(currentScreenWidth<=768){
+  headerMenuMobile.style.backgroundColor = "transparent";
+ }
 }
 
 setCurrentScreenWidth();
 
 function setCurrentScreenWidth(){
-	previousScreenWidth = currentScreenWidth;
+ previousScreenWidth = currentScreenWidth;
 }
 
 setNewClasses ();
 
-function setNewClasses (){	
-	if(currentScreenWidth<=768){
-		mobileMenuBackground.style.left = "-80%";
-		headerMenuMobile.style.left = "-80%";		
-		mobileMenuBackground.style.position = "fixed";		
-		headerMenuMobile.style.position = "fixed";		
-		headerMenuMobile.style.zIndex = 15;
-		mobileMenu.style.display = "block";		
-	}	
+function setNewClasses() { 
+ if(currentScreenWidth<=768){
+  mobileMenuBackground.style.left = "-80%";
+  headerMenuMobile.style.left = "-80%";  
+  mobileMenuBackground.style.position = "fixed";  
+  headerMenuMobile.style.position = "fixed";  
+  headerMenuMobile.style.zIndex = 15;
+  mobileMenu.style.display = "block";  
+ } 
 }
 
-mobileMenu.onclick = function (){
-	mainCounter++;
-	headerMenuMobile.style.transition = "left 0.15s linear";
-	mobileMenuBackground.style.transition = "left 0.15s linear";
+mobileMenu.onclick = function() {
+ mainCounter++;
+ headerMenuMobile.style.transition = "left 0.15s linear";
+ mobileMenuBackground.style.transition = "left 0.15s linear";
 
-	if (mainCounter%2 == 0){		
-		hideMenu();				
-	} else {	
-		showMenu();		
-	}
+ if (mainCounter%2 == 0){  
+  hideMenu();    
+ } else { 
+  showMenu();  
+ }
 }
 
 window.addEventListener("resize", resizeFunction);
-	
+ 
 function resizeFunction (){
-	currentScreenWidth = document.documentElement.clientWidth;	
-	currentScreenHeight = document.documentElement.clientHeight;		
-	mainCounter=0;
-	setFooterText ();
-	headerMenuMobile.style.transition = "none";
-	
-	if(previousScreenWidth<=768){
-		if (currentScreenWidth<=768){
-			enableDropMenu ();
-		} else {
-			enableDesktopMenu ();
-		}
-	} else{		
-		if (currentScreenWidth<=768){			
-			setNewClasses ();			
-		} else{
-			headerMenuMobile.style.display = "flex";
-		}
-	}
-	setCurrentScreenWidth();			
+ currentScreenWidth = document.documentElement.clientWidth; 
+ currentScreenHeight = document.documentElement.clientHeight;  
+ mainCounter=0;
+ setFooterText ();
+ headerMenuMobile.style.transition = "none";
+ 
+ if(previousScreenWidth <= 768){
+  if (currentScreenWidth <= 768){
+   enableDropMenu ();
+  } else {
+   enableDesktopMenu ();
+  }
+ } else {  
+  if (currentScreenWidth <= 768){   
+   setNewClasses ();   
+  } else{
+   headerMenuMobile.style.display = "flex";
+  }
+ }
+ setCurrentScreenWidth();   
 }
 
-function enableDropMenu (){
-	hideMenu();	
+function enableDropMenu() {
+ hideMenu(); 
 }
 
-function enableDesktopMenu (){
-	headerMenuMobile.style.display = "flex";
-	headerMenuMobile.style.position = "relative";
-	headerMenuMobile.style.left = "0";
-	mobileMenuBackground.style.left = "0";
-	headerMenuMobile.style.backgroundColor = colorTransparent;
-	headerMenuMobile.style.transition = "none";
+function enableDesktopMenu() {
+ headerMenuMobile.style.display = "flex";
+ headerMenuMobile.style.position = "relative";
+ headerMenuMobile.style.left = "0";
+ mobileMenuBackground.style.left = "0";
+ headerMenuMobile.style.backgroundColor = colorTransparent;
+ headerMenuMobile.style.transition = "none";
 }
 
-function showMenu(){
-	mobileMenuBackground.style.display = "block";
-	headerMenuMobile.style.display = "block";
-	headerLogo.style.zIndex = "13";
-	headerMenuMobile.style.left = "0";
-	mobileMenuBackground.style.left = "0";
-	logoBlock.classList.add(logoWhiteIcon);
-	mobileMenu.classList.add(burgerMenuWhiteIcon);
-	headerLogo.style.backgroundColor = colorTransparent;
+function showMenu() {
+ mobileMenuBackground.style.display = "block";
+ headerMenuMobile.style.display = "block";
+ headerLogo.style.zIndex = "13";
+ headerMenuMobile.style.left = "0";
+ mobileMenuBackground.style.left = "0";
+ logoBlock.classList.add(logoWhiteIcon);
+ mobileMenu.classList.add(burgerMenuWhiteIcon);
+ headerLogo.style.backgroundColor = colorTransparent;
 }
 
-function hideMenu(){
-	headerLogo.style.zIndex = "11";
-	headerMenuMobile.style.left = "-80%";
-	mobileMenuBackground.style.left = "-80%";
-	mobileMenu.classList.remove(burgerMenuWhiteIcon);		
-	logoBlock.classList.remove(logoWhiteIcon);
-	headerLogo.style.backgroundColor = headerBackgroundColor;
-	mobileMenu.style.backgroundColor = colorTransparent;
-	
+function hideMenu() {
+ headerLogo.style.zIndex = "11";
+ headerMenuMobile.style.left = "-80%";
+ mobileMenuBackground.style.left = "-80%";
+ mobileMenu.classList.remove(burgerMenuWhiteIcon);  
+ logoBlock.classList.remove(logoWhiteIcon);
+ headerLogo.style.backgroundColor = headerBackgroundColor;
+ mobileMenu.style.backgroundColor = colorTransparent;
+ 
 }
 
 
