@@ -169,3 +169,7 @@ function resizeHeightWidth(){
 		}
 	}	
 }
+
+// window.onkeydown = function(event){
+// 	alert(event.keyCode);
+// }

@@ -41,8 +41,12 @@
 
 
 
-   elem.onclick = function(event) {
-    // вывести тип события, элемент и координаты клика
-    alert(event.type + " на " + event.currentTarget);
-    alert(event.clientX + ":" + event.clientY);
+  //  elem.onclick = function(event) {
+  //   // вывести тип события, элемент и координаты клика
+  //   alert(event.type + " на " + event.currentTarget);
+  //   alert(event.clientX + ":" + event.clientY);
+  // }
+
+  window.onkeydown = function(event){
+  	alert(event.keyCode);
   }
