@@ -11,6 +11,7 @@ var sliderItems = document.querySelectorAll('.slider-item').length/2;
 var currentInnerItemHeight = document.querySelector('.slider-item').offsetHeight;
 var currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30; 
 
+
 setSlider();
 
 function setSlider(){
@@ -66,6 +67,7 @@ function leftOnClick(){
 window.addEventListener("resize", getNewWrapperWidth);
 
 function getNewWrapperWidth (){
+	
 	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
 	sliderInner.style.display = "none";
 	setSlider();

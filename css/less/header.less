@@ -1,11 +1,23 @@
 
 header {
-	margin-top: 10px;
-	height: 50px;
-	// position: fixed;
-	// background-color: white;
-	// width: 100%;
-	// z-index: 1;
+	height: 70px;
+	transition: height 0.2s linear;
+
+	.fixed-header{
+		position: fixed;
+		width: 100%;
+		max-width: @wrapperWidth;
+		background-color: @logoMobileClr;
+		z-index: 100;
+
+		@media @mobile {
+			position: relative;
+			width: 100%;
+			max-width: auto;
+			background-color: inherit;
+		}
+
+	}
 
 	.header-logo{
 		height: 50px;
@@ -13,11 +25,12 @@ header {
 	}
 
 	.logo-block{
-		height: 40px;
-		width: 61px;
+		height: 60px;
+		width: 90px;
 		margin: 5px auto;	
 		.setBackgroundImage(@mainLogo);
 		background-position: top;
+		transition: height, width 0.2s linear;
 
 		@media @mobile{
 			margin: 0 auto;
@@ -34,9 +47,12 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		text-align: center;
+		height: 70px;
 		padding: @blankPadding;
 		margin: @blankMargin;
 		font-size: 1.5rem;
+		user-select: none;
+		transition: height 0.2s linear;
 		
 		.menu-item{
 			display: inline-block; //for old browsers
@@ -49,12 +65,16 @@ header {
 			transition: background-color, border-color 0.2s linear;			
 			color: @menuLinkColor;
 			cursor: pointer;
+			text-overflow: clip;
+
+			
 
 			&:hover{
-				// border-color: @menuItemHvBrd;
 				box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.1);
-				// background-color: @menuItemHvBgCl;
 				
+				@media @mobile {
+					box-shadow: none;
+				}
 				.submenu{
 					display: inline-block;
 					width: 150%;
@@ -84,13 +104,11 @@ header {
 				.menu-item{
 					width: 100%;
 				}
-			}			
+			}
 		}
+
 	}
 
-	@media @mobile{
-		margin-top: 0;
-	}
 
 	@media @mobile{
 		.header-logo-mobile{
@@ -103,6 +121,11 @@ header {
 			background-color: @logoMobileClr;
 			z-index: 11;
 
+			.logo-block{
+				height: 40px;
+				width: 60px;
+			}
+
 			.mobile-menu{
 				display: none;
 				position: absolute;
@@ -110,8 +133,14 @@ header {
 				height: 40px;
 				.setBackgroundImage(@brgMenuIcon);
 				background-position: top;
-				z-index: 13;	
+				z-index: 13;
 			}
+
+			.mobile-menu-enabled {
+				display: block !important;
+			}
+
+
 
 			.mobile-menu-white_icon{
 				background-position: bottom;
@@ -119,14 +148,26 @@ header {
 
 			.mobile-menu-background{
 				display: block;
-				position: absolute;
+				position: fixed;
 				width: 80%;
 				height: 100%;
 				top:0;
 				left: 0;
 				background-color: @mobileMenuBgclr;
 				z-index: -1;
+				transition: left 0.15s linear;
 			}
+
+			.mobile-menu-background-hidden {
+				left: -80% !important;
+
+			}
+
+		}
+
+		.header-logo-mobile-transp {
+			background-color: transparent !important;
+			z-index: 13 !important;
 		}
 
 		.header-menu-mobile{
@@ -134,7 +175,6 @@ header {
 			position: relative;
 			width: 80%;
 			height: 100%;		
-			// .height(100%,"-",70px);
 			top: 0;
 			left: 0;	
 			margin: 70px 0 0;		
@@ -143,6 +183,8 @@ header {
 			z-index: 10;
 			text-align: left;
 			overflow: auto;	
+			transition: left 0.15s linear;
+
 
 			.menu-item-mobile {
 				display: block;
@@ -151,6 +193,7 @@ header {
 				border: 0;
 				border-radius: 0;
 				list-style-type: none;
+				text-overflow: clip;
 
 				&.expand{
 					padding-bottom: 0;
@@ -199,7 +242,34 @@ header {
 				}
 			}
 		}
+
+		.header-menu-mobile-hidden {
+			position: fixed; 
+			left: -80%;			 
+		 	z-index: 15;
+		}
+
+		.header-menu-mobile-visible {
+			background-color: transparent;
+ 			left: 0 !important;
+		}
+
+
 	}
 
 }
 
+
+.header-min {
+	height: 50px !important;
+}
+.header-logo-min {
+	height: 40px !important;
+}
+.logo-block-min {
+	height: 40px !important;
+	width: 60px !important;
+}
+.header-menu-min {
+	height: 50px !important;
+}
