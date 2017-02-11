@@ -12,8 +12,6 @@
   var mainCounter = 0;
   var burgerMenuWhiteIcon = "mobile-menu-white_icon";
   var logoWhiteIcon = "logo-block-white_icon";
-  // var colorTransparent = 'transparent';
-  // var headerBackgroundColor = "rgba(255,255,255,0.9)";
   var mobileMenuBackground;
   var networksLink = document.querySelectorAll('.networks-link')[0];
   var header = document.getElementsByTagName('header')[0];
@@ -56,7 +54,7 @@
     if (currentScreenWidth > 768) {
       var scrolled = window.pageYOffset; 
 
-      if (scrolled >= 100) {      
+      if (scrolled >= 50) {      
         narrowHeaderMenu();
       } else {
         extendHeaderMenu();
@@ -114,7 +112,7 @@
     mobileMenuBackground.classList.remove('mobile-menu-background-hidden');
     logoBlock.classList.add(logoWhiteIcon);
     mobileMenuButton.classList.add(burgerMenuWhiteIcon);
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden"; // откл прокрутки экрана
   }
 
 
@@ -126,7 +124,7 @@
     mobileMenuBackground.classList.add('mobile-menu-background-hidden');
     mobileMenuButton.classList.remove(burgerMenuWhiteIcon);  
     logoBlock.classList.remove(logoWhiteIcon);
-    document.body.style.overflow = "";
+    // document.body.style.overflow = ""; // вкл прокрутки экрана
   }
 
 
