@@ -3,22 +3,22 @@
 var sliderInner;
 var clickCounter = 0;
 var radioButton=[];
-var contentSlider = document.querySelector('.content-slider');
-var arrowLeft = document.querySelector('.slider-arrow-left');
-var arrowRight = document.querySelector('.slider-arrow-right');
-var sliderItemImage = document.querySelector('.slider-item-image');
+var contentSlider = document.querySelectorAll('.content-slider')[0];
+var arrowLeft = document.querySelectorAll('.slider-arrow-left')[0];
+var arrowRight = document.querySelectorAll('.slider-arrow-right')[0];
+var sliderItemImage = document.querySelectorAll('.slider-item-image')[0];
 var sliderItems = document.querySelectorAll('.slider-item').length/2;
-var currentInnerItemHeight = document.querySelector('.slider-item').offsetHeight;
-var currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30; 
+var currentInnerItemHeight = document.querySelectorAll('.slider-item').offsetHeight;
+var currentWrapperWidth = document.querySelectorAll('body')[0].offsetWidth; 
 
 
 setSlider();
 
 function setSlider(){
 	if(currentWrapperWidth<=768){
-		sliderInner = document.querySelector('.slider-inner-mobile');		
+		sliderInner = document.querySelectorAll('.slider-inner-mobile')[0];		
 	} else {
-		sliderInner = document.querySelector('.slider-inner-desktop');		
+		sliderInner = document.querySelectorAll('.slider-inner-desktop')[0];		
 	}
 	sliderInner.style.display = "block";
 }
@@ -34,7 +34,7 @@ arrowRight.onclick = function (){
 }
 
 function rightOnClick(){
-	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
+	currentWrapperWidth = document.querySelectorAll('body')[0].offsetWidth;
 	sliderInner.style.width = currentWrapperWidth + 'px';	
 	clickCounter++;		
 	if (clickCounter>sliderItems-1){
@@ -51,7 +51,7 @@ arrowLeft.onclick = function (){
 }
 
 function leftOnClick(){
-	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
+	currentWrapperWidth = document.querySelectorAll('body')[0].offsetWidth;
 	sliderInner.style.width = currentWrapperWidth + 'px';
 	clickCounter--;	
 	if (clickCounter<0){
@@ -68,7 +68,7 @@ window.addEventListener("resize", getNewWrapperWidth);
 
 function getNewWrapperWidth (){
 	
-	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
+	currentWrapperWidth = document.querySelectorAll('body')[0].offsetWidth;
 	sliderInner.style.display = "none";
 	setSlider();
 	sliderInner.style.width = currentWrapperWidth + 'px';
@@ -121,7 +121,7 @@ function chooseSlide (i){
 	changeButtonBackGround ();
 	radioButton[i].style.backgroundColor= 'rgb(80, 210, 89)';
 
-	currentWrapperWidth = document.querySelectorAll('.wrapper')[0].offsetWidth - 30;
+	currentWrapperWidth = document.querySelectorAll('body')[0].offsetWidth;
 	sliderInner.style.width = currentWrapperWidth + 'px';
 	sliderInner.style.marginLeft = -currentWrapperWidth*(clickCounter) + 'px';
 }

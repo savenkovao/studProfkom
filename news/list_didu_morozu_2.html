@@ -94,7 +94,7 @@
 
 					<h2 class="content-description-subheader">🎉Внимание студентам, которые являются родителями!🎉</h2>
 					<div class="col-xs-12 col-sm-7 col-md-7">
-						<div class="content-gallery-block news-poster">
+						<div class="news-poster">
 							<img class="content-image" src="../images/content/news/news-images/list_didu_morozu.jpg" alt="Лист Діду Морозу">
 						</div>
 
@@ -128,25 +128,46 @@
 				</div>
 
 				<a href="../news.html" class="clear-link btn_news_back">Назад к Новостям</a>
-				<a class="btn_go_up-link" href="#head">
-					<div class="btn_go_up">
-					</div>
-				</a>
-			</section>
 
-			<footer>
-				<div class="col-xs-12 networks">
-					<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
-						<span>Мы в социальных сетях</span>
+				<div id="btn_go_up-link">
+					<a class="btn_go_up-link" href="#head">
+						<div class="btn_go_up">
+						</div>
 					</a>
 				</div>
-			</footer>
+
+			</section>
 		</div>
 	</div>
 
+	<footer>
+		<div class="col-xs-12 networks">
+			<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
+				<span>Мы в социальных сетях</span>
+			</a>
+		</div>
+	</footer>
 
-	<script src="../scripts/script-drop_menu.js"></script>
-	<script src="../scripts/script-open_photo.js"></script>
+	<script src="../scripts/script-drop_menu.js?ver1.02"></script>
+	<script src="../scripts/script-open_photo.js?ver1.0"></script>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../scripts/bootstrap.js"></script>
+
+	<!-- scroll -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn_go_up-link").on("click","a", function (event) {
+				event.preventDefault();
+				var id = $(this).attr('href'),
+				top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1000);
+			});
+		});
+	</script>
+	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">
 	    (function (d, w, c) {
 	        (w[c] = w[c] || []).push(function() {

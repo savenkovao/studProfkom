@@ -8,6 +8,9 @@
 	<meta name="description" content="Официальный сайт Профкома студентов ОГАСА">
 	<meta name="author" content="Профком студентов ОГАСА, профком студентів ОДАБА">
 
+	<meta name="yandex-verification" content="d5c2be00eccb55ff" />
+	<meta name='wmail-verification' content='8e290e1870b8ff1e7e36b25f2c0916b3' />
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../css/bootstrap.css">
 	<link rel="stylesheet short" href="../../css/style.css?ver1.04">	
@@ -108,26 +111,48 @@
 					</div>
 				</div>
 				<a href="../events.html" class="clear-link btn_news_back">Назад к другим меропиятиям</a>
-				<a class="btn_go_up-link" href="#head">
-					<div class="btn_go_up">
-					</div>
-				</a>
-			</section>
-
-			<footer>
-				<div class="col-xs-12 networks">
-					<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
-						<span>Мы в социальных сетях</span>
+				
+				<div id="btn_go_up-link">
+					<a class="btn_go_up-link" href="#head">
+						<div class="btn_go_up">
+						</div>
 					</a>
 				</div>
-			</footer>
 
-
+			</section>
 		</div>
 	</div>
 
+	<footer>
+		<div class="col-xs-12 networks">
+			<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
+				<span>Мы в социальных сетях</span>
+			</a>
+		</div>
+	</footer>
+
+
+
+
 	<script src="../../scripts/script-drop_menu.js"></script>
 	<script src="../../scripts/script-open_photo-autoload.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../scripts/bootstrap.js"></script>
+
+	<!-- scroll -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn_go_up-link").on("click","a", function (event) {
+				event.preventDefault();
+				var id = $(this).attr('href'),
+				top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1000);
+			});
+		});
+	</script>
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">
 	    (function (d, w, c) {

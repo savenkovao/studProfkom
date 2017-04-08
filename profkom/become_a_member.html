@@ -8,9 +8,13 @@
 	<meta name="description" content="Официальный сайт Профкома студентов ОГАСА. Как стать членом Профкома студентов ОГАСА">
 	<meta name="author" content="Профком студентов ОГАСА, профком студентів ОДАБА">
 
+
+	<meta name="yandex-verification" content="d5c2be00eccb55ff" />
+	<meta name='wmail-verification' content='8e290e1870b8ff1e7e36b25f2c0916b3' />
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/bootstrap.css?ver1.04">
-	<link rel="stylesheet" href="../css/style.css?ver1.04">
+	<link rel="stylesheet" href="../css/style.css?ver1.06">
 
 	<link rel="shortcut icon" href="../images/design/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="56x57" href="../images/design/favicon/apple-icon-57x57.png">
@@ -33,19 +37,21 @@
 	
 </head>
 <body>
-
-	<div class="container-fluid wrapper" id="head">
-		<div class="row">
-			<header>
-				<div class="col-xs-12 fixed-header">
+	<header>
+		<div class="col-xs-12 fixed-header">
+			<div class="container-fluid wrapper" id="head">
+				<div class="row">
 					<div class="row">
 						
 						<div class="col-xs-12 col-sm-2 col-md-2 header-logo header-logo-mobile">
+						
 							<div class="mobile-menu"></div>
-							<a href="../index.html">
+							
+							<a href="index.html">							
 								<div class="logo-block"></div>
-							</a> 
+							</a>
 						</div>
+
 						<div class="col-xs-12 col-sm-10 col-md-10">
 							<ul class="header-menu header-menu-mobile">
 								<li class="menu-item menu-item-mobile"><a href="../index.html"  class="menu-item-link"><div>Главная</div></a>
@@ -82,10 +88,14 @@
 						</div>
 						
 					</div>
-				</div>				
-			</header>
+				</div>
+			</div>
+		</div>	
+	</header>	
 
-			<section>
+	<section>
+		<div class="container-fluid wrapper" id="head">
+			<div class="row">			
 				<div class="col-xs-12">
 					<div class="row">
 						<h2 class="content-description-header">Как стать членом Профкома студентов ОГАСА?</h2>
@@ -176,25 +186,43 @@
 						</form> -->
 					</div>
 				</div>
-				<a class="btn_go_up-link" href="#head">
-					<div class="btn_go_up">
-					</div>
-				</a>
-			</section>
-
-			<footer>
-				<div class="col-xs-12 networks">
-					<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
-						<span>Мы в социальных сетях</span>
+				<div id="btn_go_up-link">
+					<a class="btn_go_up-link" href="#head">
+						<div class="btn_go_up">
+						</div>
 					</a>
 				</div>
-			</footer>
-
-
+			</div>
 		</div>
-	</div>
+	</section>
+
+	<footer>
+		<div class="col-xs-12 networks">
+			<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
+				<span>Мы в социальных сетях</span>
+			</a>
+		</div>
+	</footer>
+
 	
 	<script src="../scripts/script-drop_menu.js?ver1.02"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="scripts/bootstrap.js"></script>
+
+	<!-- scroll -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn_go_up-link").on("click","a", function (event) {
+				event.preventDefault();
+				var id = $(this).attr('href'),
+				top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1000);
+			});
+		});
+	</script>
+
 	<script type="text/javascript">
 	    (function (d, w, c) {
 	        (w[c] = w[c] || []).push(function() {
