@@ -39,7 +39,7 @@
 
 	<header>
 		<div class="col-xs-12 fixed-header">
-			<div class="container-fluid wrapper" id="head">
+			<div class="container-fluid wrapper">
 				<div class="row">
 					<div class="row">
 						
@@ -93,7 +93,7 @@
 		</div>	
 	</header>
 
-	<section>
+	<section id="head">
 		<div class="container-fluid wrapper" id="head">
 			<div class="row">	
 				<div class="col-xs-12">	
@@ -338,14 +338,17 @@
 	<script src="scripts/bootstrap.js"></script>
 
 	<!-- scroll -->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#btn_go_up-link").on("click","a", function (event) {
+	<script>
+		$("#btn_go_up-link").on("click","a", function (event) {
+			
+			var id = $(this).attr('href');
+			
+			if ( id.match(/#\w/g) ){
 				event.preventDefault();
-				var id = $(this).attr('href'),
-				top = $(id).offset().top;
-				$('body,html').animate({scrollTop: top}, 1000);
-			});
+				var top = $(id).offset().top;
+			}
+			
+			$('body,html').animate({scrollTop: top - 70}, 1000);
 		});
 	</script>
 

@@ -39,7 +39,7 @@
 <body>
 	<header>
 		<div class="col-xs-12 fixed-header">
-			<div class="container-fluid wrapper" id="head">
+			<div class="container-fluid wrapper">
 				<div class="row">
 					<div class="row">
 						
@@ -93,7 +93,7 @@
 		</div>	
 	</header>	
 
-	<section>
+	<section id="head">
 		<div class="container-fluid wrapper" id="head">
 			<div class="row">	
 			
@@ -104,10 +104,34 @@
 				<div class="news">
 
 <!-- News posts -->
+					<a class="news-block news-page-block gallery_item" href="news/mister_ogasa_2.html">
+						<div class="news-block-wrapper news_36">
+							<span class="news-block-header">МИSТЕР ОГАСА 2017</span>
+
+							<p>
+								ВНИМАНИЕ! В связи с погодными условиями, <strong class="important_information">мероприятие переносится на 25.04</strong>. Ждём вас!!!
+							</p>
+							<p>
+								👯‍♂️ После жаркого конкурса "Мистер ОГАСА" приглашаем всех обсудить увиденное в приятном месте: <strong class="important_information">Rhino</strong>
+							</p>
+
+							<span class="news-block-date">Опубликовано - 21.02.2017</span>
+						</div>
+					</a>
+
+					<a class="news-block news-page-block gallery_item" href="news/profkom_news_1.html">
+						<div class="news-block-wrapper news_p">
+							<span class="news-block-header">Вибори голів профбюро інститутів/факультетів</span>
+								<p>
+									З <strong class="important_information">15 по 19 травня</strong> будуть проходити <strong class="important_information">вибори голів профбюро</strong>. Якщо тобі не байдужа доля твого інституту/факультету, ти розумієш, що зможеш зробити його кращим, то заповнюй анкету.
+								</p>
+							<span class="news-block-date">Опубликовано - 21.04.2017</span>
+						</div>
+					</a>
 
 					<a class="news-block news-page-block gallery_item" href="news/ogasa_news_1.html">
 									<div class="news-block-wrapper news_0">
-							<span class="news-block-header">✿Робочі та святкові дні ОДАБА</span>
+							<span class="news-block-header">Робочі та святкові дні ОДАБА</span>
 								<p>Відповідно до Наказу №67/ох, від 30.03.2017:</p>
 									<ul class="no-marker">
 										<li><strong class="important_information">1, 2 і 9 травня</strong> вважати святковими днями;</li>
@@ -937,14 +961,17 @@
 	<script src="scripts/bootstrap.js"></script>
 
 	<!-- scroll -->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#btn_go_up-link").on("click","a", function (event) {
+	<script>
+		$("#btn_go_up-link").on("click","a", function (event) {
+			
+			var id = $(this).attr('href');
+			
+			if ( id.match(/#\w/g) ){
 				event.preventDefault();
-				var id = $(this).attr('href'),
-				top = $(id).offset().top;
-				$('body,html').animate({scrollTop: top}, 1500);
-			});
+				var top = $(id).offset().top;
+			}
+			
+			$('body,html').animate({scrollTop: top - 70}, 1000);
 		});
 	</script>
 
