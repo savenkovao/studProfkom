@@ -16,7 +16,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../css/bootstrap.css">
-	<link rel="stylesheet short" href="../../css/style.css?ver1.04">	
+	<link rel="stylesheet" href="../../css/style.css?ver1.06">	
 	
 	<link rel="shortcut icon" href="../../images/design/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="56x57" href="../../images/design/favicon/apple-icon-57x57.png">
@@ -41,11 +41,10 @@
 </head>
 <body>
 
-	<div class="container-fluid wrapper">
-		<div class="row">
-			<header>
-				<div class="col-xs-12 fixed-header">
-					<div class="row">
+	<header>
+		<div class="col-xs-12 fixed-header">
+			<div class="container-fluid wrapper">
+				<div class="row">	
 						
 						<div class="col-xs-12 col-sm-2 col-md-2 header-logo header-logo-mobile">
 							<div class="mobile-menu"></div>
@@ -88,21 +87,19 @@
 							</ul>
 						</div>
 						
-					</div>
-				</div>				
-			</header>
+				</div>
+			</div>				
+		</div>
+	</header>
 
-
-			<section id="head">
-				<div class="col-xs-12">
-					<div class="row">
-						<div class="col-xs-12 content-description">
-							<h2 class="content-description-header">Студенческий ЗАГС ОГАСА 2017 - фотоотчет</h2>						
-							
-							<div class="content-gallery gallery_hidden">
-								<div class="source-information disabled" src="../../images/content/events/events-images/zags_ogasa_2017/" name="59"></div>
-							</div>
-						</div>
+	<section>
+		<div class="container-fluid wrapper" id="head">
+			<div class="row">
+				<div class="col-xs-12 content-description">
+					<h2 class="content-description-header">Студенческий ЗАГС ОГАСА 2017 - фотоотчет</h2>						
+					
+					<div class="content-gallery gallery_hidden">
+						<div class="source-information disabled" src="../../images/content/events/events-images/zags_ogasa_2017/" name="59"></div>
 					</div>
 				</div>
 
@@ -111,7 +108,7 @@
 					</div>
 				</div>
 				<a href="../events.html" class="clear-link btn_news_back">Назад к другим меропиятиям</a>
-				
+		
 				<div id="btn_go_up-link">
 					<a class="btn_go_up-link" href="#head">
 						<div class="btn_go_up">
@@ -119,9 +116,10 @@
 					</a>
 				</div>
 
-			</section>
+			</div>
 		</div>
-	</div>
+	</section>
+
 
 	<footer>
 		<div class="col-xs-12 networks">
@@ -131,32 +129,53 @@
 		</div>
 	</footer>
 
-
-
-
 	<script src="../../scripts/script-drop_menu.js"></script>
 	<script src="../../scripts/script-open_photo-autoload.js"></script>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../scripts/bootstrap.js"></script>
 
 	<!-- scroll -->
-	<script>
-		$("#btn_go_up-link").on("click","a", function (event) {
-			
-			var id = $(this).attr('href');
-			
-			if ( id.match(/#\w/g) ){
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn_go_up-link").on("click","a", function (event) {
 				event.preventDefault();
-				var top = $(id).offset().top;
-			}
-			
-			$('body,html').animate({scrollTop: top - 70}, 1000);
+				var id = $(this).attr('href'),
+				top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1000);
+			});
 		});
 	</script>
-	
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	    (function (d, w, c) {
+	        (w[c] = w[c] || []).push(function() {
+	            try {
+	                w.yaCounter40767799 = new Ya.Metrika({
+	                    id:40767799,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true,
+	                    webvisor:true
+	                });
+	            } catch(e) { }
+	        });
+
+	        var n = d.getElementsByTagName("script")[0],
+	            s = d.createElement("script"),
+	            f = function () { n.parentNode.insertBefore(s, n); };
+	        s.type = "text/javascript";
+	        s.async = true;
+	        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+	        if (w.opera == "[object Opera]") {
+	            d.addEventListener("DOMContentLoaded", f, false);
+	        } else { f(); }
+	    })(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/40767799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
 
 </body>
 </html>

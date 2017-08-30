@@ -68,7 +68,16 @@
 	}
 
 	.content-contacts-tel_number{
+		display: block;
 		margin-left: 1.5rem;	
+		color: @contNamecolor;
+
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited {
+			text-decoration: none;
+		}
 	}
 
 	.content-contacts-tel_number::before{
@@ -132,14 +141,34 @@
 			background-image: url(~'@{contact}contact9.jpg');
 		}
 	}
-	&.contact_1{
-		&0::before{
+	&.contact_10{
+		&::before{
 			background-image: url(~'@{contact}contact10.jpg');
 		}
 	}
-	&.contact_1{
-		&1::before{
+	&.contact_11{
+		&::before{
 			background-image: url(~'@{contact}contact11.jpg');
+		}
+	}	
+		&.contact_12{
+		&::before{
+			background-image: url(~'@{contact}contact12.jpg');
+		}
+	}
+	&.contact_13{
+		&::before{
+			background-image: url(~'@{contact}contact13.jpg');
+		}
+	}
+	&.contact_14{
+		&::before{
+			background-image: url(~'@{contact}contact14.jpg');
+		}
+	}
+	&.contact_15{
+		&::before{
+			background-image: url(~'@{contact}contact15.jpg');
 		}
 	}	
 }

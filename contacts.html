@@ -9,7 +9,7 @@
 	<meta name="author" content="Профком студентов ОГАСА, профком студентів ОДАБА">
 
 	<link rel="stylesheet" href="css/bootstrap.css?ver1.04">
-	<link rel="stylesheet" href="css/style.css?ver1.06">
+	<link rel="stylesheet" href="css/style.css?ver1.12">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -34,6 +34,32 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="images/design/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+
+	<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+
+	<script type="text/javascript">
+		var map;
+
+		DG.then(function () {
+			map = DG.map('map', {
+				center: [46.48417, 30.7160],
+				zoom: 16
+			});
+			DG.marker([46.48417, 30.7160]).addTo(map).bindPopup('Профком студентов ОГАСА<br>каб. а156а<br>Время работы:<br>пн-пт 9.00 - 16.00<br>Контактный телефон: 729&nbsp;86&nbsp;48');
+		});
+	</script>
+	<script type="text/javascript">
+		var map;
+
+		DG.then(function () {
+			map = DG.map('map1', {
+				center: [46.48417, 30.7160],
+				zoom: 16
+			});
+			DG.marker([46.48417, 30.7160]).addTo(map).bindPopup('Профком студентов ОГАСА<br>каб. а156а<br>Время работы:<br>пн-пт 9.00 - 16.00<br>Контактный телефон: 729&nbsp;86&nbsp;48');
+		});
+	</script>
+
 </head>
 <body>
 	<header>
@@ -104,27 +130,29 @@
 								<p>Адрес: 65029, Украина, г. Одесса, ул. Дидрихсона, 4, Одесская государственная академия строительства и архитектуры, главный административный корпус, кабинет&nbsp;<b>а156а</b></p>
 
 								<p>Контактный телефон: +38&nbsp;(048)&nbsp;<b>729&nbsp;86&nbsp;48</b></p>
-								<p>Почта: <a>profkomstudentovogasa@mail.ru</a></p>
+								<p>Почта: <a href="mailto:profkomstudentovogasa@mail.ru">profkomstudentovogasa@mail.ru</a></p>
+
+								<p>Вконтакте: <a href="https://vk.com/profcom__ogasa" target="blank">https://vk.com/profcom__ogasa</a></p>
+								<p>Telegram: <a href="https://t.me/stud_profkom_ogasa" target="blank">https://t.me/stud_profkom_ogasa</a></p>
+								<p>Instagram: <a href="https://www.instagram.com/studprofkom_ogasa/" target="blank">https://www.instagram.com/studprofkom_ogasa/</a></p>
 
 								<p>										
 									<a class="networks-content-ogasa" href="http://www.ogasa.org.ua/ps.html" target="blank" title="www.ogasa.org.ua">
 										<span>Мы на сайте академии</span>
 									</a>	
 								</p>
-								<p>				
-									<a class="networks-content-link" href="https://vk.com/profcom__ogasa" target="blank">
-										<span>Мы в социальных сетях</span>
-									</a>
-								</p>
+
 							</div>				
 						</div>
-						
+
+
 						<div class="hidden-xs col-sm-6 col-md-6 contacts-maps">
 							<a class="content-gallery-block content-ogasa-map image_container full">
 								<img class="content-image image_container_inner" src="images/content/contacts/ogasa_map.jpg" alt="Карта ОГАСА">
 							</a>
+						   
+						   <div id="map" class="content-map" style="width:90%; height:400px"></div>
 							
-							<iframe class="content-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.4862497243116!2d30.715637823714626!3d46.48432344806517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae22b25912fd2551!2z0J7QtNC10YHRgdC60LDRjyDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdCw0Y8g0LDQutCw0LTQtdC80LjRjyDRgdGC0YDQvtC40YLQtdC70YzRgdGC0LLQsCDQuCDQsNGA0YXQuNGC0LXQutGC0YPRgNGL!5e0!3m2!1sru!2sua!4v1471984539193" width="90%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>					
 						</div>
 
 						<div class="col-xs-12 col-sm-6 col-md-6">
@@ -134,70 +162,72 @@
 									<div class="content-contacts contact_1">
 										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/anastasiiapandas">Анастасия Пандас</a></div>
 										<div class="content-contacts-position">Председатель ППОС ОГАСА</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;445 72&nbsp;47</div>
+										<a href='tel:+380934457247' class="content-contacts-tel_number">+38&nbsp;093&nbsp;445 72&nbsp;47</a>
 									</div>
 
 									<div class="content-contacts contact_2">
 										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/id20821063">Мария Бойчук</a></div>
 										<div class="content-contacts-position">Заместитель председателя ППОС ОГАСА</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;061 76&nbsp;07</div>
+										<a href='tel:+380930617607' class="content-contacts-tel_number">+38&nbsp;093&nbsp;061 76&nbsp;07</a>
 									</div>
 									<div class="content-contacts contact_10">
 										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/goonerfrombirth">Дмитрий Дубчак</a></div>
 										<div class="content-contacts-position">Заместитель председателя ППОС ОГАСА</div>
-										<div class="content-contacts-tel_number">+38&nbsp;096&nbsp;771 35&nbsp;11</div>
+										<a href='tel:+380967713511' class="content-contacts-tel_number">+38&nbsp;096&nbsp;771 35&nbsp;11</a>
 									</div>
 
 									<div class="content-contacts contact_3">
 										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/stsaran">Станислав Царан</a></div>
 										<div class="content-contacts-position">Директор студенческого клуба ОГАСА</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;500 07&nbsp;92</div>
+										<a href='tel:+380935000792' class="content-contacts-tel_number">+38&nbsp;093&nbsp;500 07&nbsp;92</a>
 									</div>
 									
-									<div class="content-contacts contact_5">
-										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/id21819522">Анна Семенько</a></div>
+									<div class="content-contacts contact_13">
+										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/olaalo771">Ольга Кожухарь</a></div>
 										<div class="content-contacts-position">Председатель профбюро АХИ</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;074 13&nbsp;31</div>
+										<a href='tel:+380631150507' class="content-contacts-tel_number">+38&nbsp;063&nbsp;115 05&nbsp;07</a>
 									</div>
 
 									<div class="content-contacts contact_6">
 										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/id356925347">Евгений Гулов</a></div>
 										<div class="content-contacts-position">Председатель профбюро ГТС</div>
-										<div class="content-contacts-tel_number">+38&nbsp;073&nbsp;444 17&nbsp;26</div>
+										<a href='tel:+380734441726' class="content-contacts-tel_number">+38&nbsp;073&nbsp;444 17&nbsp;26</a>
 									</div>
 									
-									<div class="content-contacts contact_8">
-										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/id104562028">Павел Болдырев</a></div>
+									<div class="content-contacts contact_12">
+										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/id223634949">Ольга Скороход</a></div>
 										<div class="content-contacts-position">Председатель профбюро ИИЭС</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;050 95&nbsp;24</div>
+										<a href='tel:+380501658062' class="content-contacts-tel_number">+38&nbsp;050&nbsp;165 80&nbsp;62</a>
 									</div>
 
-									<div class="content-contacts contact_7">
-										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/m_romaneskul">Маргарита Репецкая</a></div>
+									<div class="content-contacts contact_11">
+										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/vmpapkov">Владимир Папков</a></div>
 										<div class="content-contacts-position">Председатель профбюро ИСИ</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;820 43&nbsp;39</div>
+										<a href='tel:+380682781943' class="content-contacts-tel_number">+38&nbsp;068&nbsp;278 19&nbsp;43</a>
 									</div>
 
 									<div class="content-contacts contact_4">
-										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/id18202166">Анастасия Попроцкая</a></div>
+										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/darinka_shevchuk">Дарья Шевчук</a></div>
 										<div class="content-contacts-position">Председатель профбюро СТИ</div>
-										<div class="content-contacts-tel_number">+38&nbsp;063&nbsp;969 39&nbsp;63</div>
+
+										<a href='tel:+380930062115' class="content-contacts-tel_number">+38&nbsp;093&nbsp;006 21&nbsp;15</a>
 									</div>
 
-									<div class="content-contacts contact_9">
-										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/confector">Роман Одиноков</a></div>
+									<div class="content-contacts contact_14">
+										<div class="content-contacts-name"><a class="content-contacts-vk-link link-person" target="_blank" href="https://vk.com/olga__timoshenko">Ольга Тимошенко</a></div>
 										<div class="content-contacts-position">Председатель профбюро ЭкУС</div>
-										<div class="content-contacts-tel_number">+38&nbsp;093&nbsp;240 40&nbsp;79</div>		
+										<a href='tel:+380933884556' class="content-contacts-tel_number">+38&nbsp;093&nbsp;388 45&nbsp;56</a>		
 									</div>
 							</div>
 						</div>
 
-						<div class="hidden-sm hidden-md hidden-lg col-xs-12   contacts-maps">
+						<div class="hidden-sm hidden-md hidden-lg col-xs-12 contacts-maps">
 							<a class="content-gallery-block content-ogasa-map full">
 								<img class="content-image " src="images/content/contacts/ogasa_map.jpg" alt="Карта ОГАСА">
 							</a>
-							
-							<iframe class="content-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.4862497243116!2d30.715637823714626!3d46.48432344806517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae22b25912fd2551!2z0J7QtNC10YHRgdC60LDRjyDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdCw0Y8g0LDQutCw0LTQtdC80LjRjyDRgdGC0YDQvtC40YLQtdC70YzRgdGC0LLQsCDQuCDQsNGA0YXQuNGC0LXQutGC0YPRgNGL!5e0!3m2!1sru!2sua!4v1471984539193" width="90%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>					
+
+							<div id="map1" class="content-map" style="width:90%; height:400px"></div>
+
 						</div>
 
 						
@@ -230,8 +260,6 @@
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="scripts/bootstrap.js"></script>
 
 	<!-- scroll -->
 	<script>
@@ -249,30 +277,30 @@
 	</script>
 
 	<script type="text/javascript">
-	    (function (d, w, c) {
-	        (w[c] = w[c] || []).push(function() {
-	            try {
-	                w.yaCounter40767799 = new Ya.Metrika({
-	                    id:40767799,
-	                    clickmap:true,
-	                    trackLinks:true,
-	                    accurateTrackBounce:true,
-	                    webvisor:true
-	                });
-	            } catch(e) { }
-	        });
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter40767799 = new Ya.Metrika({
+						id:40767799,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true
+					});
+				} catch(e) { }
+			});
 
-	        var n = d.getElementsByTagName("script")[0],
-	            s = d.createElement("script"),
-	            f = function () { n.parentNode.insertBefore(s, n); };
-	        s.type = "text/javascript";
-	        s.async = true;
-	        s.src = "https://mc.yandex.ru/metrika/watch.js?ver1.0";
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/watch.js?ver1.0";
 
-	        if (w.opera == "[object Opera]") {
-	            d.addEventListener("DOMContentLoaded", f, false);
-	        } else { f(); }
-	    })(document, window, "yandex_metrika_callbacks");
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/40767799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->

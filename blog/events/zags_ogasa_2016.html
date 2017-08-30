@@ -2,16 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ЗАГС ОГАСА - фотоотчет</title>
+	<title>ЗАГС ОГАСА 2016 - фотоотчет</title>
+
+	<meta name="keywords" content="Профком студентов студентів ОДАБА ОГАСА студпрофком Made_in_stud_profkom_ogasa StudProfcomUA stroika">
+	<meta name="description" content="Официальный сайт Профкома студентов ОГАСА. ЗАГС ОГАСА 2016 - фотоотчет">
+	<meta name="author" content="Профком студентов ОГАСА, профком студентів ОДАБА">
+
+	<meta name="yandex-verification" content="d5c2be00eccb55ff" />
+	<meta name='wmail-verification' content='8e290e1870b8ff1e7e36b25f2c0916b3' />
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../css/bootstrap.css">
-	<link rel="stylesheet short" href="../../css/style.css?ver1.04">
-	<link rel="ut icon" href="../../images/design/logoProfkom.png">
+	<link rel="stylesheet short" href="../../css/style.css?ver1.04">	
+	
+	<link rel="shortcut icon" href="../../images/design/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="56x57" href="../../images/design/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="59x60" href="../../images/design/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="71x72" href="../../images/design/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="75x76" href="../../images/design/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="113x114" href="../../images/design/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="119x120" href="../../images/design/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="143x144" href="../../images/design/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="151x152" href="../../images/design/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="179x180" href="../../images/design/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="191x192"  href="../../images/design/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../images/design/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../../images/design/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../images/design/favicon/favicon-16x16.png">
+	<link rel="manifest" href="../../images/design/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="../../images/design/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
 
 </head>
 <body>
 
-	<div class="container-fluid wrapper" id="head">
+	<div class="container-fluid wrapper">
 		<div class="row">
 			<header>
 				<div class="col-xs-12 fixed-header">
@@ -63,11 +90,11 @@
 			</header>
 
 
-			<section>
+			<section id="head">
 				<div class="col-xs-12">
 					<div class="row">
 						<div class="col-xs-12 content-description">
-							<h2 class="content-description-header">ЗАГС ОГАСА - фотоотчет</h2>						
+							<h2 class="content-description-header">ЗАГС ОГАСА 2016 - фотоотчет</h2>						
 
 							<div class="content-description-text">
 								<h4 class="bold">Организатор: Профком студентов ОГАСА</h4>
@@ -88,26 +115,75 @@
 					</div>
 				</div>
 				<a href="../events.html" class="clear-link btn_news_back">Назад к другим меропиятиям</a>
-				<a class="btn_go_up-link" href="#head">
-					<div class="btn_go_up">
-					</div>
-				</a>
-			</section>
 
-			<footer>
-				<div class="col-xs-12 networks">
-					<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
-						<span>Мы в социальных сетях</span>
+				<div id="btn_go_up-link">
+					<a class="btn_go_up-link" href="#head">
+						<div class="btn_go_up">
+						</div>
 					</a>
 				</div>
-			</footer>
 
-
+			</section>
 		</div>
 	</div>
 
+	<footer>
+		<div class="col-xs-12 networks">
+			<a class="networks-link" href="https://vk.com/profcom__ogasa" target="blank">
+				<span>Мы в социальных сетях</span>
+			</a>
+		</div>
+	</footer>
+
+
+
 	<script src="../../scripts/script-drop_menu.js"></script>
 	<script src="../../scripts/script-open_photo-autoload.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- scroll -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn_go_up-link").on("click","a", function (event) {
+				event.preventDefault();
+				var id = $(this).attr('href'),
+				top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1000);
+			});
+		});
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	    (function (d, w, c) {
+	        (w[c] = w[c] || []).push(function() {
+	            try {
+	                w.yaCounter40767799 = new Ya.Metrika({
+	                    id:40767799,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true,
+	                    webvisor:true
+	                });
+	            } catch(e) { }
+	        });
+
+	        var n = d.getElementsByTagName("script")[0],
+	            s = d.createElement("script"),
+	            f = function () { n.parentNode.insertBefore(s, n); };
+	        s.type = "text/javascript";
+	        s.async = true;
+	        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+	        if (w.opera == "[object Opera]") {
+	            d.addEventListener("DOMContentLoaded", f, false);
+	        } else { f(); }
+	    })(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/40767799" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
 
 </body>
 </html>
